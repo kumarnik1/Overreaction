@@ -1,0 +1,685 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Forecasting Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap">
+  <style>
+    body { font-family: "Source Serif 4", system-ui, -apple-system, Segoe UI, Roboto, Arial, serif; max-width: 1000px; margin: 36px auto; padding: 0 16px; }
+    .card { border: 1px solid #ddd; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+    .row { display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; }
+    .row > div { min-width: 220px; }
+    label { display:block; margin: 10px 0 6px; }
+    input[type="number"]{ width: 200px; padding: 8px; border-radius: 10px; border: 1px solid #ccc; }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .muted { color:#666; font-size: 0.95rem; }
+    .big { font-size: 1.2rem; }
+    #chart, #chart2 { width: 100%; height: 260px; border: 1px solid #eee; border-radius: 12px; }
+    .topbar { display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items:flex-start; }
+    .topbar-right { margin-left:auto; text-align:right; }
+    #scroll { width: 100%; margin-top: 6px; }
+    code { background:#f2f2f2; padding:2px 6px; border-radius:6px; }
+    .debug-meta { display:none; } /* hidden from participants, visible via dev tools */
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <h1>Forecasting Task</h1>
+
+  <div id="screen-consent" class="card">
+    <p class="big"><b>Consent</b></p>
+    <p class="muted">
+      You will forecast values of a stable random process across multiple rounds. You will first observe 40 past realizations of the process and then will forecast thereafter.
+      Your bonus depends on the accuracy of your forecasts.
+    </p>
+    <label><input id="consent" type="checkbox"> I consent to participate.</label>
+    <button id="btn-begin">Begin</button>
+  </div>
+
+  <div id="screen-instructions" class="card" style="display:none;">
+    <div class="topbar">
+      <div>
+        <p class="big"><b>Instructions</b></p>
+        <p class="muted">
+          You will see a sequence of past values, then complete 40 forecasting rounds.
+          In each round you observe the current value $x_t$ and forecast $x_{t+1}$ and $x_{t+2}$.
+        </p>
+        <p class="muted">
+          Your scoring per forecast is $S = 100 \times \max\bigl(0, 1 - \lvert \text{forecast} - \text{realization} \rvert / 20\bigr)$, and your total score is the sum across all forecasts.
+          Your score will then be linearly converted to an additional bonus roughly between \$0 and \$5.
+        </p>
+      </div>
+      <div class="debug-meta">
+        <p class="muted">Participant ID: <code id="pid"></code></p>
+        <p class="muted">Condition (ρ): <code id="rho"></code></p>
+      </div>
+    </div>
+
+    <p><b>History (40 past realizations)</b></p>
+    <canvas id="chart"></canvas>
+    <p class="muted">This chart shows the last 40 values you observed before the forecasting rounds begin.</p>
+
+    <button id="btn-start-task">Start forecasting rounds</button>
+  </div>
+
+  <div id="screen-task" class="card" style="display:none;">
+    <div class="topbar">
+      <div>
+        <p class="big"><b>Testing phase</b></p>
+        <p>Current value: <b id="xt"></b></p>
+        <p class="muted">
+          Your previous round forecast for $x_{t+2}$ is shown as a grey dot in the $t\!+\!1$ column; you can see it but cannot change it.
+        </p>
+      </div>
+      <div class="topbar-right">
+        <p class="big"><b>Score: <span id="score">0</span></b></p>
+        <p class="muted"><b>Round <span id="round"></span> of 40</b></p>
+      </div>
+    </div>
+
+    <canvas id="chart2"></canvas>
+    <div>
+      <input id="scroll" type="range" min="0" max="0" value="0" />
+      <p class="muted">Drag to scroll back and see earlier realizations.</p>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="f1">Forecast for next period $x_{t+1}$:</label>
+        <input id="f1" type="number" step="1" />
+      </div>
+      <div>
+        <label for="f2">Forecast for two periods ahead $x_{t+2}$:</label>
+        <input id="f2" type="number" step="1" />
+      </div>
+      <div>
+        <button id="btn-submit">Make prediction</button>
+        <p id="err" style="color:#b00; margin:8px 0 0;"></p>
+      </div>
+    </div>
+    <div style="text-align:right; margin-top:4px;" class="muted">
+      <span id="latest-scores"></span>
+    </div>
+  </div>
+
+  <div id="screen-done" class="card" style="display:none;">
+    <p class="big"><b>Finished</b></p>
+    <p>Your completion code:</p>
+    <p class="big"><code id="ccode"></code></p>
+
+    <p class="muted">
+      Download your data (JSON) for verification / pilot testing:
+    </p>
+    <button id="btn-download">Download data</button>
+
+    <p class="muted" style="margin-top:10px;">
+      If you want automatic storage, add a server endpoint and POST the <code>payload</code> object.
+    </p>
+  </div>
+
+<script>
+(function () {
+  // Parameters
+  const MU = 0;
+  const SIGMA_E = 20;               // innovation volatility used in scoring denominator
+  const RHO_SET = [0.2, 0.6];       // two conditions
+  const N_HISTORY = 40;             // shown before task
+  const N_ROUNDS = 40;              // forecasting rounds  
+  // Each round: forecast t+1 and t+2 => 80 scored predictions
+  const WINDOW_SIZE = 15;           // visible points in the main chart window
+
+  // Prolific/MTurk URL params if exist
+  const qs = new URLSearchParams(window.location.search);
+  const prolific_pid = qs.get("PROLIFIC_PID") || "NA";
+  const workerId = qs.get("workerId") || "NA";
+  const assignmentId = qs.get("assignmentId") || "NA";
+  const hitId = qs.get("hitId") || "NA";
+
+  const participant_id = prolific_pid !== "NA" ? prolific_pid : (workerId !== "NA" ? workerId : cryptoRandomId());
+
+  function cryptoRandomId() {
+    const a = new Uint32Array(2);
+    crypto.getRandomValues(a);
+    return "P" + a[0].toString(16) + a[1].toString(16);
+  }
+
+  // Randomly assign rho
+  const rho = RHO_SET[Math.floor(Math.random() * RHO_SET.length)];
+  console.log("Forecasting task participant:", { participant_id, rho });
+
+  // open with ?debug=1 in the URL then shows participant ID and condition
+  const isDebug = qs.get("debug") === "1";
+  if (isDebug) {
+    const metas = document.querySelectorAll(".debug-meta");
+    metas.forEach(m => { m.style.display = "block"; });
+  }
+
+  // AR(1) generator: x_t = (1-rho)*mu + rho*x_{t-1} + e_t
+  function randn() {
+    let u = 0, v = 0;
+    while (u === 0) u = Math.random();
+    while (v === 0) v = Math.random();
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+  }
+
+  function nextX(prev) {
+    const e = SIGMA_E * randn();
+    return (1 - rho) * MU + rho * prev + e;
+  }
+
+  const totalNeeded = N_HISTORY + N_ROUNDS + 2;
+  const x = new Array(totalNeeded);
+  x[0] = 0; // initialization
+  for (let i = 1; i < totalNeeded; i++) x[i] = nextX(x[i-1]);
+
+  const rawMin = Math.min(...x);
+  const rawMax = Math.max(...x);
+  const margin = 2 * SIGMA_E; 
+  const GLOBAL_MIN = rawMin - margin;
+  const GLOBAL_MAX = rawMax + margin;
+
+  const t0 = N_HISTORY - 1;
+
+  const trials = [];
+  let totalScore = 0;
+
+  let prevF2 = null;
+
+  let currentF1 = null;
+  let currentF2 = null;
+
+  let currentRound = 1;
+  let viewStart = 0;      // global index of first point in main chart window
+  let chartState = null;  // geometry info from last draw
+  let dragMode = null;    // whether the user is dragging the t+1 or t+2 forecast
+
+  const lastScores = [];
+
+  // Scoring function
+  function scoreOne(forecast, realization) {
+    const delta = forecast - realization;
+    const s = 100 * Math.max(0, 1 - Math.abs(delta) / SIGMA_E);
+    return s;
+  }
+
+  function drawSeries(canvas, series, opts) {
+    const ctx = canvas.getContext("2d");
+    const W = canvas.width = canvas.clientWidth * devicePixelRatio;
+    const H = canvas.height = canvas.clientHeight * devicePixelRatio;
+
+    ctx.clearRect(0, 0, W, H);
+
+    const pad = 28 * devicePixelRatio;
+
+    const futureSteps = opts && typeof opts.futureSteps === "number" ? opts.futureSteps : 0;
+
+    const fixedMin = opts && typeof opts.fixedMin === "number" ? opts.fixedMin : null;
+    const fixedMax = opts && typeof opts.fixedMax === "number" ? opts.fixedMax : null;
+
+    let minY = fixedMin != null ? fixedMin : Math.min(...series);
+    let maxY = fixedMax != null ? fixedMax : Math.max(...series);
+
+    // (grey/yellow dots) only if axis is not fixed
+    if (!fixedMin || !fixedMax) {
+      if (opts) {
+        const extraVals = [];
+        if (opts.greyDot && typeof opts.greyDot.value === "number") {
+          extraVals.push(opts.greyDot.value);
+        }
+        if (Array.isArray(opts.predictionValues)) {
+          for (const v of opts.predictionValues) {
+            if (typeof v === "number") extraVals.push(v);
+          }
+        }
+        if (extraVals.length) {
+          minY = Math.min(minY, ...extraVals);
+          maxY = Math.max(maxY, ...extraVals);
+        }
+      }
+    }
+
+    const rangeY = (maxY - minY) || 1;
+
+    function xPos(i) {
+      const denom = (series.length - 1 + futureSteps) || 1;
+      return pad + (W - 2*pad) * (i / denom);
+    }
+    function yPos(v) {
+      return H - pad - (H - 2*pad) * ((v - minY) / rangeY);
+    }
+
+    // axes
+    ctx.strokeStyle = "#e6e6e6";
+    ctx.lineWidth = 1 * devicePixelRatio;
+    ctx.beginPath();
+    ctx.moveTo(pad, pad);
+    ctx.lineTo(pad, H - pad);
+    ctx.lineTo(W - pad, H - pad);
+    ctx.stroke();
+
+    // horizontal grid lines + y-axis ticks with numeric labels
+    ctx.fillStyle = "#666";
+    ctx.font = `${10 * devicePixelRatio}px system-ui, -apple-system, Segoe UI`;
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    const nTicks = 5;
+    for (let i = 0; i <= nTicks; i++) {
+      const v = minY + (rangeY * i) / nTicks;
+      const yp = yPos(v);
+
+      // light horizontal grid line
+      ctx.strokeStyle = "#f2f2f2";
+      ctx.beginPath();
+      ctx.moveTo(pad, yp);
+      ctx.lineTo(W - pad, yp);
+      ctx.stroke();
+
+      // small tick at y-axis
+      ctx.strokeStyle = "#e6e6e6";
+      ctx.beginPath();
+      ctx.moveTo(pad - 4 * devicePixelRatio, yp);
+      ctx.lineTo(pad, yp);
+      ctx.stroke();
+
+      ctx.fillText(v.toFixed(0), pad - 6 * devicePixelRatio, yp);
+    }
+
+    ctx.strokeStyle = "#222";
+    ctx.lineWidth = 2 * devicePixelRatio;
+    ctx.beginPath();
+    for (let i = 0; i < series.length; i++) {
+      const xp = xPos(i);
+      const yp = yPos(series[i]);
+      if (i === 0) ctx.moveTo(xp, yp);
+      else ctx.lineTo(xp, yp);
+    }
+    ctx.stroke();
+
+    // green dots on realizations
+    ctx.fillStyle = "#00aa2d";
+    for (let i = 0; i < series.length; i++) {
+      const xp = xPos(i);
+      const yp = yPos(series[i]);
+      ctx.beginPath();
+      ctx.arc(xp, yp, 4 * devicePixelRatio, 0, 2*Math.PI);
+      ctx.fill();
+    }
+
+    // numeric labels on realizations
+    const showLabels = !opts || opts.showLabels !== false;
+    if (showLabels) {
+      ctx.fillStyle = "#333";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      ctx.font = `${10 * devicePixelRatio}px system-ui, -apple-system, Segoe UI`;
+      for (let i = 0; i < series.length; i++) {
+        const xp = xPos(i);
+        const yp = yPos(series[i]);
+        ctx.fillText(series[i].toFixed(0), xp, yp - 6 * devicePixelRatio);
+      }
+    }
+
+    // prediction bands (t+1 in blue, t+2 in red)
+    const showBands = !opts || opts.showBands !== false;
+    if (showBands) {
+      const totalSlots = (series.length - 1 + futureSteps) || 1;
+      const innerLeft = pad;
+      const innerRight = W - pad;
+      const slotWidth = (innerRight - innerLeft) / totalSlots;
+
+      // centers for future slots t+1 and t+2
+      const slotIndex1 = series.length;     // first future position
+      const slotIndex2 = series.length + 1; // second future position
+      const center1 = innerLeft + slotWidth * slotIndex1;
+      const center2 = innerLeft + slotWidth * slotIndex2;
+      const bandWidth = slotWidth * 0.7;
+      const band1Left = center1 - bandWidth / 2;
+      const band1Right = center1 + bandWidth / 2;
+      const band2Left = center2 - bandWidth / 2;
+      const band2Right = center2 + bandWidth / 2;
+
+      ctx.save();
+      ctx.globalAlpha = 0.12;
+      ctx.fillStyle = "#4a90e2"; 
+      ctx.fillRect(band1Left, pad, bandWidth, H - 2*pad);
+      ctx.fillStyle = "#f27b7b"; 
+      ctx.fillRect(band2Left, pad, bandWidth, H - 2*pad);
+      ctx.restore();
+
+      ctx.fillStyle = "#333";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      ctx.font = `${11 * devicePixelRatio}px system-ui, -apple-system, Segoe UI`;
+      ctx.fillText("t+1", (band1Left + band1Right) / 2, pad + 4 * devicePixelRatio);
+      ctx.fillText("t+2", (band2Left + band2Right) / 2, pad + 4 * devicePixelRatio);
+
+      // prediction dots if current forecasts exist 
+      const predictVals = (opts && opts.predictionValues) || [];
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      ctx.font = `${10 * devicePixelRatio}px system-ui, -apple-system, Segoe UI`;
+
+      // grey dot for previous round's t+2 forecast shown in t+1 column (can't be moved, unlabeled)
+      const prevBand1Val = opts && typeof opts.previousBand1 === "number" ? opts.previousBand1 : null;
+      if (prevBand1Val != null) {
+        const yp = yPos(prevBand1Val);
+        const cx = (band1Left + band1Right) / 2;
+        ctx.fillStyle = "#999999";
+        ctx.beginPath();
+        ctx.arc(cx, yp, 5 * devicePixelRatio, 0, 2*Math.PI);
+        ctx.fill();
+      }
+
+      // t+1: yellow dot 
+      if (predictVals[0] != null) {
+        const yp = yPos(predictVals[0]);
+        const cx = (band1Left + band1Right) / 2;
+        ctx.fillStyle = "#ffcc00";
+        ctx.beginPath();
+        ctx.arc(cx, yp, 5 * devicePixelRatio, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.fillStyle = "#333";
+        ctx.fillText(predictVals[0].toFixed(0), cx, yp - 7 * devicePixelRatio);
+      }
+
+      // t+2: white dot 
+      if (predictVals[1] != null) {
+        const yp = yPos(predictVals[1]);
+        const cx = (band2Left + band2Right) / 2;
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(cx, yp, 5 * devicePixelRatio, 0, 2*Math.PI);
+        ctx.fill();
+        ctx.fillStyle = "#333";
+        ctx.textBaseline = "bottom";
+        ctx.fillText(predictVals[1].toFixed(0), cx, yp - 7 * devicePixelRatio);
+      }
+
+      if (opts && opts.isInteractive) {
+        chartState = {
+          canvas,
+          W,
+          H,
+          pad,
+          minY,
+          maxY,
+          band1: { x1: band1Left, x2: band1Right },
+          band2: { x1: band2Left, x2: band2Right }
+        };
+      }
+    }
+  }
+
+  const el = (id) => document.getElementById(id);
+
+  el("pid").textContent = participant_id;
+  el("rho").textContent = rho.toString();
+
+  el("btn-begin").onclick = () => {
+    if (!el("consent").checked) return alert("Please consent to continue.");
+    el("screen-consent").style.display = "none";
+    el("screen-instructions").style.display = "block";
+
+    const history = x.slice(0, N_HISTORY);
+    drawSeries(el("chart"), history, {
+      fixedMin: GLOBAL_MIN,
+      fixedMax: GLOBAL_MAX,
+      showBands: false,
+      showLabels: true
+    });
+  };
+
+  el("btn-start-task").onclick = () => {
+    el("screen-instructions").style.display = "none";
+    el("screen-task").style.display = "block";
+    renderRound(1);
+  };
+
+  function renderRound(r) {
+    currentRound = r;
+    el("round").textContent = String(r);
+    el("score").textContent = totalScore.toFixed(1);
+
+    const t = t0 + r;         // index of current observed value
+    const current = x[t];
+    el("xt").textContent = current.toFixed(1);
+
+    // reset forecasts for this round
+    currentF1 = null;
+    currentF2 = null;
+    el("f1").value = "";
+    el("f2").value = "";
+    el("err").textContent = "";
+
+    // scroll range to be able to look back across fixed-size windows
+    const maxStart = Math.max(0, t - WINDOW_SIZE + 1);
+    const scrollEl = el("scroll");
+    scrollEl.max = String(maxStart);
+    // by default keep window anchored on the latest point
+    scrollEl.value = String(maxStart);
+    viewStart = maxStart;
+
+    renderChartForCurrentRound();
+  }
+
+  function renderChartForCurrentRound() {
+    const t = t0 + currentRound;
+    const maxStart = Math.max(0, t - WINDOW_SIZE + 1);
+    const start = Math.max(0, Math.min(viewStart, maxStart));
+    const end = Math.min(t, start + WINDOW_SIZE - 1);
+    const shown = x.slice(start, end + 1);
+
+    const atLatestWindow = (start === maxStart);
+
+    drawSeries(el("chart2"), shown, {
+      predictionValues: atLatestWindow ? [currentF1, currentF2] : [],
+      fixedMin: GLOBAL_MIN,
+      fixedMax: GLOBAL_MAX,
+      showBands: atLatestWindow,
+      showLabels: true,
+      isInteractive: atLatestWindow,
+      futureSteps: atLatestWindow ? 2 : 0,
+      previousBand1: atLatestWindow ? prevF2 : null
+    });
+  }
+
+  el("btn-submit").onclick = () => {
+    const r = Number(el("round").textContent);
+    const f1 = Number(el("f1").value);
+    const f2 = Number(el("f2").value);
+
+    if (!Number.isFinite(f1) || !Number.isFinite(f2)) {
+      el("err").textContent = "Please enter both forecasts.";
+      return;
+    }
+
+    currentF1 = f1;
+    currentF2 = f2;
+
+    const t = t0 + r;    // observed current index 
+    const y1 = x[t + 1]; // realization for x_{t+1}
+    const y2 = x[t + 2]; // realization for x_{t+2}
+
+    const s1 = scoreOne(f1, y1);
+    const s2 = scoreOne(f2, y2);
+    totalScore += (s1 + s2);
+
+    lastScores.unshift({ s1, s2 });
+    if (lastScores.length > 3) lastScores.pop();
+    renderLatestScores();
+
+    trials.push({
+      round: r,
+      t_index: t,
+      x_t: x[t],
+      forecast_t1: f1,
+      forecast_t2: f2,
+      realized_t1: y1,
+      realized_t2: y2,
+      score_t1: s1,
+      score_t2: s2,
+      rho,
+      mu: MU,
+      sigma_e: SIGMA_E,
+      timestamp: new Date().toISOString()
+    });
+
+    prevF2 = f2;
+
+    if (r < N_ROUNDS) {
+      renderRound(r + 1);
+    } else {
+      finish();
+    }
+  };
+
+  function renderLatestScores() {
+    const elLS = el("latest-scores");
+    if (!elLS) return;
+    if (!lastScores.length) {
+      elLS.textContent = "";
+      return;
+    }
+    const parts = lastScores.map(pair => {
+      const s1 = Math.round(pair.s1);
+      const s2 = Math.round(pair.s2);
+      const fmt1 = (s1 >= 0 ? "+" : "") + s1;
+      const fmt2 = (s2 >= 0 ? "+" : "") + s2;
+      return `(<span style="color:#1f77b4">${fmt1}</span>, <span style="color:#d62728">${fmt2}</span>)`;
+    });
+    elLS.innerHTML = parts.join(" ") + ' | Latest scores';
+  }
+
+  el("f1").addEventListener("input", () => {
+    const v = Number(el("f1").value);
+    currentF1 = Number.isFinite(v) ? v : null;
+    renderChartForCurrentRound();
+  });
+  el("f2").addEventListener("input", () => {
+    const v = Number(el("f2").value);
+    currentF2 = Number.isFinite(v) ? v : null;
+    renderChartForCurrentRound();
+  });
+
+  el("scroll").addEventListener("input", () => {
+    viewStart = Number(el("scroll").value);
+    renderChartForCurrentRound();
+  });
+
+  function yToValue(yDevicePx) {
+    if (!chartState) return null;
+    const { H, pad, minY, maxY } = chartState;
+    const usableH = H - 2 * pad;
+    const clampedY = Math.max(pad, Math.min(H - pad, yDevicePx));
+    const frac = (H - pad - clampedY) / usableH;
+    return minY + frac * (maxY - minY);
+  }
+
+  function handleDragUpdate(which, clientX, clientY) {
+    if (!chartState) return;
+    const { canvas, band1, band2 } = chartState;
+    const rect = canvas.getBoundingClientRect();
+    const x = (clientX - rect.left) * devicePixelRatio;
+    const y = (clientY - rect.top) * devicePixelRatio;
+
+    const band = which === "f1" ? band1 : band2;
+    if (!band || x < band.x1 || x > band.x2) return;
+    const val = yToValue(y);
+    if (val == null) return;
+
+    if (which === "f1") {
+      currentF1 = val;
+      el("f1").value = val.toFixed(0);
+    } else {
+      currentF2 = val;
+      el("f2").value = val.toFixed(0);
+    }
+    renderChartForCurrentRound();
+  }
+
+  (function attachCanvasHandlers() {
+    const canvas = el("chart2");
+    canvas.addEventListener("mousedown", (ev) => {
+      if (!chartState) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = (ev.clientX - rect.left) * devicePixelRatio;
+      const { band1, band2 } = chartState;
+      if (band1 && x >= band1.x1 && x <= band1.x2) {
+        dragMode = "f1";
+      } else if (band2 && x >= band2.x1 && x <= band2.x2) {
+        dragMode = "f2";
+      } else {
+        dragMode = null;
+      }
+      if (dragMode) {
+        handleDragUpdate(dragMode, ev.clientX, ev.clientY);
+      }
+    });
+
+    window.addEventListener("mousemove", (ev) => {
+      if (!dragMode) return;
+      handleDragUpdate(dragMode, ev.clientX, ev.clientY);
+    });
+
+    window.addEventListener("mouseup", () => {
+      dragMode = null;
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+      dragMode = null;
+    });
+  })();
+
+  function finish() {
+    el("screen-task").style.display = "none";
+    el("screen-done").style.display = "block";
+
+    const payload = {
+      participant_id,
+      prolific_pid,
+      workerId,
+      assignmentId,
+      hitId,
+      condition_rho: rho,
+      mu: MU,
+      sigma_e: SIGMA_E,
+      n_history: N_HISTORY,
+      n_rounds: N_ROUNDS,
+      total_score: totalScore,
+      implied_bonus_mturk_paper: totalScore / 600, 
+      trials
+    };
+
+    const ccode = makeCompletionCode(payload);
+    el("ccode").textContent = ccode;
+
+    el("btn-download").onclick = () => {
+      const blob = new Blob([JSON.stringify({ ...payload, completion_code: ccode }, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `forecast_task_${participant_id}.json`;
+      a.click();
+    };
+  }
+
+  function makeCompletionCode(payload) {
+    const base = `${payload.participant_id}|${payload.condition_rho}|${payload.total_score.toFixed(2)}|${Date.now()}`;
+    let h = 2166136261;
+    for (let i = 0; i < base.length; i++) {
+      h ^= base.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return "CC" + (h >>> 0).toString(16).toUpperCase().padStart(8, "0");
+  }
+})();
+</script>
+</body>
+</html>
