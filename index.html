@@ -65,8 +65,9 @@
 
     <p><b>History (40 past realizations)</b></p>
     <canvas id="chart"></canvas>
-    <p class="muted">This chart shows the last 40 values you observed before the forecasting rounds begin.</p>
-
+    <input id="scroll-history" type="range" min="0" max="0" value="0" style="width:100%; margin-top:6px;" />
+    <p class="muted">This chart shows the last 40 values of the process. Drag to scroll.</p>
+    
     <button id="btn-start-task">Start forecasting rounds</button>
   </div>
 
@@ -210,6 +211,18 @@
     return s;
   }
 
+  function niceInterval(rangeY) {
+    const rough = rangeY / 6;
+    const magnitude = Math.pow(10, Math.floor(Math.log10(rough)));
+    const normalized = rough / magnitude;
+    let nice;
+    if (normalized < 1.5) nice = 1;
+    else if (normalized < 3.5) nice = 2;
+    else if (normalized < 7.5) nice = 5;
+    else nice = 10;
+    return nice * magnitude;
+  }
+
   function drawSeries(canvas, series, opts) {
     const ctx = canvas.getContext("2d");
     const W = canvas.width = canvas.clientWidth * devicePixelRatio;
@@ -265,31 +278,33 @@
     ctx.lineTo(W - pad, H - pad);
     ctx.stroke();
 
-    // horizontal grid lines + y-axis ticks with numeric labels
-    ctx.fillStyle = "#666";
-    ctx.font = `${10 * devicePixelRatio}px system-ui, -apple-system, Segoe UI`;
-    ctx.textAlign = "right";
-    ctx.textBaseline = "middle";
-    const nTicks = 5;
-    for (let i = 0; i <= nTicks; i++) {
-      const v = minY + (rangeY * i) / nTicks;
+    // grid lines
+    const interval = niceInterval(rangeY);
+    const firstTick = Math.ceil(minY / interval) * interval;
+    for (let v = firstTick; v <= maxY; v += interval) {
       const yp = yPos(v);
-
-      // light horizontal grid line
-      ctx.strokeStyle = "#f2f2f2";
+      const isZero = Math.abs(v) < 1e-9;
+      ctx.strokeStyle = isZero ? "#999" : "#eaeaea";
+      ctx.lineWidth = isZero ? 1.5 * devicePixelRatio : 1 * devicePixelRatio;
+      ctx.setLineDash([]);
       ctx.beginPath();
       ctx.moveTo(pad, yp);
       ctx.lineTo(W - pad, yp);
       ctx.stroke();
+    }
+    ctx.setLineDash([]);
 
-      // small tick at y-axis
-      ctx.strokeStyle = "#e6e6e6";
+    // Draw zero line explicitly if in range but missed by tick loop
+    if (minY < 0 && maxY > 0 && firstTick > 0) {
+      const yp = yPos(0);
+      ctx.strokeStyle = "#999";
+      ctx.lineWidth = 1.5 * devicePixelRatio;
+      ctx.setLineDash([]);
       ctx.beginPath();
-      ctx.moveTo(pad - 4 * devicePixelRatio, yp);
-      ctx.lineTo(pad, yp);
+      ctx.moveTo(pad, yp);
+      ctx.lineTo(W - pad, yp);
       ctx.stroke();
-
-      ctx.fillText(v.toFixed(0), pad - 6 * devicePixelRatio, yp);
+      ctx.setLineDash([]);
     }
 
     ctx.strokeStyle = "#222";
@@ -428,13 +443,24 @@
     el("screen-consent").style.display = "none";
     el("screen-instructions").style.display = "block";
 
-    const history = x.slice(0, N_HISTORY);
-    drawSeries(el("chart"), history, {
-      fixedMin: GLOBAL_MIN,
-      fixedMax: GLOBAL_MAX,
-      showBands: false,
-      showLabels: true
-    });
+    let historyViewStart = Math.max(0, N_HISTORY - WINDOW_SIZE);
+    const scrollHistory = el("scroll-history");
+    scrollHistory.max = String(historyViewStart);
+    scrollHistory.value = String(historyViewStart);
+
+    function renderHistory() {
+      const start = Number(scrollHistory.value);
+      const shown = x.slice(start, start + WINDOW_SIZE);
+      drawSeries(el("chart"), shown, {
+        fixedMin: GLOBAL_MIN,
+        fixedMax: GLOBAL_MAX,
+        showBands: false,
+        showLabels: true
+      });
+}
+
+scrollHistory.addEventListener("input", renderHistory);
+renderHistory();
   };
 
   el("btn-start-task").onclick = () => {
