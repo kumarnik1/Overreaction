@@ -28,15 +28,39 @@
     .btnrow { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; align-items:center; margin-top: 14px; }
     .dist-hint { font-size: 1rem; color: #666; user-select: none; }
     .btn-primary { background: #111; color: #fff; border-color:#111; }
-    .btn-choice { min-width: 200px; padding: 12px 14px; border-radius: 12px; background: #fafafa; }
+    .btn-choice { min-width: 200px; padding: 12px 14px; border-radius: 12px; background: #fafafa; font-size: 1.1rem; }
     .hidden { display:none; }
+    .typing-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .typing-block label { display: block; width: 100%; text-align: center; margin: 10px 0 6px; }
+    .typing-block input[type="number"] { display: block; margin-left: auto; margin-right: auto; }
+    .typing-block .typing-err { width: 100%; text-align: center; margin: 8px 0 0; }
+    .full-width { flex: 0 0 100%; min-width: 100%; text-align: center; }
+    .enter-hint {
+      display: block;
+      width: 100%;
+      margin-top: 34px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    #screen-forecast .forecast-enter-hint {
+      display: block;
+      margin-top: 1.5rem;
+      line-height: 1.5;
+    }
     .scale-wrap { width: min(720px, 100%); margin: 12px auto 0; }
     .scale-labels { display:flex; justify-content:space-between; font-size: 0.9rem; color:#666; margin: 0 2px 6px; }
     .scale-bar { position: relative; height: 18px; border-radius: 999px; background: linear-gradient(90deg, #f3f3f3, #fafafa); border: 1px solid #e6e6e6; overflow: hidden; }
     .scale-fill { position:absolute; inset: 0 auto 0 0; width: 0%; background: #4a90e2; opacity: 0.55; }
     .scale-tick { position:absolute; top: -6px; width: 2px; height: 30px; background: #222; opacity: 0.35; }
-    .scale-actual { position:absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 999px; background:#111; box-shadow: 0 0 0 3px rgba(17,17,17,0.15); }
-    .scale-forecast { position:absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 999px; background:#d11; box-shadow: 0 0 0 3px rgba(209,17,17,0.18); }
+    .scale-actual { position:absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 999px; background:#111; }
+    .scale-forecast { position:absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 999px; background:#d11; }
     .scale-legend { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 10px; color:#444; font-size: 0.95rem; }
     .legend-dot { display:inline-block; width: 10px; height: 10px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
   </style>
@@ -84,7 +108,7 @@
     </div>
 
     <p class="muted">
-      Between each period in both the observation and forecasting phases, you will complete a timed word-judgment task.
+      Between each period in both the observation and forecasting phases, you will complete a timed word-judgment task. You may use the left and right arrow keys as well as the mouse directly to complete this task. 
       The duration varies from trial to trial.
     </p>
 
@@ -114,28 +138,37 @@
       </div>
     </div>
 
-    <div id="obs-forced" class="row hidden">
-      <div>
-        <label for="obs-type">Type the value to continue:</label>
-        <input id="obs-type" type="number" step="1" />
-        <p class="muted">Enter the current value seen above.</p>
-      </div>
-      <div>
-        <button id="btn-obs-continue" class="btn-primary">Continue</button>
-        <p id="obs-err" style="color:#b00; margin:8px 0 0;"></p>
-      </div>
+    <div id="obs-forced" class="typing-block hidden">
+      <label for="obs-type">Type the value:</label>
+      <input id="obs-type" type="number" step="1" autocomplete="off" />
+      <p id="obs-err" class="typing-err" style="color:#b00;"></p>
+      <button id="btn-obs-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
 
     <div id="obs-passive" class="center">
-      <button id="btn-obs-passive-continue" class="btn-primary">Continue</button>
+      <button id="btn-obs-passive-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
+    <p class="muted enter-hint">Press Enter/Return to continue.</p>
+  </div>
+
+  <div id="screen-forecast-intro" class="card" style="display:none;">
+    <div class="topbar">
+      <div>
+        <p class="big">Forecasting phase</p>
+      </div>
+      <div class="topbar-right">
+        <p class="muted">Trial <span id="fc-pre-idx"></span> of <span id="fc-pre-total"></span></p>
+      </div>
+    </div>
+    <p class="muted center">You will now enter your forecast for the next value.</p>
+    <p class="muted enter-hint">Press Enter/Return to continue.</p>
+    <button id="btn-forecast-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
   </div>
 
   <div id="screen-forecast" class="card" style="display:none;">
     <div class="topbar">
       <div>
         <p class="big">Forecasting phase</p>
-        <p class="muted">Predict the next value as an integer.</p>
       </div>
       <div class="topbar-right">
         <p class="big">Score: <span id="score">0</span></p>
@@ -143,14 +176,11 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" style="justify-content:center; align-items:flex-start; text-align:center;">
       <div>
         <label for="forecast-input">Forecast for next value:</label>
-        <input id="forecast-input" type="number" step="1" min="1" max="1000" />
-        <p class="muted">Use any whole number from 1 to 1000.</p>
-      </div>
-      <div>
-        <button id="btn-forecast-submit" class="btn-primary">Submit forecast</button>
+        <input id="forecast-input" type="number" step="1" min="1" max="1000" autocomplete="off" />
+        <p class="muted forecast-enter-hint">Press Enter/Return to continue.</p>
         <p id="fc-err" style="color:#b00; margin:8px 0 0;"></p>
       </div>
     </div>
@@ -160,7 +190,7 @@
     <div class="topbar">
       <div>
         <p class="big">Outcome</p>
-        <p class="muted">The true value is presented below, along with your forecast and associated error.</p>
+        <p class="muted">The true value is presented below along with the associated forecast error.</p>
       </div>
       <div class="topbar-right">
         <p class="big">Score: <span id="score2">0</span></p>
@@ -183,24 +213,19 @@
           <span><span class="legend-dot" style="background:#d11;"></span>Your forecast</span>
         </div>
       </div>
-      <div class="muted" style="margin-top: 8px;">
-        Your forecast: <span id="your-forecast"></span> &nbsp;|&nbsp; Error: <span id="your-error"></span>
-      </div>
+      <div class="muted" style="margin-top: 8px;">Error: <span id="your-error"></span></div>
     </div>
 
-    <div id="fb-forced" class="row hidden">
-      <div>
-        <label for="fb-type">Type the actual value to continue:</label>
-        <input id="fb-type" type="number" step="1" />
-      </div>
-      <div>
-        <button id="btn-fb-continue" class="btn-primary">Continue</button>
-        <p id="fb-err" style="color:#b00; margin:8px 0 0;"></p>
-      </div>
+    <div id="fb-forced" class="typing-block hidden">
+      <label for="fb-type">Type the actual value:</label>
+      <input id="fb-type" type="number" step="1" autocomplete="off" />
+      <p id="fb-err" class="typing-err" style="color:#b00;"></p>
+      <button id="btn-fb-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
     <div id="fb-passive" class="center">
-      <button id="btn-fb-passive-continue" class="btn-primary">Continue</button>
+      <button id="btn-fb-passive-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
+    <p class="muted enter-hint">Press Enter/Return to continue.</p>
   </div>
 
   <div id="screen-distractor" class="card" style="display:none;">
@@ -354,6 +379,7 @@
 
   el("obs-total").textContent = String(N_OBS);
   el("fc-total").textContent = String(N_FORECAST);
+  el("fc-pre-total").textContent = String(N_FORECAST);
 
   function sampleWord() {
     const pool = window.wordpool;
@@ -372,6 +398,7 @@
       "screen-consent",
       "screen-instructions",
       "screen-observe",
+      "screen-forecast-intro",
       "screen-forecast",
       "screen-feedback",
       "screen-distractor",
@@ -402,6 +429,30 @@
     try { window.scrollTo({ top: 0, behavior: "instant" }); } catch { window.scrollTo(0, 0); }
   }
 
+  /* Focus so user doesn't have to click on the input to start typing */
+  function focusInputAfterPaint(inputEl, opts) {
+    opts = opts || {};
+    const extraDelayMs = typeof opts.extraDelayMs === "number" ? opts.extraDelayMs : 0;
+    if (!inputEl) return;
+    const run = () => {
+      try {
+        inputEl.focus({ preventScroll: true });
+      } catch (_) {}
+    };
+    setTimeout(() => {
+      run();
+      requestAnimationFrame(() => {
+        run();
+        requestAnimationFrame(() => {
+          run();
+          setTimeout(run, 0);
+          setTimeout(run, 40);
+          if (extraDelayMs > 0) setTimeout(run, extraDelayMs);
+        });
+      });
+    }, 0);
+  }
+
   function waitForClickOrEnter(buttonEl, opts) {
     opts = opts || {};
     const enterDelayMs = typeof opts.enterDelayMs === "number" ? opts.enterDelayMs : 0;
@@ -423,6 +474,24 @@
         }
       }
       buttonEl.addEventListener("click", onActivate);
+      window.addEventListener("keydown", onKeyDown);
+    });
+  }
+
+  /* Moves on only on Enter/Return */
+  function waitForEnterOnly(opts) {
+    opts = opts || {};
+    const enterDelayMs = typeof opts.enterDelayMs === "number" ? opts.enterDelayMs : 0;
+    return new Promise((resolve) => {
+      const enterReadyAt = performance.now() + enterDelayMs;
+      function onKeyDown(ev) {
+        if (ev.key === "Enter" || ev.key === "NumpadEnter") {
+          ev.preventDefault();
+          if (performance.now() < enterReadyAt) return;
+          window.removeEventListener("keydown", onKeyDown);
+          resolve();
+        }
+      }
       window.addEventListener("keydown", onKeyDown);
     });
   }
@@ -472,7 +541,7 @@
       await new Promise((resolve) => {
         const btn = el("btn-obs-continue");
         const input = el("obs-type");
-        input.focus();
+        focusInputAfterPaint(input);
 
         function onKeyDown(ev) {
           if (ev.key === "Enter" || ev.key === "NumpadEnter") {
@@ -499,7 +568,7 @@
     } else {
       el("obs-forced").classList.add("hidden");
       el("obs-passive").classList.remove("hidden");
-      await waitForClickOrEnter(el("btn-obs-passive-continue"), { enterDelayMs: 350 });
+      await waitForEnterOnly({ enterDelayMs: 350 });
     }
 
     const trialEnd = performance.now();
@@ -519,16 +588,19 @@
   }
 
   async function runForecastTrial(k, t) {
+    showScreen("screen-forecast-intro");
+    el("fc-pre-idx").textContent = String(k);
+    await waitForEnterOnly({ enterDelayMs: 150 });
+
     showScreen("screen-forecast");
     el("fc-idx").textContent = String(k);
     el("score").textContent = totalScore.toFixed(1);
     el("fc-err").textContent = "";
     el("forecast-input").value = "";
-    el("forecast-input").focus();
+    focusInputAfterPaint(el("forecast-input"), { extraDelayMs: 120 });
 
     const trialStart = performance.now();
     const forecast = await new Promise((resolve) => {
-      const btn = el("btn-forecast-submit");
       const input = el("forecast-input");
 
       function onKeyDown(ev) {
@@ -540,16 +612,19 @@
       }
 
       function handler() {
-        const f = clampInt(Number(input.value), X_MIN, X_MAX);
-        if (f == null) {
-          el("fc-err").textContent = "Please enter a whole number from 1 to 1000.";
+        const raw = Number(input.value);
+        if (!Number.isFinite(raw)) {
+          el("fc-err").textContent = "Please enter a forecast value.";
           return;
         }
-        btn.removeEventListener("click", handler);
+        if (raw < X_MIN || raw > X_MAX) {
+          el("fc-err").textContent = `Please enter a value between ${X_MIN} and ${X_MAX}.`;
+          return;
+        }
+        const f = Math.round(raw);
         input.removeEventListener("keydown", onKeyDown);
         resolve(f);
       }
-      btn.addEventListener("click", handler);
       input.addEventListener("keydown", onKeyDown);
     });
     const forecastEnd = performance.now();
@@ -562,8 +637,7 @@
     el("score2").textContent = totalScore.toFixed(1);
     el("trial-score").textContent = Math.round(s).toString();
     el("actual-x").textContent = String(actual);
-    el("your-forecast").textContent = String(forecast);
-    el("your-error").textContent = String(forecast - actual);
+    el("your-error").textContent = String(Math.abs(forecast - actual));
     el("fb-err").textContent = "";
     el("fb-type").value = "";
     renderScale(
@@ -579,7 +653,7 @@
         const btn = el("btn-fb-continue");
         const input = el("fb-type");
 
-        input.focus();
+        focusInputAfterPaint(input);
 
         function onKeyDown(ev) {
           if (ev.key === "Enter" || ev.key === "NumpadEnter") {
@@ -605,7 +679,7 @@
     } else {
       el("fb-forced").classList.add("hidden");
       el("fb-passive").classList.remove("hidden");
-      await waitForClickOrEnter(el("btn-fb-passive-continue"), { enterDelayMs: 350 });
+      await waitForEnterOnly({ enterDelayMs: 350 });
     }
     const fbEnd = performance.now();
 
