@@ -6,13 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap">
   <style>
-    body { font-family: "Source Serif 4", system-ui, -apple-system, Segoe UI, Roboto, Arial, serif; max-width: 1000px; margin: 36px auto; padding: 0 16px; }
+    body { font-family: "Source Serif 4", system-ui, -apple-system, Segoe UI, Roboto, Arial, serif; max-width: 1000px; margin: 12px auto 36px; padding: 0 16px; }
     h1 { font-weight: 400; font-size: 1.35rem; }
     .card { border: 1px solid #ddd; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
     .row { display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; }
     .row > div { min-width: 220px; }
     label { display:block; margin: 10px 0 6px; }
-    input[type="number"]{ width: 200px; padding: 8px; border-radius: 10px; border: 1px solid #ccc; }
+    input[type="number"]{
+      width: 200px; padding: 8px; border-radius: 10px; border: 1px solid #ccc;
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
     button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ccc; background: #f8f8f8; cursor: pointer; }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
     .muted { color:#666; font-size: 0.95rem; }
@@ -55,7 +64,31 @@
       line-height: 1.5;
     }
     .scale-wrap { width: min(720px, 100%); margin: 12px auto 0; }
-    .scale-labels { display:flex; justify-content:space-between; font-size: 0.9rem; color:#666; margin: 0 2px 6px; }
+    .scale-value-below {
+      position: relative;
+      width: 100%;
+      min-height: 1.35em;
+      margin-top: 8px;
+    }
+    .scale-axis-label {
+      position: absolute;
+      top: 0;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.2;
+    }
+    .scale-axis-min { left: 0; }
+    .scale-axis-max { right: 0; text-align: right; }
+    .scale-number-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-50%);
+      font-size: 0.82rem;
+      color: #444;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
     .scale-bar { position: relative; height: 18px; border-radius: 999px; background: linear-gradient(90deg, #f3f3f3, #fafafa); border: 1px solid #e6e6e6; overflow: hidden; }
     .scale-fill { position:absolute; inset: 0 auto 0 0; width: 0%; background: #4a90e2; opacity: 0.55; }
     .scale-tick { position:absolute; top: -6px; width: 2px; height: 30px; background: #222; opacity: 0.35; }
@@ -63,21 +96,13 @@
     .scale-forecast { position:absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 999px; background:#d11; }
     .scale-legend { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 10px; color:#444; font-size: 0.95rem; }
     .legend-dot { display:inline-block; width: 10px; height: 10px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
+    #screen-feedback .fb-head { margin-bottom: 6px; }
+    #screen-feedback .fb-scoreline { font-size: 0.95rem; color: #555; text-align: right; line-height: 1.35; }
   </style>
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   <script src="./wordpool.js"></script>
 </head>
 <body>
-  <h1>Forecasting Task</h1>
-
   <div id="screen-consent" class="card">
-    <p class="big">Consent</p>
     <p class="muted">
      You will forecast values of a stable random process across multiple rounds. You will first observe 20 past realizations of the process and then will forecast for 40 periods thereafter.
       Between trials, you will complete a short word-judgment task. Your bonus depends on your forecast accuracy.
@@ -95,14 +120,14 @@
           an observation phase (where you observe values one-by-one), followed by a forecasting phase (where you predict the next value and then see the true value).
         </p>
         <p class="muted">
-        Your scoring per forecast is $S = 100 \times \max\bigl(0, 1 - \lvert \text{forecast} - \text{realization} \rvert / 20\bigr)$, and your total score is the sum across all forecasts.
-        Your score will then be linearly converted to an additional bonus roughly between \$0 and \$5. You will also recieve a base payment of \$3. 
+          You will receive a score for each forecast based on how accurate it is. Your cumulative score across all forecasting rounds is then converted linearly into a bonus roughly between $0 and $5. You will also receive an additional base payment of $3.
         </p>
       </div>
       <div class="debug-meta">
         <p class="muted">Participant ID: <code id="pid"></code></p>
         <p class="muted">Condition (ρ): <code id="rho"></code></p>
-        <p class="muted">Encoding: <code id="enc"></code></p>
+        <p class="muted">Encoding (feedback after forecast): <code id="enc"></code></p>
+        <p class="muted">Observation typing: random per trial (or URL <code>obs_encoding</code>)</p>
         <p class="muted">Distractor: <code id="dist"></code></p>
       </div>
     </div>
@@ -118,8 +143,7 @@
   <div id="screen-observe" class="card" style="display:none;">
     <div class="topbar">
       <div>
-        <p class="big">Observation phase</p>
-        <p class="muted">Observe the current value.</p>
+        <p class="big">Observations</p>
       </div>
       <div class="topbar-right">
         <p class="muted">Trial <span id="obs-idx"></span> of <span id="obs-total"></span></p>
@@ -127,20 +151,23 @@
     </div>
 
     <div class="center" style="margin: 18px 0;">
-      <div class="muted">Current value</div>
-      <div class="value-big" id="obs-x"></div>
       <div class="scale-wrap" aria-label="Scale from 1 to 1000">
-        <div class="scale-labels"><span>1</span><span>1000</span></div>
         <div class="scale-bar" id="obs-scale">
           <div class="scale-fill" id="obs-scale-fill"></div>
           <div class="scale-actual" id="obs-scale-actual" title="Value"></div>
         </div>
+        <div class="scale-value-below">
+          <span class="scale-axis-label scale-axis-min">1</span>
+          <span class="scale-number-label" id="obs-x">0</span>
+          <span class="scale-axis-label scale-axis-max">1000</span>
+        </div>
       </div>
     </div>
 
+    <p id="obs-instruction" class="muted center" style="margin-top:12px;">Type the current value:</p>
+
     <div id="obs-forced" class="typing-block hidden">
-      <label for="obs-type">Type the value:</label>
-      <input id="obs-type" type="number" step="1" autocomplete="off" />
+      <input id="obs-type" type="number" step="1" min="1" max="1000" autocomplete="off" aria-label="Type the current value:" />
       <p id="obs-err" class="typing-err" style="color:#b00;"></p>
       <button id="btn-obs-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
@@ -187,33 +214,28 @@
   </div>
 
   <div id="screen-feedback" class="card" style="display:none;">
-    <div class="topbar">
+    <div class="topbar fb-head">
       <div>
-        <p class="big">Outcome</p>
-        <p class="muted">The true value is presented below along with the associated forecast error.</p>
+        <p class="big">Results</p>
       </div>
-      <div class="topbar-right">
-        <p class="big">Score: <span id="score2">0</span></p>
-        <p class="muted"><span class="pill">+<span id="trial-score">0</span> this trial</span></p>
+      <div class="topbar-right fb-scoreline">
+        Score <span id="score2">0</span>
       </div>
     </div>
 
-    <div class="center" style="margin: 18px 0;">
-      <div class="muted">Actual value</div>
-      <div class="value-big" id="actual-x"></div>
+    <div class="center" style="margin: 10px 0 14px;">
       <div class="scale-wrap" aria-label="Scale from 1 to 1000">
-        <div class="scale-labels"><span>1</span><span>1000</span></div>
         <div class="scale-bar" id="fb-scale">
           <div class="scale-fill" id="fb-scale-fill"></div>
-          <div class="scale-actual" id="fb-scale-actual" title="Actual value"></div>
-          <div class="scale-forecast" id="fb-scale-forecast" title="Your forecast"></div>
+          <div class="scale-actual" id="fb-scale-actual" title="True"></div>
+          <div class="scale-forecast" id="fb-scale-forecast" title="Forecast"></div>
         </div>
-        <div class="scale-legend">
-          <span><span class="legend-dot" style="background:#111;"></span>Actual</span>
-          <span><span class="legend-dot" style="background:#d11;"></span>Your forecast</span>
+        <div class="scale-value-below">
+          <span class="scale-axis-label scale-axis-min">1</span>
+          <span class="scale-number-label" id="actual-x">0</span>
+          <span class="scale-axis-label scale-axis-max">1000</span>
         </div>
       </div>
-      <div class="muted" style="margin-top: 8px;">Error: <span id="your-error"></span></div>
     </div>
 
     <div id="fb-forced" class="typing-block hidden">
@@ -304,12 +326,17 @@
     const v = (qs.get("encoding") || "").toLowerCase();
     return ENCODING_SET.includes(v) ? v : pickOne(ENCODING_SET);
   })();
+  /* Observation typing: random each trial unless URL ?obs_encoding=forced|passive */
+  const obs_encoding_override = (() => {
+    const v = (qs.get("obs_encoding") || "").toLowerCase();
+    return ENCODING_SET.includes(v) ? v : null;
+  })();
   const distractor_task = (() => {
     const v = (qs.get("distractor") || "").toLowerCase();
     return DISTRACTOR_SET.includes(v) ? v : pickOne(DISTRACTOR_SET);
   })();
 
-  console.log("Forecasting task participant:", { participant_id, rho, encoding_condition, distractor_task });
+  console.log("Forecasting task participant:", { participant_id, rho, encoding_condition, obs_encoding_override, distractor_task });
 
   // open with ?debug=1 in the URL then shows participant ID and condition
   const isDebug = qs.get("debug") === "1";
@@ -429,10 +456,31 @@
     try { window.scrollTo({ top: 0, behavior: "instant" }); } catch { window.scrollTo(0, 0); }
   }
 
-  /* Focus so user doesn't have to click on the input to start typing */
-  function focusInputAfterPaint(inputEl, opts) {
-    opts = opts || {};
-    const extraDelayMs = typeof opts.extraDelayMs === "number" ? opts.extraDelayMs : 0;
+  function focusInputReliable(inputEl) {
+    if (!inputEl) return;
+    const run = () => {
+      try {
+        inputEl.focus({ preventScroll: true });
+      } catch (_) {}
+    };
+    run();
+    requestAnimationFrame(() => {
+      run();
+      setTimeout(run, 0);
+      setTimeout(run, 50);
+      setTimeout(run, 100);
+    });
+  }
+
+  function focusObservationInput() {
+    focusInputReliable(el("obs-type"));
+  }
+
+  function focusFeedbackInput() {
+    focusInputReliable(el("fb-type"));
+  }
+
+  function focusInputAfterPaint(inputEl) {
     if (!inputEl) return;
     const run = () => {
       try {
@@ -441,15 +489,7 @@
     };
     setTimeout(() => {
       run();
-      requestAnimationFrame(() => {
-        run();
-        requestAnimationFrame(() => {
-          run();
-          setTimeout(run, 0);
-          setTimeout(run, 40);
-          if (extraDelayMs > 0) setTimeout(run, extraDelayMs);
-        });
-      });
+      requestAnimationFrame(() => run());
     }, 0);
   }
 
@@ -508,9 +548,13 @@
     return ((clamped - X_MIN) / (X_MAX - X_MIN)) * 100;
   }
 
-  function renderScale({ fillEl, actualEl, forecastEl }, { actual, forecast }) {
+  function renderScale({ fillEl, actualEl, forecastEl, valueLabelEl }, { actual, forecast }) {
     if (fillEl) fillEl.style.width = `${valueToPct(actual)}%`;
     if (actualEl) actualEl.style.left = `${valueToPct(actual)}%`;
+    if (valueLabelEl) {
+      valueLabelEl.textContent = String(actual);
+      valueLabelEl.style.left = `${valueToPct(actual)}%`;
+    }
     if (forecastEl) {
       if (forecast == null) {
         forecastEl.style.display = "none";
@@ -522,54 +566,41 @@
   }
 
   async function runObservationTrial(i, x_i) {
+    const obs_encoding = obs_encoding_override ?? pickOne(ENCODING_SET);
     showScreen("screen-observe");
     el("obs-idx").textContent = String(i);
-    el("obs-x").textContent = String(x_i);
     el("obs-err").textContent = "";
     el("obs-type").value = "";
     renderScale(
-      { fillEl: el("obs-scale-fill"), actualEl: el("obs-scale-actual") },
+      { fillEl: el("obs-scale-fill"), actualEl: el("obs-scale-actual"), valueLabelEl: el("obs-x") },
       { actual: x_i }
     );
 
     const trialStart = performance.now();
 
-    if (encoding_condition === "forced") {
-      el("obs-forced").classList.remove("hidden");
-      el("obs-passive").classList.add("hidden");
+    el("obs-forced").classList.remove("hidden");
+    el("obs-passive").classList.add("hidden");
 
-      await new Promise((resolve) => {
-        const btn = el("btn-obs-continue");
-        const input = el("obs-type");
-        focusInputAfterPaint(input);
+    await new Promise((resolve) => {
+      const input = el("obs-type");
+      focusObservationInput();
 
-        function onKeyDown(ev) {
-          if (ev.key === "Enter" || ev.key === "NumpadEnter") {
-            ev.preventDefault();
-            ev.stopPropagation();
-            handler();
-          }
-        }
-
-        function handler() {
+      function onKeyDown(ev) {
+        if (ev.key !== "Enter" && ev.key !== "NumpadEnter") return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (obs_encoding === "forced") {
           const typed = clampInt(Number(input.value), X_MIN, X_MAX);
-          if (typed === x_i) {
-            btn.removeEventListener("click", handler);
-            input.removeEventListener("keydown", onKeyDown);
-            resolve();
-          } else {
+          if (typed !== x_i) {
             el("obs-err").textContent = "That doesn't match. Please re-enter the value exactly.";
+            return;
           }
         }
-
-        btn.addEventListener("click", handler);
-        input.addEventListener("keydown", onKeyDown);
-      });
-    } else {
-      el("obs-forced").classList.add("hidden");
-      el("obs-passive").classList.remove("hidden");
-      await waitForEnterOnly({ enterDelayMs: 350 });
-    }
+        input.removeEventListener("keydown", onKeyDown);
+        resolve();
+      }
+      input.addEventListener("keydown", onKeyDown);
+    });
 
     const trialEnd = performance.now();
 
@@ -577,7 +608,7 @@
       phase: "observation",
       obs_index: i,
       x_t: x_i,
-      encoding_condition,
+      obs_encoding,
       started_ms: trialStart,
       ended_ms: trialEnd,
       timestamp: new Date().toISOString()
@@ -597,7 +628,7 @@
     el("score").textContent = totalScore.toFixed(1);
     el("fc-err").textContent = "";
     el("forecast-input").value = "";
-    focusInputAfterPaint(el("forecast-input"), { extraDelayMs: 120 });
+    focusInputAfterPaint(el("forecast-input"));
 
     const trialStart = performance.now();
     const forecast = await new Promise((resolve) => {
@@ -635,52 +666,42 @@
 
     showScreen("screen-feedback");
     el("score2").textContent = totalScore.toFixed(1);
-    el("trial-score").textContent = Math.round(s).toString();
-    el("actual-x").textContent = String(actual);
-    el("your-error").textContent = String(Math.abs(forecast - actual));
     el("fb-err").textContent = "";
     el("fb-type").value = "";
     renderScale(
-      { fillEl: el("fb-scale-fill"), actualEl: el("fb-scale-actual"), forecastEl: el("fb-scale-forecast") },
+      {
+        fillEl: el("fb-scale-fill"),
+        actualEl: el("fb-scale-actual"),
+        forecastEl: el("fb-scale-forecast"),
+        valueLabelEl: el("actual-x")
+      },
       { actual, forecast }
     );
 
     const fbStart = performance.now();
-    if (encoding_condition === "forced") {
-      el("fb-forced").classList.remove("hidden");
-      el("fb-passive").classList.add("hidden");
-      await new Promise((resolve) => {
-        const btn = el("btn-fb-continue");
-        const input = el("fb-type");
+    el("fb-forced").classList.remove("hidden");
+    el("fb-passive").classList.add("hidden");
 
-        focusInputAfterPaint(input);
+    await new Promise((resolve) => {
+      const input = el("fb-type");
+      focusFeedbackInput();
 
-        function onKeyDown(ev) {
-          if (ev.key === "Enter" || ev.key === "NumpadEnter") {
-            ev.preventDefault();
-            ev.stopPropagation();
-            handler();
-          }
-        }
-
-        function handler() {
+      function onKeyDown(ev) {
+        if (ev.key !== "Enter" && ev.key !== "NumpadEnter") return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (encoding_condition === "forced") {
           const typed = clampInt(Number(input.value), X_MIN, X_MAX);
-          if (typed === actual) {
-            btn.removeEventListener("click", handler);
-            input.removeEventListener("keydown", onKeyDown);
-            resolve();
-          } else {
+          if (typed !== actual) {
             el("fb-err").textContent = "That doesn't match. Please type the actual value exactly.";
+            return;
           }
         }
-        btn.addEventListener("click", handler);
-        input.addEventListener("keydown", onKeyDown);
-      });
-    } else {
-      el("fb-forced").classList.add("hidden");
-      el("fb-passive").classList.remove("hidden");
-      await waitForEnterOnly({ enterDelayMs: 350 });
-    }
+        input.removeEventListener("keydown", onKeyDown);
+        resolve();
+      }
+      input.addEventListener("keydown", onKeyDown);
+    });
     const fbEnd = performance.now();
 
     trials.push({
@@ -825,11 +846,16 @@
   window.addEventListener("keydown", (ev) => {
     if (ev.key !== "Enter" && ev.key !== "NumpadEnter") return;
     if (el("screen-consent").style.display === "block") {
-      if (el("consent").checked) el("btn-begin").click();
+      if (!el("consent").checked) return;
+      ev.preventDefault();
+      ev.stopPropagation();
+      el("btn-begin").click();
     } else if (el("screen-instructions").style.display === "block" && !taskStarted) {
+      ev.preventDefault();
+      ev.stopPropagation();
       el("btn-start-task").click();
     }
-  });
+  }, true);
 
   window.addEventListener("beforeunload", (e) => {
     if (taskStarted && !taskFinished) {
@@ -905,6 +931,7 @@
       hitId,
       condition_rho: rho,
       encoding_condition,
+      obs_encoding_override: obs_encoding_override,
       distractor_task,
       mu: MU,
       sigma_e: SIGMA_E,
