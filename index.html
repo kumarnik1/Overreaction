@@ -122,13 +122,10 @@
         <p class="muted">
           You will receive a score for each forecast based on how accurate it is. Your cumulative score across all forecasting rounds is then converted linearly into a bonus roughly between $0 and $5. You will also receive an additional base payment of $3.
         </p>
-      </div>
-      <div class="debug-meta">
-        <p class="muted">Participant ID: <code id="pid"></code></p>
-        <p class="muted">Condition (ρ): <code id="rho"></code></p>
-        <p class="muted">Encoding (feedback after forecast): <code id="enc"></code></p>
-        <p class="muted">Observation typing: random per trial (or URL <code>obs_encoding</code>)</p>
-        <p class="muted">Distractor: <code id="dist"></code></p>
+        <p class="muted" style="margin-top:12px;">
+          <strong>Typing mode (this session):</strong> <code id="instr-typing-mode"></code>.
+          The same mode applies when you view each past value and when you see each forecast outcome — in <em>forced</em> mode you must type the number exactly before continuing; in <em>passive</em> mode you press Enter without typing that number.
+        </p>
       </div>
     </div>
 
@@ -281,6 +278,14 @@
     <p style="margin-top:14px;">Your completion code:</p>
     <p class="big"><code id="ccode"></code></p>
 
+    <div id="debug-session-meta" class="debug-meta" style="margin-top:16px;">
+      <p class="big" style="margin:0 0 8px;">Session (debug)</p>
+      <p class="muted">Participant ID: <code id="pid"></code></p>
+      <p class="muted">Condition (ρ): <code id="rho"></code></p>
+      <p class="muted">Typing mode (observation + forecast feedback): <code id="enc"></code></p>
+      <p class="muted">Distractor task: <code id="dist"></code></p>
+    </div>
+
     <div id="debug-download" class="debug-meta" style="margin-top:14px;">
       <p class="muted">Download session JSON:</p>
       <button id="btn-download" type="button">Download data</button>
@@ -322,28 +327,28 @@
     const v = Number(qs.get("rho"));
     return Number.isFinite(v) && RHO_SET.includes(v) ? v : pickOne(RHO_SET);
   })();
+  /* One mode for the whole session: observation screens and forecast feedback screens both use it. URL: ?encoding= or ?obs_encoding= (same meaning; if both are set they must match or ?encoding= wins). */
   const encoding_condition = (() => {
-    const v = (qs.get("encoding") || "").toLowerCase();
-    return ENCODING_SET.includes(v) ? v : pickOne(ENCODING_SET);
-  })();
-  /* Observation typing: random each trial unless URL ?obs_encoding=forced|passive */
-  const obs_encoding_override = (() => {
-    const v = (qs.get("obs_encoding") || "").toLowerCase();
-    return ENCODING_SET.includes(v) ? v : null;
+    const enc = (qs.get("encoding") || "").toLowerCase();
+    const obs = (qs.get("obs_encoding") || "").toLowerCase();
+    const encOk = ENCODING_SET.includes(enc);
+    const obsOk = ENCODING_SET.includes(obs);
+    if (encOk && obsOk && enc !== obs) {
+      console.warn("encoding and obs_encoding differ; using encoding=", enc);
+    }
+    if (encOk) return enc;
+    if (obsOk) return obs;
+    return pickOne(ENCODING_SET);
   })();
   const distractor_task = (() => {
     const v = (qs.get("distractor") || "").toLowerCase();
     return DISTRACTOR_SET.includes(v) ? v : pickOne(DISTRACTOR_SET);
   })();
 
-  console.log("Forecasting task participant:", { participant_id, rho, encoding_condition, obs_encoding_override, distractor_task });
+  console.log("Forecasting task participant:", { participant_id, rho, encoding_condition, distractor_task });
 
   // open with ?debug=1 in the URL then shows participant ID and condition
   const isDebug = qs.get("debug") === "1";
-  if (isDebug) {
-    const metas = document.querySelectorAll(".debug-meta");
-    metas.forEach(m => { m.style.display = "block"; });
-  }
 
   function randn() {
     let u = 0, v = 0;
@@ -403,6 +408,7 @@
   el("rho").textContent = rho.toString();
   el("enc").textContent = encoding_condition;
   el("dist").textContent = distractor_task;
+  el("instr-typing-mode").textContent = encoding_condition;
 
   el("obs-total").textContent = String(N_OBS);
   el("fc-total").textContent = String(N_FORECAST);
@@ -566,7 +572,7 @@
   }
 
   async function runObservationTrial(i, x_i) {
-    const obs_encoding = obs_encoding_override ?? pickOne(ENCODING_SET);
+    const obs_encoding = encoding_condition;
     showScreen("screen-observe");
     el("obs-idx").textContent = String(i);
     el("obs-err").textContent = "";
@@ -917,8 +923,7 @@
       })(),
       design: {
         rho,
-        forecast_feedback_encoding: encoding_condition,
-        observation_encoding_url_override: obs_encoding_override,
+        typing_mode: encoding_condition,
         distractor_task,
         time_series: {
           mu: MU,
@@ -1008,11 +1013,14 @@
     const fullOut = buildSessionExport(ccode, ended_wall_iso);
     saveSessionToLocalStorage(fullOut);
 
+    const debugMetaDone = el("debug-session-meta");
     const debugBox = el("debug-download");
     if (isDebug) {
+      debugMetaDone.style.display = "block";
       debugBox.style.display = "block";
       el("btn-download").onclick = () => downloadSessionJson(fullOut);
     } else {
+      debugMetaDone.style.display = "none";
       debugBox.style.display = "none";
     }
   }
