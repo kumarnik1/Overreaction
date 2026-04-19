@@ -99,8 +99,8 @@
     .scale-forecast { position:absolute; top: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 999px; background:#d11; }
     .scale-legend { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 10px; color:#444; font-size: 0.95rem; }
     .legend-dot { display:inline-block; width: 10px; height: 10px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
-    #screen-feedback .fb-head { margin-bottom: 6px; }
-    #screen-feedback .fb-scoreline { font-size: 0.95rem; color: #555; text-align: right; line-height: 1.35; }
+    #screen-feedback .fb-scoreline { font-size: 0.95rem; color: #555; line-height: 1.35; text-align: right; }
+    .fc-trial-line { text-align: right; margin-bottom: 14px; }
   </style>
   <script src="./wordpool.js"></script>
 </head>
@@ -137,14 +137,7 @@
   </div>
 
   <div id="screen-observe" class="card" style="display:none;">
-    <div class="topbar">
-      <div>
-        <p class="big">Observations</p>
-      </div>
-      <div class="topbar-right">
-        <p class="muted">Trial <span id="obs-idx"></span> of <span id="obs-total"></span></p>
-      </div>
-    </div>
+    <p class="muted fc-trial-line">Trial <span id="obs-idx"></span> of <span id="obs-total"></span></p>
 
     <div class="center" style="margin: 18px 0;">
       <div class="scale-wrap" aria-label="Scale from 1 to 1000">
@@ -175,29 +168,13 @@
   </div>
 
   <div id="screen-forecast-intro" class="card" style="display:none;">
-    <div class="topbar">
-      <div>
-        <p class="big">Forecasting phase</p>
-      </div>
-      <div class="topbar-right">
-        <p class="muted">Trial <span id="fc-pre-idx"></span> of <span id="fc-pre-total"></span></p>
-      </div>
-    </div>
     <p class="muted center">You will now enter your forecast for the next value.</p>
     <p class="muted enter-hint">Press Enter/Return to continue.</p>
     <button id="btn-forecast-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
   </div>
 
   <div id="screen-forecast" class="card" style="display:none;">
-    <div class="topbar">
-      <div>
-        <p class="big">Forecasting phase</p>
-      </div>
-      <div class="topbar-right">
-        <p class="big">Score: <span id="score">0</span></p>
-        <p class="muted">Trial <span id="fc-idx"></span> of <span id="fc-total"></span></p>
-      </div>
-    </div>
+    <p class="muted fc-trial-line">Trial <span id="fc-idx"></span> of <span id="fc-total"></span></p>
 
     <div class="row" style="justify-content:center; align-items:flex-start; text-align:center;">
       <div>
@@ -210,15 +187,7 @@
   </div>
 
   <div id="screen-feedback" class="card" style="display:none;">
-    <div class="topbar fb-head">
-      <div>
-        <p class="big">Results</p>
-      </div>
-      <div class="topbar-right fb-scoreline">
-        Score <span id="score2">0</span>
-      </div>
-    </div>
-
+    <p class="muted fb-scoreline" style="margin:0 0 28px;">Total Score: <span id="score2">0</span></p>
     <div class="center" style="margin: 10px 0 14px;">
       <div class="scale-wrap" aria-label="Scale from 1 to 1000">
         <div class="scale-bar" id="fb-scale">
@@ -408,7 +377,6 @@
 
   el("obs-total").textContent = String(N_OBS);
   el("fc-total").textContent = String(N_FORECAST);
-  el("fc-pre-total").textContent = String(N_FORECAST);
 
   function sampleWord() {
     const pool = window.wordpool;
@@ -604,7 +572,7 @@
         input.addEventListener("keydown", onKeyDown);
       });
     } else {
-      el("obs-instruction").textContent = "Observe the value.";
+      el("obs-instruction").textContent = "Observe the current value.";
       el("obs-forced").classList.add("hidden");
       el("obs-passive").classList.remove("hidden");
       await waitForEnterOnly({ enterDelayMs: 150 });
@@ -628,12 +596,10 @@
 
   async function runForecastTrial(k, t) {
     showScreen("screen-forecast-intro");
-    el("fc-pre-idx").textContent = String(k);
     await waitForEnterOnly({ enterDelayMs: 150 });
 
     showScreen("screen-forecast");
     el("fc-idx").textContent = String(k);
-    el("score").textContent = totalScore.toFixed(1);
     el("fc-err").textContent = "";
     el("forecast-input").value = "";
     focusInputAfterPaint(el("forecast-input"));
