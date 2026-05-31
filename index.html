@@ -197,7 +197,7 @@
     <p class="muted fc-trial-line">Trial <span id="obs-idx"></span> of <span id="obs-total"></span></p>
 
     <div class="center" style="margin: 18px 0;">
-      <div class="scale-wrap" aria-label="Scale from 1 to 1000">
+      <div class="scale-wrap" aria-label="Scale from 1 to 200">
         <div class="scale-bar" id="obs-scale">
           <div class="scale-fill" id="obs-scale-fill"></div>
           <div class="scale-actual" id="obs-scale-actual" title="Value"></div>
@@ -205,7 +205,7 @@
         <div class="scale-value-below">
           <span class="scale-axis-label scale-axis-min">1</span>
           <span class="scale-number-label" id="obs-x">0</span>
-          <span class="scale-axis-label scale-axis-max">1000</span>
+          <span class="scale-axis-label scale-axis-max">200</span>
         </div>
       </div>
     </div>
@@ -213,7 +213,7 @@
     <p id="obs-instruction" class="muted center" style="margin-top:12px;">Type the current value:</p>
 
     <div id="obs-forced" class="typing-block hidden">
-      <input id="obs-type" type="number" step="1" min="1" max="1000" autocomplete="off" aria-label="Type the current value:" />
+      <input id="obs-type" type="number" step="1" min="1" max="200" autocomplete="off" aria-label="Type the current value:" />
       <p id="obs-err" class="typing-err" style="color:#b00;"></p>
       <button id="btn-obs-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
@@ -236,7 +236,7 @@
     <div class="row" style="justify-content:center; align-items:flex-start; text-align:center;">
       <div>
         <label for="forecast-input">Forecast for next value:</label>
-        <input id="forecast-input" type="number" step="1" min="1" max="1000" autocomplete="off" />
+        <input id="forecast-input" type="number" step="1" min="1" max="200" autocomplete="off" />
         <p class="muted forecast-enter-hint">Press Enter/Return to continue.</p>
         <p id="fc-err" style="color:#b00; margin:8px 0 0;"></p>
       </div>
@@ -246,7 +246,7 @@
   <div id="screen-feedback" class="card" style="display:none;">
     <p class="muted fb-scoreline" style="margin:0 0 28px;">Total Score: <span id="score2">0</span></p>
     <div class="center" style="margin: 10px 0 14px;">
-      <div class="scale-wrap" aria-label="Scale from 1 to 1000">
+      <div class="scale-wrap" aria-label="Scale from 1 to 200">
         <div class="scale-bar" id="fb-scale">
           <div class="scale-fill" id="fb-scale-fill"></div>
           <div class="scale-actual" id="fb-scale-actual" title="True"></div>
@@ -255,14 +255,14 @@
         <div class="scale-value-below">
           <span class="scale-axis-label scale-axis-min">1</span>
           <span class="scale-number-label" id="actual-x">0</span>
-          <span class="scale-axis-label scale-axis-max">1000</span>
+          <span class="scale-axis-label scale-axis-max">200</span>
         </div>
       </div>
     </div>
 
     <div id="fb-forced" class="typing-block hidden">
       <label for="fb-type">Type the actual value:</label>
-      <input id="fb-type" type="number" step="1" autocomplete="off" />
+      <input id="fb-type" type="number" step="1" min="1" max="200" autocomplete="off" />
       <p id="fb-err" class="typing-err" style="color:#b00;"></p>
       <button id="btn-fb-continue" class="btn-primary" style="display:none;" aria-hidden="true">Continue</button>
     </div>
@@ -320,15 +320,15 @@
 
 <script>
 (function () {
-  const MU = 500;
-  const SIGMA_E = 20;               
+  const MU = 100;
+  const SIGMA_E = 12;               
   const RHO_SET = [0.6, 0.9];       
   const ENCODING_SET = ["passive", "forced"];
   const DISTRACTOR_SET = ["animacy", "size"]; 
   const N_OBS = 3;
   const N_FORECAST = 3;
   const X_MIN = 1;
-  const X_MAX = 1000;
+  const X_MAX = 200;
   const DMIN_SEC = 2;
   const DMAX_SEC = 12;
   const BASE_PAY_USD = 3.00;
@@ -388,11 +388,19 @@
     return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
   }
 
+  function reflectInBounds(v) {
+    let x = v;
+    while (x > X_MAX || x < X_MIN) {
+      if (x > X_MAX) x = 2 * X_MAX - x;
+      else if (x < X_MIN) x = 2 * X_MIN - x;
+    }
+    return Math.round(x);
+  }
+
   function nextX(prev) {
     const e = SIGMA_E * randn();
     const raw = (1 - rho) * MU + rho * prev + e;
-    const rounded = Math.round(raw);
-    return Math.min(X_MAX, Math.max(X_MIN, rounded));
+    return reflectInBounds(raw);
   }
 
   const totalNeeded = (N_OBS + N_FORECAST); 

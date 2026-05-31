@@ -10,7 +10,7 @@ Each file itself is a different trial. To be able to download data, add `?debug=
   - `rho`: the AR(1) persistence.
   - `typing_mode`: `forced` or `passive`, determining whether the subject undergoes active or passive recall. `forced`: after each observation value and after each revealed forecast outcome, they must type that number exactly. `passive`: those screens only need Enter (no typing the values).
   - `distractor_task` — randomly chosen between an `animacy` or `size` task.
-  - `time_series` — Parameters for the underlying time series: `mu`, `sigma_e`, `bounds.min`, `bounds.max`. Most cases we use 500, 20, 1, 1000 respectively. 
+  - `time_series` — Parameters for the underlying time series: `mu`, `sigma_e`, `bounds.min`, `bounds.max`. Most cases we use 100, 12, 1, 200 respectively. Values that would exceed the bounds are reflected back into range (bounce at the boundary). 
   - `trial_counts` — Number of `observation` trials and `forecast` trials. This is generally 20 and 40 respectively. 
   - `distractor_block_duration_sec` — `min`, `max` in seconds between periods.
 - **`payment`** — `total_score`, `base_pay_usd`, `bonus_per_score`, `bonus_usd`, `total_pay_usd`.
