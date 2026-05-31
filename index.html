@@ -37,6 +37,25 @@
     .btnrow { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; align-items:center; margin-top: 14px; }
     .btn-primary { background: #111; color: #fff; border-color:#111; }
     .btn-choice { min-width: 200px; padding: 12px 14px; border-radius: 12px; background: #fafafa; font-size: 1.1rem; }
+    .dist-key-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .dist-key {
+      min-width: 168px;
+      padding: 14px 18px 12px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+      background: linear-gradient(180deg, #fafafa 0%, #ececec 100%);
+      box-shadow: 0 2px 0 #bbb, 0 4px 8px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      pointer-events: none;
+      user-select: none;
+      transition: background 0.08s, box-shadow 0.08s, transform 0.08s;
+    }
+    .dist-key-active {
+      background: linear-gradient(180deg, #e8e8e8 0%, #d4d4d4 100%);
+      box-shadow: 0 1px 0 #aaa, inset 0 2px 4px rgba(0, 0, 0, 0.12);
+      transform: translateY(1px);
+    }
+    .dist-key-label { display: block; font-size: 1.15rem; color: #111; }
     .hidden { display: none; }
     .typing-block {
       display: flex;
@@ -169,10 +188,7 @@
       </div>
     </div>
 
-    <p class="muted">
-      Between each period in both the observation and forecasting phases, you will complete a timed word-judgment task. You will use the left and right Shift keys to complete this task.
-      The duration varies from trial to trial.
-    </p>
+    <p class="muted" id="instr-distractor"></p>
 
     <button id="btn-start-task" class="btn-primary">Start</button>
   </div>
@@ -263,9 +279,13 @@
 
     <div class="center" style="margin: 18px 0;">
       <div class="word" id="dist-word"></div>
-      <div class="btnrow">
-        <button id="dist-a" class="btn-choice" type="button"></button>
-        <button id="dist-b" class="btn-choice" type="button"></button>
+      <div class="dist-key-row">
+        <div id="dist-a" class="dist-key dist-key-left">
+          <span class="dist-key-label" id="dist-a-label"></span>
+        </div>
+        <div id="dist-b" class="dist-key dist-key-right">
+          <span class="dist-key-label" id="dist-b-label"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -351,7 +371,12 @@
     return DISTRACTOR_SET.includes(v) ? v : pickOne(DISTRACTOR_SET);
   })();
 
-  console.log("Forecasting task participant:", { participant_id, rho, encoding_condition, distractor_task });
+  console.log("Forecasting task participant:", {
+    participant_id,
+    rho,
+    encoding_condition,
+    distractor_task
+  });
 
   // open with ?debug=1 in the URL then shows participant ID and condition
   const isDebug = qs.get("debug") === "1";
@@ -423,6 +448,17 @@
   }
   const consentBasePay = el("consent-base-pay");
   if (consentBasePay) consentBasePay.textContent = BASE_PAY_USD.toFixed(2);
+
+  const instrDistractor = el("instr-distractor");
+  if (instrDistractor) {
+    if (distractor_task === "animacy") {
+      instrDistractor.textContent =
+        "Between each period in the observation and forecasting phases, you will complete a timed word-judgment task: decide whether each word refers to something living or nonliving. Press the left Shift key for Living and the right Shift key for Nonliving. Use the Shift keys only — do not use the mouse. The duration varies from trial to trial.";
+    } else {
+      instrDistractor.textContent =
+        "Between each period in the observation and forecasting phases, you will complete a timed word-judgment task: decide whether each item would fit in a shoebox. Press the left Shift key for Yes and the right Shift key for No. Use the Shift keys only — do not use the mouse. The duration varies from trial to trial.";
+    }
+  }
 
   function sampleWord() {
     const pool = window.wordpool;
@@ -758,17 +794,24 @@
     const endsAt = startedMs + durationSec * 1000;
 
     const isAnimacy = distractor_task === "animacy";
-    const prompt = isAnimacy ? "Does this word refer to something living or nonliving?" : "Will this item fit in a shoebox?";
+    const prompt = isAnimacy
+      ? "Does this word refer to something living or nonliving?"
+      : "Will this item fit in a shoebox?";
     const aLabel = isAnimacy ? "Living" : "Yes";
     const bLabel = isAnimacy ? "Nonliving" : "No";
     el("dist-instr").textContent = prompt;
-    el("dist-a").textContent = aLabel;
-    el("dist-b").textContent = bLabel;
+    el("dist-a-label").textContent = aLabel;
+    el("dist-b-label").textContent = bLabel;
 
     let currentWord = null;
     let wordShownAt = null;
     let lockedForThisWord = false;
-    let responseHandlerAttached = false;
+
+    function flashDistKey(choice) {
+      const keyEl = choice === "A" ? el("dist-a") : el("dist-b");
+      keyEl.classList.add("dist-key-active");
+      setTimeout(() => keyEl.classList.remove("dist-key-active"), 120);
+    }
 
     function remainingSec() {
       const now = performance.now();
@@ -801,6 +844,7 @@
     function handleChoice(choice) {
       if (lockedForThisWord) return;
       lockedForThisWord = true;
+      flashDistKey(choice);
       record(choice);
       nextWord();
     }
@@ -818,9 +862,6 @@
         }
       };
 
-      const onA = () => { handleChoice("A"); };
-      const onB = () => { handleChoice("B"); };
-
       function onKeyDown(ev) {
         if (ev.repeat) return;
         if (performance.now() > endsAt) return;
@@ -834,17 +875,9 @@
       }
 
       function cleanup() {
-        if (responseHandlerAttached) {
-          el("dist-a").removeEventListener("click", onA);
-          el("dist-b").removeEventListener("click", onB);
-          responseHandlerAttached = false;
-        }
         window.removeEventListener("keydown", onKeyDown);
       }
 
-      el("dist-a").addEventListener("click", onA);
-      el("dist-b").addEventListener("click", onB);
-      responseHandlerAttached = true;
       window.addEventListener("keydown", onKeyDown);
 
       requestAnimationFrame(tick);
