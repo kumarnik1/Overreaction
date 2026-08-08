@@ -128,63 +128,14 @@
   <script src="./wordpool.js"></script>
 </head>
 <body>
-  <div id="screen-consent" class="card">
-    <p class="big">Welcome!</p>
-    <hr class="consent-divider">
-
-    <p class="muted">
-      You have been invited to take part in a research study conducted by the Computational Memory Lab at the University of Pennsylvania.
-      In this study, you will observe values from a stable random process, make forecasts about future values, and complete brief word-judgment tasks between periods.
-      Full instructions will be provided on the next screen before the task begins.
-    </p>
-    <p class="muted">
-      The session includes <span id="consent-trial-summary"></span>.
-      You will receive a base payment of $<span id="consent-base-pay"></span>, plus a performance bonus of up to about $5 based on forecast accuracy.
-      The study typically takes about 20–40 minutes. The main risk is mild fatigue from sustained attention; you may pause between trials as needed.
-    </p>
-    <p class="muted">
-      Your participation is voluntary, and you may stop at any time. If you have questions about your rights as a research participant, or about this study, please contact the principal investigator:
-    </p>
-
-    <div class="consent-contact center">
-      <p class="muted" style="margin:0;">
-        <strong>Michael Kahana, Ph.D.</strong><br>
-        University of Pennsylvania<br>
-        Department of Psychology<br>
-        425 S. University Ave.<br>
-        Levin Building, Room 263<br>
-        Philadelphia, PA 19104<br>
-        <a href="mailto:kahanalab@gmail.com">kahanalab@gmail.com</a>
-      </p>
-    </div>
-
-    <p class="muted">
-      If you email us, please include the keyword &ldquo;Prolific&rdquo; in the subject line.
-    </p>
-    <p class="muted">
-      By clicking Continue below, you indicate that you have read and understand the information above and consent to participate.
-      Your response data will be used for research purposes.
-    </p>
-
-    <label><input id="consent" type="checkbox"> I consent to participate.</label>
-
-    <div class="consent-actions">
-      <button id="btn-begin" class="btn-primary" type="button">Continue</button>
-      <button id="btn-consent-exit" class="btn-secondary" type="button">Exit</button>
-    </div>
-  </div>
+  <div id="screen-consent" class="card"></div>
 
   <div id="screen-instructions" class="card" style="display:none;">
     <div class="topbar">
       <div>
         <p class="big">Instructions</p>
-        <p class="muted">
-          This study has two phases:
-          an observation phase (where you observe values one-by-one), followed by a forecasting phase (where you predict the next value and then see the true value).
-        </p>
-        <p class="muted">
-          You will receive a score for each forecast based on how accurate it is. Your cumulative score across all forecasting rounds is then converted linearly into a bonus roughly between $0 and $5. You will also receive an additional base payment of $3.
-        </p>
+        <p class="muted" id="instr-phases"></p>
+        <p class="muted" id="instr-payment"></p>
       </div>
     </div>
 
@@ -194,7 +145,7 @@
   </div>
 
   <div id="screen-observe" class="card" style="display:none;">
-    <p class="muted fc-trial-line">Trial <span id="obs-idx"></span> of <span id="obs-total"></span></p>
+    <p class="muted fc-trial-line">Round <span id="obs-idx"></span> of <span id="obs-total"></span></p>
 
     <div class="center" style="margin: 18px 0;">
       <div class="scale-wrap" aria-label="Scale from 1 to 200">
@@ -231,7 +182,7 @@
   </div>
 
   <div id="screen-forecast" class="card" style="display:none;">
-    <p class="muted fc-trial-line">Trial <span id="fc-idx"></span> of <span id="fc-total"></span></p>
+    <p class="muted fc-trial-line">Round <span id="fc-idx"></span> of <span id="fc-total"></span></p>
 
     <div class="row" style="justify-content:center; align-items:flex-start; text-align:center;">
       <div>
@@ -325,14 +276,15 @@
   const RHO_SET = [0.6, 0.9];       
   const ENCODING_SET = ["passive", "forced"];
   const DISTRACTOR_SET = ["animacy", "size"]; 
-  const N_OBS = 3;
-  const N_FORECAST = 3;
+  const N_OBS = 20;
+  const N_FORECAST = 20;
   const X_MIN = 1;
   const X_MAX = 200;
   const DMIN_SEC = 2;
   const DMAX_SEC = 12;
   const BASE_PAY_USD = 3.00;
-  const BONUS_PER_SCORE = 1 / 600;
+  // Max score is 100 per forecast; scale so a perfect run earns about $5 bonus.
+  const BONUS_PER_SCORE = 5 / (N_FORECAST * 100);
 
   const qs = new URLSearchParams(window.location.search);
   const prolific_pid = qs.get("PROLIFIC_PID") || "NA";
@@ -408,9 +360,9 @@
   x[1] = MU;
   for (let i = 2; i <= totalNeeded; i++) x[i] = nextX(x[i - 1]);
 
-  const trials = [];        
-  const obs_trials = [];   
-  const distractor_events = []; 
+  const observationTrials = [];
+  const forecastTrials = [];
+  const distractorBlocks = [];
   let totalScore = 0;
   let taskStarted = false;
   let taskFinished = false;
@@ -450,23 +402,30 @@
   el("obs-total").textContent = String(N_OBS);
   el("fc-total").textContent = String(N_FORECAST);
 
-  const consentTrialSummary = el("consent-trial-summary");
-  if (consentTrialSummary) {
-    consentTrialSummary.textContent = `${N_OBS} observation trials and ${N_FORECAST} forecasting trials`;
-  }
-  const consentBasePay = el("consent-base-pay");
-  if (consentBasePay) consentBasePay.textContent = BASE_PAY_USD.toFixed(2);
+  function fillInstructionCopy() {
+    const instrPhases = el("instr-phases");
+    if (instrPhases) {
+      instrPhases.textContent =
+        `This study has two phases. First, an observation phase with ${N_OBS} rounds: each round shows one value from a stable random process. Then, a forecasting phase with ${N_FORECAST} rounds: in each round you predict the next value, see the true value, and receive a score based on accuracy.`;
+    }
+    const instrPayment = el("instr-payment");
+    if (instrPayment) {
+      instrPayment.textContent =
+        `Your cumulative score across all ${N_FORECAST} forecasting rounds is converted linearly into a bonus of roughly $0–$5. You will also receive a base payment of $${BASE_PAY_USD.toFixed(2)}.`;
+    }
 
-  const instrDistractor = el("instr-distractor");
-  if (instrDistractor) {
-    if (distractor_task === "animacy") {
-      instrDistractor.textContent =
-        "Between each period in the observation and forecasting phases, you will complete a timed word-judgment task: decide whether each word refers to something living or nonliving. Press the left Shift key for Living and the right Shift key for Nonliving. Use the Shift keys only — do not use the mouse. The duration varies from trial to trial.";
-    } else {
-      instrDistractor.textContent =
-        "Between each period in the observation and forecasting phases, you will complete a timed word-judgment task: decide whether each item would fit in a shoebox. Press the left Shift key for Yes and the right Shift key for No. Use the Shift keys only — do not use the mouse. The duration varies from trial to trial.";
+    const instrDistractor = el("instr-distractor");
+    if (instrDistractor) {
+      if (distractor_task === "animacy") {
+        instrDistractor.textContent =
+          "Between each round in the observation and forecasting phases, you will complete a timed word-judgment task: decide whether each word refers to something living or nonliving. Press the left Shift key for Living and the right Shift key for Nonliving. Use the Shift keys only — do not use the mouse. The duration varies from round to round.";
+      } else {
+        instrDistractor.textContent =
+          "Between each round in the observation and forecasting phases, you will complete a timed word-judgment task: decide whether each item would fit in a shoebox. Press the left Shift key for Yes and the right Shift key for No. Use the Shift keys only — do not use the mouse. The duration varies from round to round.";
+      }
     }
   }
+  fillInstructionCopy();
 
   function sampleWord() {
     const pool = window.wordpool;
@@ -669,19 +628,21 @@
     }
 
     const trialEnd = performance.now();
+    const endedIso = new Date().toISOString();
 
-    obs_trials.push({
-      phase: "observation",
-      obs_index: i,
-      x_t: x_i,
-      obs_encoding,
+    observationTrials.push({
+      round: i,
+      value: x_i,
+      series_index: i,
+      typing_mode: obs_encoding,
+      duration_ms: trialEnd - trialStart,
       started_ms: trialStart,
       ended_ms: trialEnd,
-      timestamp: new Date().toISOString()
+      ended_iso: endedIso
     });
 
     const dt = drawDtSec();
-    await runDistractor(dt, { phase: "observation", obs_index: i });
+    await runDistractor(dt, { after_phase: "observation", after_round: i });
   }
 
   async function runForecastTrial(k, t) {
@@ -771,33 +732,31 @@
       await waitForEnterOnly({ enterDelayMs: 150 });
     }
     const fbEnd = performance.now();
+    const endedIso = new Date().toISOString();
 
-    trials.push({
-      phase: "forecast",
-      forecast_index: k,
-      t_index: t,
-      forecast_t1: forecast,
-      realized_t1: actual,
-      score_t1: s,
-      rho,
-      mu: MU,
-      sigma_e: SIGMA_E,
-      encoding_condition,
-      distractor_task,
+    forecastTrials.push({
+      round: k,
+      // Position in `series.values` (1-based) that this forecast predicts.
+      series_index: t + 1,
+      forecast,
+      actual,
+      error: forecast - actual,
+      score: s,
+      response_time_ms: forecastEnd - trialStart,
+      feedback_duration_ms: fbEnd - fbStart,
       forecast_started_ms: trialStart,
       forecast_submitted_ms: forecastEnd,
       feedback_started_ms: fbStart,
       feedback_ended_ms: fbEnd,
-      timestamp: new Date().toISOString()
+      ended_iso: endedIso
     });
 
     const dt = drawDtSec();
-    await runDistractor(dt, { phase: "forecast", forecast_index: k, t_index: t });
+    await runDistractor(dt, { after_phase: "forecast", after_round: k });
   }
 
   async function runDistractor(durationSec, meta) {
     showScreen("screen-distractor");
-    const startIso = new Date().toISOString();
     const startedMs = performance.now();
     const endsAt = startedMs + durationSec * 1000;
 
@@ -805,15 +764,17 @@
     const prompt = isAnimacy
       ? "Does this word refer to something living or nonliving?"
       : "Will this item fit in a shoebox?";
-    const aLabel = isAnimacy ? "Living" : "Yes";
-    const bLabel = isAnimacy ? "Nonliving" : "No";
+    const choiceLabels = isAnimacy
+      ? { A: "Living", B: "Nonliving" }
+      : { A: "Yes", B: "No" };
     el("dist-instr").textContent = prompt;
-    el("dist-a-label").textContent = aLabel;
-    el("dist-b-label").textContent = bLabel;
+    el("dist-a-label").textContent = choiceLabels.A;
+    el("dist-b-label").textContent = choiceLabels.B;
 
     let currentWord = null;
     let wordShownAt = null;
     let lockedForThisWord = false;
+    const judgments = [];
 
     function flashDistKey(choice) {
       const keyEl = choice === "A" ? el("dist-a") : el("dist-b");
@@ -835,17 +796,13 @@
 
     function record(choice) {
       const now = performance.now();
-      const rt = wordShownAt != null ? (now - wordShownAt) : null;
-      distractor_events.push({
-        ...meta,
-        distractor_task,
-        prompt,
+      judgments.push({
         word: currentWord,
         choice,
-        rt_ms: rt,
+        choice_label: choiceLabels[choice],
+        rt_ms: wordShownAt != null ? now - wordShownAt : null,
         shown_at_ms: wordShownAt,
-        responded_at_ms: now,
-        started_at_iso: startIso
+        responded_at_ms: now
       });
     }
 
@@ -892,33 +849,61 @@
     });
 
     const endedMs = performance.now();
-    distractor_events.push({
-      ...meta,
-      distractor_task,
-      interval_event: true,
-      dt_sec: durationSec,
+    distractorBlocks.push({
+      after_phase: meta.after_phase,
+      after_round: meta.after_round,
+      task: distractor_task,
+      prompt,
+      planned_duration_sec: durationSec,
+      actual_duration_ms: endedMs - startedMs,
       started_ms: startedMs,
       ended_ms: endedMs,
-      timestamp: new Date().toISOString()
+      ended_iso: new Date().toISOString(),
+      n_judgments: judgments.length,
+      judgments
     });
   }
 
-  el("btn-begin").onclick = () => {
-    if (!el("consent").checked) return alert("Please consent to continue.");
-    showScreen("screen-instructions");
-  };
+  function wireConsentHandlers() {
+    const consentTrialSummary = el("consent-trial-summary");
+    if (consentTrialSummary) {
+      consentTrialSummary.textContent = `${N_OBS} observation rounds and ${N_FORECAST} forecasting rounds`;
+    }
+    const consentBasePay = el("consent-base-pay");
+    if (consentBasePay) consentBasePay.textContent = BASE_PAY_USD.toFixed(2);
 
-  el("btn-consent-exit").onclick = () => {
+    el("btn-begin").onclick = () => {
+      if (!el("consent").checked) return alert("Please consent to continue.");
+      showScreen("screen-instructions");
+    };
+
+    el("btn-consent-exit").onclick = () => {
+      try {
+        window.close();
+      } catch (_) {}
+      alert("You may close this browser tab to exit the study.");
+    };
+  }
+
+  async function loadConsentScreen() {
+    const host = el("screen-consent");
     try {
-      window.close();
-    } catch (_) {}
-    alert("You may close this browser tab to exit the study.");
-  };
+      const res = await fetch("./consent.html", { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      host.innerHTML = await res.text();
+    } catch (e) {
+      console.error(e);
+      host.innerHTML =
+        "<p class=\"muted\">Could not load consent text. Please refresh the page (this requires serving the files over http, not opening the HTML file directly).</p>";
+      return;
+    }
+    wireConsentHandlers();
+  }
 
   window.addEventListener("keydown", (ev) => {
     if (ev.key !== "Enter" && ev.key !== "NumpadEnter") return;
-    if (el("screen-consent").style.display === "block") {
-      if (!el("consent").checked) return;
+    if (el("screen-consent").style.display !== "none" && el("btn-begin")) {
+      if (!el("consent") || !el("consent").checked) return;
       ev.preventDefault();
       ev.stopPropagation();
       el("btn-begin").click();
@@ -935,6 +920,8 @@
       e.returnValue = "";
     }
   });
+
+  loadConsentScreen();
 
   el("btn-start-task").onclick = async () => {
     if (taskStarted) return;
@@ -956,7 +943,7 @@
     }
   };
 
-  const LS_SESSION_PREFIX = "forecast_exp_session_v1";
+  const LS_SESSION_PREFIX = "forecast_exp_session_v2";
 
   function downloadSessionFilename(obj) {
     const code = obj && obj.completion && obj.completion.code;
@@ -980,6 +967,8 @@
   function buildSessionExport(ccode, ended_wall_iso) {
     const bonusUsd = totalScore * BONUS_PER_SCORE;
     const totalPayUsd = BASE_PAY_USD + bonusUsd;
+    const seriesValues = x.slice(1); // 0-based array; series_index n is seriesValues[n - 1]
+
     return {
       completion: {
         code: ccode,
@@ -987,26 +976,26 @@
       },
       participant: (() => {
         const p = { participant_id };
-        if (workerId !== "NA" && (assignmentId !== "NA" || hitId !== "NA")) {
-          if (assignmentId !== "NA") p.mturk_assignment_id = assignmentId;
-          if (hitId !== "NA") p.mturk_hit_id = hitId;
-        }
+        if (prolific_pid !== "NA") p.prolific_pid = prolific_pid;
+        if (workerId !== "NA") p.mturk_worker_id = workerId;
+        if (assignmentId !== "NA") p.mturk_assignment_id = assignmentId;
+        if (hitId !== "NA") p.mturk_hit_id = hitId;
         return p;
       })(),
       design: {
         rho,
         typing_mode: encoding_condition,
         distractor_task,
-        time_series: {
+        n_observation: N_OBS,
+        n_forecast: N_FORECAST,
+        process: {
           mu: MU,
           sigma_e: SIGMA_E,
-          bounds: { min: X_MIN, max: X_MAX }
+          min: X_MIN,
+          max: X_MAX,
+          note: "x_t = (1-rho)*mu + rho*x_{t-1} + e_t, e_t ~ N(0, sigma_e^2); values reflected into [min, max]."
         },
-        trial_counts: {
-          observation: N_OBS,
-          forecast: N_FORECAST
-        },
-        distractor_block_duration_sec: { min: DMIN_SEC, max: DMAX_SEC }
+        distractor_duration_sec: { min: DMIN_SEC, max: DMAX_SEC }
       },
       payment: {
         total_score: totalScore,
@@ -1016,19 +1005,12 @@
         total_pay_usd: totalPayUsd
       },
       series: {
-        realized_values: x.slice(1),
-        index_note:
-          "realized_values[j] is x[j+1] from the generator (1-based). Observation trial i shows x[i]. Forecast k predicts x[t+1] with t = n_observation + k - 1."
+        values: seriesValues,
+        n_values: seriesValues.length
       },
-      trials: {
-        observations: obs_trials,
-        forecasts: trials
-      },
-      distractor: {
-        events: distractor_events,
-        event_note:
-          "Most rows are word judgments (word, choice, rt_ms). Rows with interval_event true end a timed distractor block."
-      },
+      observations: observationTrials,
+      forecasts: forecastTrials,
+      distractor_blocks: distractorBlocks,
       diagnostics: {
         session_log: sessionLog,
         screen_timings: screenTimings,
