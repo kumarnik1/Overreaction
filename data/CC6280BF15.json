@@ -1,0 +1,6255 @@
+{
+  "completion": {
+    "code": "CC6280BF15",
+    "ended_wall_iso": "2026-08-09T23:21:10.417Z"
+  },
+  "participant": {
+    "participant_id": "Peec1eeeed20b49c"
+  },
+  "design": {
+    "rho": 0.9,
+    "typing_mode": "passive",
+    "distractor_task": "size",
+    "n_observation": 20,
+    "n_forecast": 20,
+    "process": {
+      "mu": 100,
+      "sigma_e": 12,
+      "min": 1,
+      "max": 200,
+      "note": "x_t = (1-rho)*mu + rho*x_{t-1} + e_t, e_t ~ N(0, sigma_e^2); values reflected into [min, max]."
+    },
+    "distractor_duration_sec": {
+      "min": 2,
+      "max": 12
+    }
+  },
+  "payment": {
+    "total_score": 491.66666666666674,
+    "base_pay_usd": 3,
+    "bonus_per_score": 0.0025,
+    "bonus_usd": 1.229166666666667,
+    "total_pay_usd": 4.229166666666667
+  },
+  "series": {
+    "values": [
+      100,
+      107,
+      106,
+      120,
+      143,
+      145,
+      141,
+      140,
+      132,
+      137,
+      119,
+      104,
+      107,
+      89,
+      102,
+      103,
+      107,
+      90,
+      91,
+      119,
+      93,
+      94,
+      77,
+      99,
+      85,
+      81,
+      93,
+      115,
+      105,
+      123,
+      114,
+      112,
+      98,
+      91,
+      108,
+      113,
+      95,
+      104,
+      113,
+      110
+    ],
+    "n_values": 40
+  },
+  "observations": [
+    {
+      "round": 1,
+      "value": 100,
+      "series_index": 1,
+      "typing_mode": "passive",
+      "duration_ms": 1253.3000000715256,
+      "started_ms": 3623.6999999284744,
+      "ended_ms": 4877,
+      "ended_iso": "2026-08-09T23:15:43.393Z"
+    },
+    {
+      "round": 2,
+      "value": 107,
+      "series_index": 2,
+      "typing_mode": "passive",
+      "duration_ms": 790.6000000238419,
+      "started_ms": 11961.399999976158,
+      "ended_ms": 12752,
+      "ended_iso": "2026-08-09T23:15:51.267Z"
+    },
+    {
+      "round": 3,
+      "value": 106,
+      "series_index": 3,
+      "typing_mode": "passive",
+      "duration_ms": 944.8000000715256,
+      "started_ms": 16981.599999904633,
+      "ended_ms": 17926.399999976158,
+      "ended_iso": "2026-08-09T23:15:56.442Z"
+    },
+    {
+      "round": 4,
+      "value": 120,
+      "series_index": 4,
+      "typing_mode": "passive",
+      "duration_ms": 730.8000000715256,
+      "started_ms": 26349.599999904633,
+      "ended_ms": 27080.399999976158,
+      "ended_iso": "2026-08-09T23:16:05.596Z"
+    },
+    {
+      "round": 5,
+      "value": 143,
+      "series_index": 5,
+      "typing_mode": "passive",
+      "duration_ms": 658,
+      "started_ms": 33023.199999928474,
+      "ended_ms": 33681.199999928474,
+      "ended_iso": "2026-08-09T23:16:12.196Z"
+    },
+    {
+      "round": 6,
+      "value": 145,
+      "series_index": 6,
+      "typing_mode": "passive",
+      "duration_ms": 732.1999999284744,
+      "started_ms": 37866.89999997616,
+      "ended_ms": 38599.09999990463,
+      "ended_iso": "2026-08-09T23:16:17.114Z"
+    },
+    {
+      "round": 7,
+      "value": 141,
+      "series_index": 7,
+      "typing_mode": "passive",
+      "duration_ms": 810.6000000238419,
+      "started_ms": 42473.299999952316,
+      "ended_ms": 43283.89999997616,
+      "ended_iso": "2026-08-09T23:16:21.799Z"
+    },
+    {
+      "round": 8,
+      "value": 140,
+      "series_index": 8,
+      "typing_mode": "passive",
+      "duration_ms": 592.5,
+      "started_ms": 46985.799999952316,
+      "ended_ms": 47578.299999952316,
+      "ended_iso": "2026-08-09T23:16:26.093Z"
+    },
+    {
+      "round": 9,
+      "value": 132,
+      "series_index": 9,
+      "typing_mode": "passive",
+      "duration_ms": 591.6999999284744,
+      "started_ms": 56904,
+      "ended_ms": 57495.699999928474,
+      "ended_iso": "2026-08-09T23:16:36.011Z"
+    },
+    {
+      "round": 10,
+      "value": 137,
+      "series_index": 10,
+      "typing_mode": "passive",
+      "duration_ms": 809.2999999523163,
+      "started_ms": 65162,
+      "ended_ms": 65971.29999995232,
+      "ended_iso": "2026-08-09T23:16:44.486Z"
+    },
+    {
+      "round": 11,
+      "value": 119,
+      "series_index": 11,
+      "typing_mode": "passive",
+      "duration_ms": 707.5,
+      "started_ms": 69461,
+      "ended_ms": 70168.5,
+      "ended_iso": "2026-08-09T23:16:48.684Z"
+    },
+    {
+      "round": 12,
+      "value": 104,
+      "series_index": 12,
+      "typing_mode": "passive",
+      "duration_ms": 544.1999999284744,
+      "started_ms": 75421,
+      "ended_ms": 75965.19999992847,
+      "ended_iso": "2026-08-09T23:16:54.480Z"
+    },
+    {
+      "round": 13,
+      "value": 107,
+      "series_index": 13,
+      "typing_mode": "passive",
+      "duration_ms": 605,
+      "started_ms": 83420.29999995232,
+      "ended_ms": 84025.29999995232,
+      "ended_iso": "2026-08-09T23:17:02.540Z"
+    },
+    {
+      "round": 14,
+      "value": 89,
+      "series_index": 14,
+      "typing_mode": "passive",
+      "duration_ms": 566.6999999284744,
+      "started_ms": 92661.5,
+      "ended_ms": 93228.19999992847,
+      "ended_iso": "2026-08-09T23:17:11.743Z"
+    },
+    {
+      "round": 15,
+      "value": 102,
+      "series_index": 15,
+      "typing_mode": "passive",
+      "duration_ms": 640.8999999761581,
+      "started_ms": 96870.19999992847,
+      "ended_ms": 97511.09999990463,
+      "ended_iso": "2026-08-09T23:17:16.026Z"
+    },
+    {
+      "round": 16,
+      "value": 103,
+      "series_index": 16,
+      "typing_mode": "passive",
+      "duration_ms": 629.0999999046326,
+      "started_ms": 108603.5,
+      "ended_ms": 109232.59999990463,
+      "ended_iso": "2026-08-09T23:17:27.747Z"
+    },
+    {
+      "round": 17,
+      "value": 107,
+      "series_index": 17,
+      "typing_mode": "passive",
+      "duration_ms": 647.6999999284744,
+      "started_ms": 112428.39999997616,
+      "ended_ms": 113076.09999990463,
+      "ended_iso": "2026-08-09T23:17:31.591Z"
+    },
+    {
+      "round": 18,
+      "value": 90,
+      "series_index": 18,
+      "typing_mode": "passive",
+      "duration_ms": 606.5,
+      "started_ms": 115378.69999992847,
+      "ended_ms": 115985.19999992847,
+      "ended_iso": "2026-08-09T23:17:34.500Z"
+    },
+    {
+      "round": 19,
+      "value": 91,
+      "series_index": 19,
+      "typing_mode": "passive",
+      "duration_ms": 659.8999999761581,
+      "started_ms": 121978.89999997616,
+      "ended_ms": 122638.79999995232,
+      "ended_iso": "2026-08-09T23:17:41.153Z"
+    },
+    {
+      "round": 20,
+      "value": 119,
+      "series_index": 20,
+      "typing_mode": "passive",
+      "duration_ms": 667.2999999523163,
+      "started_ms": 129862.79999995232,
+      "ended_ms": 130530.09999990463,
+      "ended_iso": "2026-08-09T23:17:49.045Z"
+    }
+  ],
+  "forecasts": [
+    {
+      "round": 1,
+      "series_index": 21,
+      "forecast": 120,
+      "actual": 93,
+      "error": 27,
+      "score": 0,
+      "response_time_ms": 1554.1999999284744,
+      "feedback_duration_ms": 1147.6999999284744,
+      "forecast_started_ms": 141809.39999997616,
+      "forecast_submitted_ms": 143363.59999990463,
+      "feedback_started_ms": 143365,
+      "feedback_ended_ms": 144512.69999992847,
+      "ended_iso": "2026-08-09T23:18:03.027Z"
+    },
+    {
+      "round": 2,
+      "series_index": 22,
+      "forecast": 85,
+      "actual": 94,
+      "error": -9,
+      "score": 25,
+      "response_time_ms": 1398.3999999761581,
+      "feedback_duration_ms": 805.2000000476837,
+      "forecast_started_ms": 150032.79999995232,
+      "forecast_submitted_ms": 151431.19999992847,
+      "feedback_started_ms": 151432.19999992847,
+      "feedback_ended_ms": 152237.39999997616,
+      "ended_iso": "2026-08-09T23:18:10.752Z"
+    },
+    {
+      "round": 3,
+      "series_index": 23,
+      "forecast": 100,
+      "actual": 77,
+      "error": 23,
+      "score": 0,
+      "response_time_ms": 844.8999999761581,
+      "feedback_duration_ms": 611,
+      "forecast_started_ms": 156693.39999997616,
+      "forecast_submitted_ms": 157538.29999995232,
+      "feedback_started_ms": 157539.59999990463,
+      "feedback_ended_ms": 158150.59999990463,
+      "ended_iso": "2026-08-09T23:18:16.665Z"
+    },
+    {
+      "round": 4,
+      "series_index": 24,
+      "forecast": 80,
+      "actual": 99,
+      "error": -19,
+      "score": 0,
+      "response_time_ms": 1427.5,
+      "feedback_duration_ms": 738.7000000476837,
+      "forecast_started_ms": 163029.69999992847,
+      "forecast_submitted_ms": 164457.19999992847,
+      "feedback_started_ms": 164458.19999992847,
+      "feedback_ended_ms": 165196.89999997616,
+      "ended_iso": "2026-08-09T23:18:23.711Z"
+    },
+    {
+      "round": 5,
+      "series_index": 25,
+      "forecast": 100,
+      "actual": 85,
+      "error": 15,
+      "score": 0,
+      "response_time_ms": 1028.3000000715256,
+      "feedback_duration_ms": 741,
+      "forecast_started_ms": 176883.69999992847,
+      "forecast_submitted_ms": 177912,
+      "feedback_started_ms": 177912.59999990463,
+      "feedback_ended_ms": 178653.59999990463,
+      "ended_iso": "2026-08-09T23:18:37.168Z"
+    },
+    {
+      "round": 6,
+      "series_index": 26,
+      "forecast": 90,
+      "actual": 81,
+      "error": 9,
+      "score": 25,
+      "response_time_ms": 873.7999999523163,
+      "feedback_duration_ms": 654.1000000238419,
+      "forecast_started_ms": 184755.79999995232,
+      "forecast_submitted_ms": 185629.59999990463,
+      "feedback_started_ms": 185630.59999990463,
+      "feedback_ended_ms": 186284.69999992847,
+      "ended_iso": "2026-08-09T23:18:44.799Z"
+    },
+    {
+      "round": 7,
+      "series_index": 27,
+      "forecast": 85,
+      "actual": 93,
+      "error": -8,
+      "score": 33.333333333333336,
+      "response_time_ms": 1034.1000000238419,
+      "feedback_duration_ms": 470.7000000476837,
+      "forecast_started_ms": 193946.89999997616,
+      "forecast_submitted_ms": 194981,
+      "feedback_started_ms": 194982.09999990463,
+      "feedback_ended_ms": 195452.79999995232,
+      "ended_iso": "2026-08-09T23:18:53.967Z"
+    },
+    {
+      "round": 8,
+      "series_index": 28,
+      "forecast": 90,
+      "actual": 115,
+      "error": -25,
+      "score": 0,
+      "response_time_ms": 831.6999999284744,
+      "feedback_duration_ms": 553.8999999761581,
+      "forecast_started_ms": 203912,
+      "forecast_submitted_ms": 204743.69999992847,
+      "feedback_started_ms": 204744.79999995232,
+      "feedback_ended_ms": 205298.69999992847,
+      "ended_iso": "2026-08-09T23:19:03.813Z"
+    },
+    {
+      "round": 9,
+      "series_index": 29,
+      "forecast": 110,
+      "actual": 105,
+      "error": 5,
+      "score": 58.33333333333333,
+      "response_time_ms": 1279.3999999761581,
+      "feedback_duration_ms": 665.1999999284744,
+      "forecast_started_ms": 214630.29999995232,
+      "forecast_submitted_ms": 215909.69999992847,
+      "feedback_started_ms": 215911,
+      "feedback_ended_ms": 216576.19999992847,
+      "ended_iso": "2026-08-09T23:19:15.090Z"
+    },
+    {
+      "round": 10,
+      "series_index": 30,
+      "forecast": 115,
+      "actual": 123,
+      "error": -8,
+      "score": 33.333333333333336,
+      "response_time_ms": 846.1000000238419,
+      "feedback_duration_ms": 486.1999999284744,
+      "forecast_started_ms": 220004.09999990463,
+      "forecast_submitted_ms": 220850.19999992847,
+      "feedback_started_ms": 220850.89999997616,
+      "feedback_ended_ms": 221337.09999990463,
+      "ended_iso": "2026-08-09T23:19:19.851Z"
+    },
+    {
+      "round": 11,
+      "series_index": 31,
+      "forecast": 120,
+      "actual": 114,
+      "error": 6,
+      "score": 50,
+      "response_time_ms": 939.5,
+      "feedback_duration_ms": 514.8000000715256,
+      "forecast_started_ms": 231623.29999995232,
+      "forecast_submitted_ms": 232562.79999995232,
+      "feedback_started_ms": 232564.19999992847,
+      "feedback_ended_ms": 233079,
+      "ended_iso": "2026-08-09T23:19:31.593Z"
+    },
+    {
+      "round": 12,
+      "series_index": 32,
+      "forecast": 120,
+      "actual": 112,
+      "error": 8,
+      "score": 33.333333333333336,
+      "response_time_ms": 848.0999999046326,
+      "feedback_duration_ms": 610.7000000476837,
+      "forecast_started_ms": 237818,
+      "forecast_submitted_ms": 238666.09999990463,
+      "feedback_started_ms": 238667.29999995232,
+      "feedback_ended_ms": 239278,
+      "ended_iso": "2026-08-09T23:19:37.792Z"
+    },
+    {
+      "round": 13,
+      "series_index": 33,
+      "forecast": 115,
+      "actual": 98,
+      "error": 17,
+      "score": 0,
+      "response_time_ms": 1142.7000000476837,
+      "feedback_duration_ms": 685.2999999523163,
+      "forecast_started_ms": 243724.19999992847,
+      "forecast_submitted_ms": 244866.89999997616,
+      "feedback_started_ms": 244868,
+      "feedback_ended_ms": 245553.29999995232,
+      "ended_iso": "2026-08-09T23:19:44.067Z"
+    },
+    {
+      "round": 14,
+      "series_index": 34,
+      "forecast": 110,
+      "actual": 91,
+      "error": 19,
+      "score": 0,
+      "response_time_ms": 902.9000000953674,
+      "feedback_duration_ms": 516.7999999523163,
+      "forecast_started_ms": 252380.09999990463,
+      "forecast_submitted_ms": 253283,
+      "feedback_started_ms": 253284.39999997616,
+      "feedback_ended_ms": 253801.19999992847,
+      "ended_iso": "2026-08-09T23:19:52.315Z"
+    },
+    {
+      "round": 15,
+      "series_index": 35,
+      "forecast": 100,
+      "actual": 108,
+      "error": -8,
+      "score": 33.333333333333336,
+      "response_time_ms": 872.6000000238419,
+      "feedback_duration_ms": 3277.3000000715256,
+      "forecast_started_ms": 266146.09999990463,
+      "forecast_submitted_ms": 267018.6999999285,
+      "feedback_started_ms": 267019.59999990463,
+      "feedback_ended_ms": 270296.89999997616,
+      "ended_iso": "2026-08-09T23:20:08.811Z"
+    },
+    {
+      "round": 16,
+      "series_index": 36,
+      "forecast": 120,
+      "actual": 113,
+      "error": 7,
+      "score": 41.666666666666664,
+      "response_time_ms": 1019.3999999761581,
+      "feedback_duration_ms": 567.1999999284744,
+      "forecast_started_ms": 277975,
+      "forecast_submitted_ms": 278994.39999997616,
+      "feedback_started_ms": 278995.5,
+      "feedback_ended_ms": 279562.6999999285,
+      "ended_iso": "2026-08-09T23:20:18.077Z"
+    },
+    {
+      "round": 17,
+      "series_index": 37,
+      "forecast": 120,
+      "actual": 95,
+      "error": 25,
+      "score": 0,
+      "response_time_ms": 624.1000000238419,
+      "feedback_duration_ms": 649.1000000238419,
+      "forecast_started_ms": 289725.2999999523,
+      "forecast_submitted_ms": 290349.39999997616,
+      "feedback_started_ms": 290350.59999990463,
+      "feedback_ended_ms": 290999.6999999285,
+      "ended_iso": "2026-08-09T23:20:29.514Z"
+    },
+    {
+      "round": 18,
+      "series_index": 38,
+      "forecast": 100,
+      "actual": 104,
+      "error": -4,
+      "score": 66.66666666666667,
+      "response_time_ms": 876,
+      "feedback_duration_ms": 761.8000000715256,
+      "forecast_started_ms": 297928.89999997616,
+      "forecast_submitted_ms": 298804.89999997616,
+      "feedback_started_ms": 298806.09999990463,
+      "feedback_ended_ms": 299567.89999997616,
+      "ended_iso": "2026-08-09T23:20:38.082Z"
+    },
+    {
+      "round": 19,
+      "series_index": 39,
+      "forecast": 110,
+      "actual": 113,
+      "error": -3,
+      "score": 75,
+      "response_time_ms": 835.7000000476837,
+      "feedback_duration_ms": 2067.2000000476837,
+      "forecast_started_ms": 311413.6999999285,
+      "forecast_submitted_ms": 312249.39999997616,
+      "feedback_started_ms": 312250.09999990463,
+      "feedback_ended_ms": 314317.2999999523,
+      "ended_iso": "2026-08-09T23:20:52.831Z"
+    },
+    {
+      "round": 20,
+      "series_index": 40,
+      "forecast": 120,
+      "actual": 110,
+      "error": 10,
+      "score": 16.666666666666664,
+      "response_time_ms": 730.5,
+      "feedback_duration_ms": 736,
+      "forecast_started_ms": 325965.2999999523,
+      "forecast_submitted_ms": 326695.7999999523,
+      "feedback_started_ms": 326697,
+      "feedback_ended_ms": 327433,
+      "ended_iso": "2026-08-09T23:21:05.947Z"
+    }
+  ],
+  "distractor_blocks": [
+    {
+      "after_phase": "observation",
+      "after_round": 1,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.079006728548393,
+      "actual_duration_ms": 7082.699999928474,
+      "started_ms": 4878,
+      "ended_ms": 11960.699999928474,
+      "ended_iso": "2026-08-09T23:15:50.476Z",
+      "n_judgments": 7,
+      "judgments": [
+        {
+          "word": "WIFE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1798.9000000953674,
+          "shown_at_ms": 4878.099999904633,
+          "responded_at_ms": 6677
+        },
+        {
+          "word": "CHEEK",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 852.5,
+          "shown_at_ms": 6677.099999904633,
+          "responded_at_ms": 7529.599999904633
+        },
+        {
+          "word": "POTATO",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 680.1000000238419,
+          "shown_at_ms": 7529.699999928474,
+          "responded_at_ms": 8209.799999952316
+        },
+        {
+          "word": "DANDRUFF",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 950.2999999523163,
+          "shown_at_ms": 8209.899999976158,
+          "responded_at_ms": 9160.199999928474
+        },
+        {
+          "word": "PRISON",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 868.5,
+          "shown_at_ms": 9160.299999952316,
+          "responded_at_ms": 10028.799999952316
+        },
+        {
+          "word": "CHICK",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 693.1999999284744,
+          "shown_at_ms": 10028.899999976158,
+          "responded_at_ms": 10722.099999904633
+        },
+        {
+          "word": "GOO",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 678.8999999761581,
+          "shown_at_ms": 10722.199999928474,
+          "responded_at_ms": 11401.099999904633
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 2,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 4.222035872809581,
+      "actual_duration_ms": 4228.099999904633,
+      "started_ms": 12753,
+      "ended_ms": 16981.099999904633,
+      "ended_iso": "2026-08-09T23:15:55.497Z",
+      "n_judgments": 5,
+      "judgments": [
+        {
+          "word": "PAINTING",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1101.5,
+          "shown_at_ms": 12753.099999904633,
+          "responded_at_ms": 13854.599999904633
+        },
+        {
+          "word": "ATTORNEY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 673.3999999761581,
+          "shown_at_ms": 13854.699999928474,
+          "responded_at_ms": 14528.099999904633
+        },
+        {
+          "word": "FREEZER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 813.2000000476837,
+          "shown_at_ms": 14528.199999928474,
+          "responded_at_ms": 15341.399999976158
+        },
+        {
+          "word": "CHEDDAR",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 680.8999999761581,
+          "shown_at_ms": 15341.399999976158,
+          "responded_at_ms": 16022.299999952316
+        },
+        {
+          "word": "SHOWER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 558.8999999761581,
+          "shown_at_ms": 16022.5,
+          "responded_at_ms": 16581.399999976158
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 3,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 8.419852297423233,
+      "actual_duration_ms": 8420.799999952316,
+      "started_ms": 17927.299999952316,
+      "ended_ms": 26348.099999904633,
+      "ended_iso": "2026-08-09T23:16:04.863Z",
+      "n_judgments": 10,
+      "judgments": [
+        {
+          "word": "WASHER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 880.5,
+          "shown_at_ms": 17927.399999976158,
+          "responded_at_ms": 18807.899999976158
+        },
+        {
+          "word": "PACKAGE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 792.2999999523163,
+          "shown_at_ms": 18807.899999976158,
+          "responded_at_ms": 19600.199999928474
+        },
+        {
+          "word": "SHINGLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1045.8000000715256,
+          "shown_at_ms": 19600.199999928474,
+          "responded_at_ms": 20646
+        },
+        {
+          "word": "POLYESTER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 753,
+          "shown_at_ms": 20646.099999904633,
+          "responded_at_ms": 21399.099999904633
+        },
+        {
+          "word": "ASSOCIATE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 651.5,
+          "shown_at_ms": 21399.199999928474,
+          "responded_at_ms": 22050.699999928474
+        },
+        {
+          "word": "TOE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 601.2999999523163,
+          "shown_at_ms": 22050.799999952316,
+          "responded_at_ms": 22652.099999904633
+        },
+        {
+          "word": "MOUNTAIN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 642.7999999523163,
+          "shown_at_ms": 22652.299999952316,
+          "responded_at_ms": 23295.099999904633
+        },
+        {
+          "word": "SALT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 766,
+          "shown_at_ms": 23295.099999904633,
+          "responded_at_ms": 24061.099999904633
+        },
+        {
+          "word": "CANDLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 755.9000000953674,
+          "shown_at_ms": 24061.099999904633,
+          "responded_at_ms": 24817
+        },
+        {
+          "word": "GRASSHOPPER",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 804,
+          "shown_at_ms": 24817,
+          "responded_at_ms": 25621
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 4,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 5.937667525329077,
+      "actual_duration_ms": 5941.600000023842,
+      "started_ms": 27081.299999952316,
+      "ended_ms": 33022.89999997616,
+      "ended_iso": "2026-08-09T23:16:11.538Z",
+      "n_judgments": 7,
+      "judgments": [
+        {
+          "word": "SEAL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 976.5999999046326,
+          "shown_at_ms": 27081.5,
+          "responded_at_ms": 28058.099999904633
+        },
+        {
+          "word": "JET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 897.8000000715256,
+          "shown_at_ms": 28058.099999904633,
+          "responded_at_ms": 28955.899999976158
+        },
+        {
+          "word": "DEPARTMENT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 500,
+          "shown_at_ms": 28956,
+          "responded_at_ms": 29456
+        },
+        {
+          "word": "CARRIAGE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 785.5999999046326,
+          "shown_at_ms": 29456,
+          "responded_at_ms": 30241.599999904633
+        },
+        {
+          "word": "VOLCANO",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 495.10000002384186,
+          "shown_at_ms": 30241.599999904633,
+          "responded_at_ms": 30736.699999928474
+        },
+        {
+          "word": "GYM",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 584.7000000476837,
+          "shown_at_ms": 30736.699999928474,
+          "responded_at_ms": 31321.399999976158
+        },
+        {
+          "word": "WIFE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1128.3999999761581,
+          "shown_at_ms": 31321.399999976158,
+          "responded_at_ms": 32449.799999952316
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 5,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 4.176833923403313,
+      "actual_duration_ms": 4183.600000023842,
+      "started_ms": 33682.09999990463,
+      "ended_ms": 37865.699999928474,
+      "ended_iso": "2026-08-09T23:16:16.381Z",
+      "n_judgments": 6,
+      "judgments": [
+        {
+          "word": "DOCUMENT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 741.7000000476837,
+          "shown_at_ms": 33682.199999928474,
+          "responded_at_ms": 34423.89999997616
+        },
+        {
+          "word": "ULCER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 668.2999999523163,
+          "shown_at_ms": 34423.89999997616,
+          "responded_at_ms": 35092.199999928474
+        },
+        {
+          "word": "OZONE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 682.7999999523163,
+          "shown_at_ms": 35092.299999952316,
+          "responded_at_ms": 35775.09999990463
+        },
+        {
+          "word": "TIMBER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 581.7000000476837,
+          "shown_at_ms": 35775.09999990463,
+          "responded_at_ms": 36356.799999952316
+        },
+        {
+          "word": "ANTLER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 679.1000000238419,
+          "shown_at_ms": 36356.89999997616,
+          "responded_at_ms": 37036
+        },
+        {
+          "word": "CLIFF",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 490,
+          "shown_at_ms": 37036,
+          "responded_at_ms": 37526
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 6,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.8692134206745967,
+      "actual_duration_ms": 3872.899999976158,
+      "started_ms": 38600,
+      "ended_ms": 42472.89999997616,
+      "ended_iso": "2026-08-09T23:16:20.988Z",
+      "n_judgments": 5,
+      "judgments": [
+        {
+          "word": "BARN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 803.8999999761581,
+          "shown_at_ms": 38600.199999928474,
+          "responded_at_ms": 39404.09999990463
+        },
+        {
+          "word": "SLOPE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 686.8000000715256,
+          "shown_at_ms": 39404.09999990463,
+          "responded_at_ms": 40090.89999997616
+        },
+        {
+          "word": "WHIP",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1105.1999999284744,
+          "shown_at_ms": 40091,
+          "responded_at_ms": 41196.199999928474
+        },
+        {
+          "word": "NEEDLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 603.8000000715256,
+          "shown_at_ms": 41196.199999928474,
+          "responded_at_ms": 41800
+        },
+        {
+          "word": "DIARY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 631.7000000476837,
+          "shown_at_ms": 41800.09999990463,
+          "responded_at_ms": 42431.799999952316
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 7,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.692101671607207,
+      "actual_duration_ms": 3700.2000000476837,
+      "started_ms": 43284.799999952316,
+      "ended_ms": 46985,
+      "ended_iso": "2026-08-09T23:16:25.500Z",
+      "n_judgments": 4,
+      "judgments": [
+        {
+          "word": "MILDEW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 913.3999999761581,
+          "shown_at_ms": 43284.89999997616,
+          "responded_at_ms": 44198.299999952316
+        },
+        {
+          "word": "TOY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 701,
+          "shown_at_ms": 44198.299999952316,
+          "responded_at_ms": 44899.299999952316
+        },
+        {
+          "word": "QUILT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1413.6000000238419,
+          "shown_at_ms": 44899.299999952316,
+          "responded_at_ms": 46312.89999997616
+        },
+        {
+          "word": "WALLET",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 584.6999999284744,
+          "shown_at_ms": 46312.89999997616,
+          "responded_at_ms": 46897.59999990463
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 8,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 9.31587544103904,
+      "actual_duration_ms": 9323.100000023842,
+      "started_ms": 47579.299999952316,
+      "ended_ms": 56902.39999997616,
+      "ended_iso": "2026-08-09T23:16:35.417Z",
+      "n_judgments": 12,
+      "judgments": [
+        {
+          "word": "VAMPIRE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 759.6000000238419,
+          "shown_at_ms": 47579.39999997616,
+          "responded_at_ms": 48339
+        },
+        {
+          "word": "ARENA",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 651.5,
+          "shown_at_ms": 48339.09999990463,
+          "responded_at_ms": 48990.59999990463
+        },
+        {
+          "word": "TAXI",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 662,
+          "shown_at_ms": 48990.699999928474,
+          "responded_at_ms": 49652.699999928474
+        },
+        {
+          "word": "PUBLICATION",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 884.2000000476837,
+          "shown_at_ms": 49652.699999928474,
+          "responded_at_ms": 50536.89999997616
+        },
+        {
+          "word": "CATCHER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 757.5999999046326,
+          "shown_at_ms": 50537,
+          "responded_at_ms": 51294.59999990463
+        },
+        {
+          "word": "KETTLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 778.5,
+          "shown_at_ms": 51294.699999928474,
+          "responded_at_ms": 52073.199999928474
+        },
+        {
+          "word": "JURY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 721.1000000238419,
+          "shown_at_ms": 52073.299999952316,
+          "responded_at_ms": 52794.39999997616
+        },
+        {
+          "word": "FAUCET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 750,
+          "shown_at_ms": 52794.5,
+          "responded_at_ms": 53544.5
+        },
+        {
+          "word": "KITTEN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 753.3999999761581,
+          "shown_at_ms": 53544.5,
+          "responded_at_ms": 54297.89999997616
+        },
+        {
+          "word": "RODENT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 754.6999999284744,
+          "shown_at_ms": 54298,
+          "responded_at_ms": 55052.699999928474
+        },
+        {
+          "word": "WINGS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 760.7999999523163,
+          "shown_at_ms": 55052.799999952316,
+          "responded_at_ms": 55813.59999990463
+        },
+        {
+          "word": "SWING",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 650.1000000238419,
+          "shown_at_ms": 55813.59999990463,
+          "responded_at_ms": 56463.699999928474
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 9,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.663446595887633,
+      "actual_duration_ms": 7663.799999952316,
+      "started_ms": 57496.799999952316,
+      "ended_ms": 65160.59999990463,
+      "ended_iso": "2026-08-09T23:16:43.676Z",
+      "n_judgments": 11,
+      "judgments": [
+        {
+          "word": "STRANGER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 792.6999999284744,
+          "shown_at_ms": 57496.89999997616,
+          "responded_at_ms": 58289.59999990463
+        },
+        {
+          "word": "LONDON",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 684.6000000238419,
+          "shown_at_ms": 58289.699999928474,
+          "responded_at_ms": 58974.299999952316
+        },
+        {
+          "word": "DRIVEWAY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 753,
+          "shown_at_ms": 58974.39999997616,
+          "responded_at_ms": 59727.39999997616
+        },
+        {
+          "word": "KITTEN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 808.6999999284744,
+          "shown_at_ms": 59727.39999997616,
+          "responded_at_ms": 60536.09999990463
+        },
+        {
+          "word": "FINGERNAIL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 583.4000000953674,
+          "shown_at_ms": 60536.09999990463,
+          "responded_at_ms": 61119.5
+        },
+        {
+          "word": "BOOK",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 624.1000000238419,
+          "shown_at_ms": 61119.59999990463,
+          "responded_at_ms": 61743.699999928474
+        },
+        {
+          "word": "CONCRETE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 553.3000000715256,
+          "shown_at_ms": 61743.699999928474,
+          "responded_at_ms": 62297
+        },
+        {
+          "word": "HOSPITAL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 558,
+          "shown_at_ms": 62297,
+          "responded_at_ms": 62855
+        },
+        {
+          "word": "BUN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 607.8999999761581,
+          "shown_at_ms": 62855,
+          "responded_at_ms": 63462.89999997616
+        },
+        {
+          "word": "FORK",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 572.1999999284744,
+          "shown_at_ms": 63462.89999997616,
+          "responded_at_ms": 64035.09999990463
+        },
+        {
+          "word": "CREEK",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 640.7000000476837,
+          "shown_at_ms": 64035.299999952316,
+          "responded_at_ms": 64676
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 10,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.484481696177553,
+      "actual_duration_ms": 3488.100000023842,
+      "started_ms": 65972.39999997616,
+      "ended_ms": 69460.5,
+      "ended_iso": "2026-08-09T23:16:47.975Z",
+      "n_judgments": 5,
+      "judgments": [
+        {
+          "word": "COOK",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 572.6999999284744,
+          "shown_at_ms": 65972.5,
+          "responded_at_ms": 66545.19999992847
+        },
+        {
+          "word": "DUNE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 665.2000000476837,
+          "shown_at_ms": 66545.29999995232,
+          "responded_at_ms": 67210.5
+        },
+        {
+          "word": "OUTLAW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 721.0999999046326,
+          "shown_at_ms": 67210.5,
+          "responded_at_ms": 67931.59999990463
+        },
+        {
+          "word": "POET",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 683.7000000476837,
+          "shown_at_ms": 67931.59999990463,
+          "responded_at_ms": 68615.29999995232
+        },
+        {
+          "word": "BUG",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 832.8999999761581,
+          "shown_at_ms": 68615.29999995232,
+          "responded_at_ms": 69448.19999992847
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 11,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 5.244503478314236,
+      "actual_duration_ms": 5250.600000023842,
+      "started_ms": 70169.29999995232,
+      "ended_ms": 75419.89999997616,
+      "ended_iso": "2026-08-09T23:16:53.935Z",
+      "n_judgments": 6,
+      "judgments": [
+        {
+          "word": "KNIGHT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 697.1000000238419,
+          "shown_at_ms": 70169.39999997616,
+          "responded_at_ms": 70866.5
+        },
+        {
+          "word": "CANAL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 876.7999999523163,
+          "shown_at_ms": 70866.5,
+          "responded_at_ms": 71743.29999995232
+        },
+        {
+          "word": "MAILBOX",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 758.1999999284744,
+          "shown_at_ms": 71743.39999997616,
+          "responded_at_ms": 72501.59999990463
+        },
+        {
+          "word": "BEAR",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 653.6000000238419,
+          "shown_at_ms": 72501.69999992847,
+          "responded_at_ms": 73155.29999995232
+        },
+        {
+          "word": "JUGGLER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1122.5,
+          "shown_at_ms": 73155.39999997616,
+          "responded_at_ms": 74277.89999997616
+        },
+        {
+          "word": "LAPEL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 682.2999999523163,
+          "shown_at_ms": 74277.89999997616,
+          "responded_at_ms": 74960.19999992847
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 12,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.450579785648256,
+      "actual_duration_ms": 7452.799999952316,
+      "started_ms": 75966.29999995232,
+      "ended_ms": 83419.09999990463,
+      "ended_iso": "2026-08-09T23:17:01.934Z",
+      "n_judgments": 8,
+      "judgments": [
+        {
+          "word": "TOE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 647.1999999284744,
+          "shown_at_ms": 75966.39999997616,
+          "responded_at_ms": 76613.59999990463
+        },
+        {
+          "word": "SPIDER",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 835.5,
+          "shown_at_ms": 76613.59999990463,
+          "responded_at_ms": 77449.09999990463
+        },
+        {
+          "word": "VACUUM",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 667.9000000953674,
+          "shown_at_ms": 77449.09999990463,
+          "responded_at_ms": 78117
+        },
+        {
+          "word": "LABYRINTH",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 990.3999999761581,
+          "shown_at_ms": 78117,
+          "responded_at_ms": 79107.39999997616
+        },
+        {
+          "word": "DISH",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 803.5,
+          "shown_at_ms": 79107.39999997616,
+          "responded_at_ms": 79910.89999997616
+        },
+        {
+          "word": "PANTS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 891,
+          "shown_at_ms": 79911,
+          "responded_at_ms": 80802
+        },
+        {
+          "word": "REFRIGERATOR",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1484.6999999284744,
+          "shown_at_ms": 80802,
+          "responded_at_ms": 82286.69999992847
+        },
+        {
+          "word": "DRAGON",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 580.2000000476837,
+          "shown_at_ms": 82286.79999995232,
+          "responded_at_ms": 82867
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 13,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 8.631335237753,
+      "actual_duration_ms": 8634.399999976158,
+      "started_ms": 84026.29999995232,
+      "ended_ms": 92660.69999992847,
+      "ended_iso": "2026-08-09T23:17:11.175Z",
+      "n_judgments": 12,
+      "judgments": [
+        {
+          "word": "ENEMY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 815.2999999523163,
+          "shown_at_ms": 84026.39999997616,
+          "responded_at_ms": 84841.69999992847
+        },
+        {
+          "word": "BRUNETTE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 906.8000000715256,
+          "shown_at_ms": 84841.69999992847,
+          "responded_at_ms": 85748.5
+        },
+        {
+          "word": "OUTLAW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 547.7999999523163,
+          "shown_at_ms": 85748.5,
+          "responded_at_ms": 86296.29999995232
+        },
+        {
+          "word": "FURNITURE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 672.7999999523163,
+          "shown_at_ms": 86296.39999997616,
+          "responded_at_ms": 86969.19999992847
+        },
+        {
+          "word": "SUN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 645.5,
+          "shown_at_ms": 86969.29999995232,
+          "responded_at_ms": 87614.79999995232
+        },
+        {
+          "word": "NAPKIN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 686,
+          "shown_at_ms": 87614.89999997616,
+          "responded_at_ms": 88300.89999997616
+        },
+        {
+          "word": "LIST",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 626.7999999523163,
+          "shown_at_ms": 88301,
+          "responded_at_ms": 88927.79999995232
+        },
+        {
+          "word": "DOORBELL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 642.8999999761581,
+          "shown_at_ms": 88927.89999997616,
+          "responded_at_ms": 89570.79999995232
+        },
+        {
+          "word": "PEDESTRIAN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 950.7999999523163,
+          "shown_at_ms": 89570.79999995232,
+          "responded_at_ms": 90521.59999990463
+        },
+        {
+          "word": "SIGN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 882.3000000715256,
+          "shown_at_ms": 90521.69999992847,
+          "responded_at_ms": 91404
+        },
+        {
+          "word": "PLANET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 591.5999999046326,
+          "shown_at_ms": 91404,
+          "responded_at_ms": 91995.59999990463
+        },
+        {
+          "word": "DRIVEWAY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 550.2000000476837,
+          "shown_at_ms": 91995.69999992847,
+          "responded_at_ms": 92545.89999997616
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 14,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.6336852872673235,
+      "actual_duration_ms": 3639.8000000715256,
+      "started_ms": 93229.19999992847,
+      "ended_ms": 96869,
+      "ended_iso": "2026-08-09T23:17:15.384Z",
+      "n_judgments": 4,
+      "judgments": [
+        {
+          "word": "PLANT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 536.6000000238419,
+          "shown_at_ms": 93229.19999992847,
+          "responded_at_ms": 93765.79999995232
+        },
+        {
+          "word": "FAIRY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1095.2999999523163,
+          "shown_at_ms": 93765.89999997616,
+          "responded_at_ms": 94861.19999992847
+        },
+        {
+          "word": "CROW",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1048.5,
+          "shown_at_ms": 94861.19999992847,
+          "responded_at_ms": 95909.69999992847
+        },
+        {
+          "word": "SHARK",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 514.7999999523163,
+          "shown_at_ms": 95909.79999995232,
+          "responded_at_ms": 96424.59999990463
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 15,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 11.089957921112656,
+      "actual_duration_ms": 11090.299999952316,
+      "started_ms": 97512,
+      "ended_ms": 108602.29999995232,
+      "ended_iso": "2026-08-09T23:17:27.117Z",
+      "n_judgments": 14,
+      "judgments": [
+        {
+          "word": "PRESIDENT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 721.7000000476837,
+          "shown_at_ms": 97512.09999990463,
+          "responded_at_ms": 98233.79999995232
+        },
+        {
+          "word": "TRUCK",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 600.7999999523163,
+          "shown_at_ms": 98233.79999995232,
+          "responded_at_ms": 98834.59999990463
+        },
+        {
+          "word": "SUBURB",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1247.2000000476837,
+          "shown_at_ms": 98834.59999990463,
+          "responded_at_ms": 100081.79999995232
+        },
+        {
+          "word": "HINGE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 722.5,
+          "shown_at_ms": 100081.89999997616,
+          "responded_at_ms": 100804.39999997616
+        },
+        {
+          "word": "FLOWER",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 767.1999999284744,
+          "shown_at_ms": 100804.39999997616,
+          "responded_at_ms": 101571.59999990463
+        },
+        {
+          "word": "CARDINAL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 869.8000000715256,
+          "shown_at_ms": 101571.59999990463,
+          "responded_at_ms": 102441.39999997616
+        },
+        {
+          "word": "CONSUMER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 564.2999999523163,
+          "shown_at_ms": 102441.5,
+          "responded_at_ms": 103005.79999995232
+        },
+        {
+          "word": "PROTRACTOR",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 748.6000000238419,
+          "shown_at_ms": 103005.79999995232,
+          "responded_at_ms": 103754.39999997616
+        },
+        {
+          "word": "CRADLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 711.9000000953674,
+          "shown_at_ms": 103754.59999990463,
+          "responded_at_ms": 104466.5
+        },
+        {
+          "word": "COMET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 694.5,
+          "shown_at_ms": 104466.5,
+          "responded_at_ms": 105161
+        },
+        {
+          "word": "BUILDING",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 576.2000000476837,
+          "shown_at_ms": 105161.09999990463,
+          "responded_at_ms": 105737.29999995232
+        },
+        {
+          "word": "PARROT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 591.8999999761581,
+          "shown_at_ms": 105737.5,
+          "responded_at_ms": 106329.39999997616
+        },
+        {
+          "word": "SKETCH",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 635.1000000238419,
+          "shown_at_ms": 106329.39999997616,
+          "responded_at_ms": 106964.5
+        },
+        {
+          "word": "SWITCH",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 790,
+          "shown_at_ms": 106964.5,
+          "responded_at_ms": 107754.5
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 16,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.1930460464226247,
+      "actual_duration_ms": 3193.899999976158,
+      "started_ms": 109233.5,
+      "ended_ms": 112427.39999997616,
+      "ended_iso": "2026-08-09T23:17:30.942Z",
+      "n_judgments": 4,
+      "judgments": [
+        {
+          "word": "DART",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 769.5,
+          "shown_at_ms": 109233.5,
+          "responded_at_ms": 110003
+        },
+        {
+          "word": "MILITARY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 740.5,
+          "shown_at_ms": 110003.09999990463,
+          "responded_at_ms": 110743.59999990463
+        },
+        {
+          "word": "COLUMN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 574.8000000715256,
+          "shown_at_ms": 110743.69999992847,
+          "responded_at_ms": 111318.5
+        },
+        {
+          "word": "SHERIFF",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 925.9000000953674,
+          "shown_at_ms": 111318.59999990463,
+          "responded_at_ms": 112244.5
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 17,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 2.295238199111494,
+      "actual_duration_ms": 2300.5,
+      "started_ms": 113077,
+      "ended_ms": 115377.5,
+      "ended_iso": "2026-08-09T23:17:33.892Z",
+      "n_judgments": 2,
+      "judgments": [
+        {
+          "word": "COLUMN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 814.1999999284744,
+          "shown_at_ms": 113077,
+          "responded_at_ms": 113891.19999992847
+        },
+        {
+          "word": "BULLY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1136.3999999761581,
+          "shown_at_ms": 113891.39999997616,
+          "responded_at_ms": 115027.79999995232
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 18,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 5.988876429514988,
+      "actual_duration_ms": 5991.699999928474,
+      "started_ms": 115986,
+      "ended_ms": 121977.69999992847,
+      "ended_iso": "2026-08-09T23:17:40.492Z",
+      "n_judgments": 8,
+      "judgments": [
+        {
+          "word": "CHOCOLATE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 929.2999999523163,
+          "shown_at_ms": 115986,
+          "responded_at_ms": 116915.29999995232
+        },
+        {
+          "word": "VALLEY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 760.5,
+          "shown_at_ms": 116915.39999997616,
+          "responded_at_ms": 117675.89999997616
+        },
+        {
+          "word": "BULLET",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 854.1999999284744,
+          "shown_at_ms": 117675.89999997616,
+          "responded_at_ms": 118530.09999990463
+        },
+        {
+          "word": "DIVER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 614.2000000476837,
+          "shown_at_ms": 118530.09999990463,
+          "responded_at_ms": 119144.29999995232
+        },
+        {
+          "word": "ADULT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 553.6000000238419,
+          "shown_at_ms": 119144.29999995232,
+          "responded_at_ms": 119697.89999997616
+        },
+        {
+          "word": "VAULT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 617,
+          "shown_at_ms": 119697.89999997616,
+          "responded_at_ms": 120314.89999997616
+        },
+        {
+          "word": "SEAFOOD",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 884.3999999761581,
+          "shown_at_ms": 120315,
+          "responded_at_ms": 121199.39999997616
+        },
+        {
+          "word": "HATCHET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 712.1999999284744,
+          "shown_at_ms": 121199.39999997616,
+          "responded_at_ms": 121911.59999990463
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 19,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.219580166974057,
+      "actual_duration_ms": 7222,
+      "started_ms": 122639.69999992847,
+      "ended_ms": 129861.69999992847,
+      "ended_iso": "2026-08-09T23:17:48.376Z",
+      "n_judgments": 8,
+      "judgments": [
+        {
+          "word": "PUBLICATION",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 615.8999999761581,
+          "shown_at_ms": 122639.69999992847,
+          "responded_at_ms": 123255.59999990463
+        },
+        {
+          "word": "RASH",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 780.8000000715256,
+          "shown_at_ms": 123255.59999990463,
+          "responded_at_ms": 124036.39999997616
+        },
+        {
+          "word": "ESCALATOR",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1334.0999999046326,
+          "shown_at_ms": 124036.5,
+          "responded_at_ms": 125370.59999990463
+        },
+        {
+          "word": "ROOT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1150.8000000715256,
+          "shown_at_ms": 125370.59999990463,
+          "responded_at_ms": 126521.39999997616
+        },
+        {
+          "word": "DISC",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 918.6000000238419,
+          "shown_at_ms": 126521.39999997616,
+          "responded_at_ms": 127440
+        },
+        {
+          "word": "SURGEON",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 584.9000000953674,
+          "shown_at_ms": 127440.09999990463,
+          "responded_at_ms": 128025
+        },
+        {
+          "word": "HANGER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 649,
+          "shown_at_ms": 128025.09999990463,
+          "responded_at_ms": 128674.09999990463
+        },
+        {
+          "word": "TWISTER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 566.7000000476837,
+          "shown_at_ms": 128674.19999992847,
+          "responded_at_ms": 129240.89999997616
+        }
+      ]
+    },
+    {
+      "after_phase": "observation",
+      "after_round": 20,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 10.652143862860852,
+      "actual_duration_ms": 10654.700000047684,
+      "started_ms": 130531.09999990463,
+      "ended_ms": 141185.79999995232,
+      "ended_iso": "2026-08-09T23:17:59.700Z",
+      "n_judgments": 16,
+      "judgments": [
+        {
+          "word": "POISON",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 557.7000000476837,
+          "shown_at_ms": 130531.29999995232,
+          "responded_at_ms": 131089
+        },
+        {
+          "word": "CHALK",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 630.8999999761581,
+          "shown_at_ms": 131089,
+          "responded_at_ms": 131719.89999997616
+        },
+        {
+          "word": "ASH",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 508,
+          "shown_at_ms": 131719.89999997616,
+          "responded_at_ms": 132227.89999997616
+        },
+        {
+          "word": "CHEMIST",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 569.7999999523163,
+          "shown_at_ms": 132228,
+          "responded_at_ms": 132797.79999995232
+        },
+        {
+          "word": "UTENSIL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 640.1000000238419,
+          "shown_at_ms": 132797.79999995232,
+          "responded_at_ms": 133437.89999997616
+        },
+        {
+          "word": "ROOMMATE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 527.7999999523163,
+          "shown_at_ms": 133438,
+          "responded_at_ms": 133965.79999995232
+        },
+        {
+          "word": "SOLDIER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 663.8999999761581,
+          "shown_at_ms": 133965.89999997616,
+          "responded_at_ms": 134629.79999995232
+        },
+        {
+          "word": "MEADOW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 769.7999999523163,
+          "shown_at_ms": 134629.89999997616,
+          "responded_at_ms": 135399.69999992847
+        },
+        {
+          "word": "GUN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 528.5,
+          "shown_at_ms": 135399.79999995232,
+          "responded_at_ms": 135928.29999995232
+        },
+        {
+          "word": "NIECE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 878.6999999284744,
+          "shown_at_ms": 135928.39999997616,
+          "responded_at_ms": 136807.09999990463
+        },
+        {
+          "word": "CITIZEN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 724.6000000238419,
+          "shown_at_ms": 136807.19999992847,
+          "responded_at_ms": 137531.79999995232
+        },
+        {
+          "word": "LEADER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 573.6999999284744,
+          "shown_at_ms": 137531.89999997616,
+          "responded_at_ms": 138105.59999990463
+        },
+        {
+          "word": "WEB",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 582.3000000715256,
+          "shown_at_ms": 138105.69999992847,
+          "responded_at_ms": 138688
+        },
+        {
+          "word": "SOCKET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 591.8999999761581,
+          "shown_at_ms": 138688,
+          "responded_at_ms": 139279.89999997616
+        },
+        {
+          "word": "FLEA",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 747.2999999523163,
+          "shown_at_ms": 139280,
+          "responded_at_ms": 140027.29999995232
+        },
+        {
+          "word": "HURRICANE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 531.2999999523163,
+          "shown_at_ms": 140027.39999997616,
+          "responded_at_ms": 140558.69999992847
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 1,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 5.00105213056449,
+      "actual_duration_ms": 5005.399999976158,
+      "started_ms": 144513.79999995232,
+      "ended_ms": 149519.19999992847,
+      "ended_iso": "2026-08-09T23:18:08.034Z",
+      "n_judgments": 6,
+      "judgments": [
+        {
+          "word": "NITROGEN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1051.2000000476837,
+          "shown_at_ms": 144513.79999995232,
+          "responded_at_ms": 145565
+        },
+        {
+          "word": "CANVAS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 638.3000000715256,
+          "shown_at_ms": 145565.09999990463,
+          "responded_at_ms": 146203.39999997616
+        },
+        {
+          "word": "VITAMIN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 924.3999999761581,
+          "shown_at_ms": 146203.39999997616,
+          "responded_at_ms": 147127.79999995232
+        },
+        {
+          "word": "CURB",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 708.6000000238419,
+          "shown_at_ms": 147127.79999995232,
+          "responded_at_ms": 147836.39999997616
+        },
+        {
+          "word": "CASH",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 682.1999999284744,
+          "shown_at_ms": 147836.5,
+          "responded_at_ms": 148518.69999992847
+        },
+        {
+          "word": "EUROPE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 728.1000000238419,
+          "shown_at_ms": 148518.69999992847,
+          "responded_at_ms": 149246.79999995232
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 2,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.851515085273232,
+      "actual_duration_ms": 3856.4000000953674,
+      "started_ms": 152237.59999990463,
+      "ended_ms": 156094,
+      "ended_iso": "2026-08-09T23:18:14.609Z",
+      "n_judgments": 5,
+      "judgments": [
+        {
+          "word": "HOOP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1079.1000000238419,
+          "shown_at_ms": 152237.59999990463,
+          "responded_at_ms": 153316.69999992847
+        },
+        {
+          "word": "HOME",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 593.7000000476837,
+          "shown_at_ms": 153316.79999995232,
+          "responded_at_ms": 153910.5
+        },
+        {
+          "word": "FREEZER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 565.7999999523163,
+          "shown_at_ms": 153910.5,
+          "responded_at_ms": 154476.29999995232
+        },
+        {
+          "word": "JAR",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 782,
+          "shown_at_ms": 154476.39999997616,
+          "responded_at_ms": 155258.39999997616
+        },
+        {
+          "word": "HOOP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 694.1999999284744,
+          "shown_at_ms": 155258.39999997616,
+          "responded_at_ms": 155952.59999990463
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 3,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 4.183829921713628,
+      "actual_duration_ms": 4184.899999976158,
+      "started_ms": 158151,
+      "ended_ms": 162335.89999997616,
+      "ended_iso": "2026-08-09T23:18:20.850Z",
+      "n_judgments": 4,
+      "judgments": [
+        {
+          "word": "CRAB",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 779.6999999284744,
+          "shown_at_ms": 158151,
+          "responded_at_ms": 158930.69999992847
+        },
+        {
+          "word": "SCAPEGOAT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 978.3999999761581,
+          "shown_at_ms": 158930.79999995232,
+          "responded_at_ms": 159909.19999992847
+        },
+        {
+          "word": "FUR",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 799.5,
+          "shown_at_ms": 159909.29999995232,
+          "responded_at_ms": 160708.79999995232
+        },
+        {
+          "word": "SCALLOP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 633,
+          "shown_at_ms": 160708.79999995232,
+          "responded_at_ms": 161341.79999995232
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 4,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 11.103299562126214,
+      "actual_duration_ms": 11105.299999952316,
+      "started_ms": 165197.39999997616,
+      "ended_ms": 176302.69999992847,
+      "ended_iso": "2026-08-09T23:18:34.817Z",
+      "n_judgments": 14,
+      "judgments": [
+        {
+          "word": "LOOP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 670.2999999523163,
+          "shown_at_ms": 165197.39999997616,
+          "responded_at_ms": 165867.69999992847
+        },
+        {
+          "word": "RAIL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 802.3999999761581,
+          "shown_at_ms": 165867.79999995232,
+          "responded_at_ms": 166670.19999992847
+        },
+        {
+          "word": "FATHER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 705.6000000238419,
+          "shown_at_ms": 166670.19999992847,
+          "responded_at_ms": 167375.79999995232
+        },
+        {
+          "word": "BLACKBERRY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 756.3999999761581,
+          "shown_at_ms": 167375.89999997616,
+          "responded_at_ms": 168132.29999995232
+        },
+        {
+          "word": "NOVEL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1167.7000000476837,
+          "shown_at_ms": 168132.29999995232,
+          "responded_at_ms": 169300
+        },
+        {
+          "word": "SECRETARY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 574,
+          "shown_at_ms": 169300.09999990463,
+          "responded_at_ms": 169874.09999990463
+        },
+        {
+          "word": "PARSLEY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 648.1000000238419,
+          "shown_at_ms": 169874.19999992847,
+          "responded_at_ms": 170522.29999995232
+        },
+        {
+          "word": "GLASSES",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1064.7999999523163,
+          "shown_at_ms": 170522.29999995232,
+          "responded_at_ms": 171587.09999990463
+        },
+        {
+          "word": "HEAD",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1130.5,
+          "shown_at_ms": 171587.19999992847,
+          "responded_at_ms": 172717.69999992847
+        },
+        {
+          "word": "POLICE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 489.89999997615814,
+          "shown_at_ms": 172717.69999992847,
+          "responded_at_ms": 173207.59999990463
+        },
+        {
+          "word": "PAINTING",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 539.3999999761581,
+          "shown_at_ms": 173207.69999992847,
+          "responded_at_ms": 173747.09999990463
+        },
+        {
+          "word": "FRECKLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 741.1000000238419,
+          "shown_at_ms": 173747.09999990463,
+          "responded_at_ms": 174488.19999992847
+        },
+        {
+          "word": "SODA",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 898.3999999761581,
+          "shown_at_ms": 174488.19999992847,
+          "responded_at_ms": 175386.59999990463
+        },
+        {
+          "word": "HIP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 627.7000000476837,
+          "shown_at_ms": 175386.59999990463,
+          "responded_at_ms": 176014.29999995232
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 5,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 5.563695698010555,
+      "actual_duration_ms": 5564.799999952316,
+      "started_ms": 178654.5,
+      "ended_ms": 184219.29999995232,
+      "ended_iso": "2026-08-09T23:18:42.734Z",
+      "n_judgments": 6,
+      "judgments": [
+        {
+          "word": "CANNON",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 708.5,
+          "shown_at_ms": 178654.5,
+          "responded_at_ms": 179363
+        },
+        {
+          "word": "STRAWBERRY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 719.0999999046326,
+          "shown_at_ms": 179363,
+          "responded_at_ms": 180082.09999990463
+        },
+        {
+          "word": "THORN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1158.8999999761581,
+          "shown_at_ms": 180082.19999992847,
+          "responded_at_ms": 181241.09999990463
+        },
+        {
+          "word": "VEST",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 505.3000000715256,
+          "shown_at_ms": 181241.19999992847,
+          "responded_at_ms": 181746.5
+        },
+        {
+          "word": "LABEL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1057.7000000476837,
+          "shown_at_ms": 181746.59999990463,
+          "responded_at_ms": 182804.29999995232
+        },
+        {
+          "word": "PUPPY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 603.1000000238419,
+          "shown_at_ms": 182804.29999995232,
+          "responded_at_ms": 183407.39999997616
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 6,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.096579266895106,
+      "actual_duration_ms": 7100.100000023842,
+      "started_ms": 186285.69999992847,
+      "ended_ms": 193385.79999995232,
+      "ended_iso": "2026-08-09T23:18:51.900Z",
+      "n_judgments": 10,
+      "judgments": [
+        {
+          "word": "APPENDAGE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 974.1000000238419,
+          "shown_at_ms": 186285.79999995232,
+          "responded_at_ms": 187259.89999997616
+        },
+        {
+          "word": "FENCE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 578.6000000238419,
+          "shown_at_ms": 187259.89999997616,
+          "responded_at_ms": 187838.5
+        },
+        {
+          "word": "HAY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 622.2000000476837,
+          "shown_at_ms": 187838.59999990463,
+          "responded_at_ms": 188460.79999995232
+        },
+        {
+          "word": "BANKER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 519.5,
+          "shown_at_ms": 188460.79999995232,
+          "responded_at_ms": 188980.29999995232
+        },
+        {
+          "word": "TOOTH",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 580.3999999761581,
+          "shown_at_ms": 188980.29999995232,
+          "responded_at_ms": 189560.69999992847
+        },
+        {
+          "word": "DRAWER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 676.3999999761581,
+          "shown_at_ms": 189560.69999992847,
+          "responded_at_ms": 190237.09999990463
+        },
+        {
+          "word": "CRADLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 683.5,
+          "shown_at_ms": 190237.09999990463,
+          "responded_at_ms": 190920.59999990463
+        },
+        {
+          "word": "ANTENNA",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 750,
+          "shown_at_ms": 190920.69999992847,
+          "responded_at_ms": 191670.69999992847
+        },
+        {
+          "word": "TOMBSTONE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 571.7999999523163,
+          "shown_at_ms": 191670.79999995232,
+          "responded_at_ms": 192242.59999990463
+        },
+        {
+          "word": "VEIN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 659.8000000715256,
+          "shown_at_ms": 192242.69999992847,
+          "responded_at_ms": 192902.5
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 7,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.936627968274982,
+      "actual_duration_ms": 7945,
+      "started_ms": 195453.29999995232,
+      "ended_ms": 203398.29999995232,
+      "ended_iso": "2026-08-09T23:19:01.913Z",
+      "n_judgments": 7,
+      "judgments": [
+        {
+          "word": "CHARCOAL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 926.1000000238419,
+          "shown_at_ms": 195453.39999997616,
+          "responded_at_ms": 196379.5
+        },
+        {
+          "word": "AGENT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 494.89999997615814,
+          "shown_at_ms": 196379.5,
+          "responded_at_ms": 196874.39999997616
+        },
+        {
+          "word": "JELLO",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 947.1999999284744,
+          "shown_at_ms": 196874.39999997616,
+          "responded_at_ms": 197821.59999990463
+        },
+        {
+          "word": "RULER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1033.6000000238419,
+          "shown_at_ms": 197821.59999990463,
+          "responded_at_ms": 198855.19999992847
+        },
+        {
+          "word": "DRAWING",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1164.1000000238419,
+          "shown_at_ms": 198855.29999995232,
+          "responded_at_ms": 200019.39999997616
+        },
+        {
+          "word": "TUBE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1635.8999999761581,
+          "shown_at_ms": 200019.39999997616,
+          "responded_at_ms": 201655.29999995232
+        },
+        {
+          "word": "INFANT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1181,
+          "shown_at_ms": 201655.29999995232,
+          "responded_at_ms": 202836.29999995232
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 8,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 8.636979930766962,
+      "actual_duration_ms": 8641.599999904633,
+      "started_ms": 205299.5,
+      "ended_ms": 213941.09999990463,
+      "ended_iso": "2026-08-09T23:19:12.455Z",
+      "n_judgments": 11,
+      "judgments": [
+        {
+          "word": "BUGLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 778.0999999046326,
+          "shown_at_ms": 205299.5,
+          "responded_at_ms": 206077.59999990463
+        },
+        {
+          "word": "BLACKBOARD",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1370,
+          "shown_at_ms": 206077.59999990463,
+          "responded_at_ms": 207447.59999990463
+        },
+        {
+          "word": "COMEDIAN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 688.6000000238419,
+          "shown_at_ms": 207447.59999990463,
+          "responded_at_ms": 208136.19999992847
+        },
+        {
+          "word": "BOLT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 601.8999999761581,
+          "shown_at_ms": 208136.29999995232,
+          "responded_at_ms": 208738.19999992847
+        },
+        {
+          "word": "HUT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1217.6000000238419,
+          "shown_at_ms": 208738.29999995232,
+          "responded_at_ms": 209955.89999997616
+        },
+        {
+          "word": "RAT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 509.10000002384186,
+          "shown_at_ms": 209955.89999997616,
+          "responded_at_ms": 210465
+        },
+        {
+          "word": "FREEWAY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 520.2000000476837,
+          "shown_at_ms": 210465.09999990463,
+          "responded_at_ms": 210985.29999995232
+        },
+        {
+          "word": "ANKLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 647.8999999761581,
+          "shown_at_ms": 210985.29999995232,
+          "responded_at_ms": 211633.19999992847
+        },
+        {
+          "word": "BARREL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 733.8999999761581,
+          "shown_at_ms": 211633.29999995232,
+          "responded_at_ms": 212367.19999992847
+        },
+        {
+          "word": "SHORTCAKE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 716.5,
+          "shown_at_ms": 212367.29999995232,
+          "responded_at_ms": 213083.79999995232
+        },
+        {
+          "word": "PENGUIN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 558.2999999523163,
+          "shown_at_ms": 213083.89999997616,
+          "responded_at_ms": 213642.19999992847
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 9,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 2.730229212600564,
+      "actual_duration_ms": 2738.2000000476837,
+      "started_ms": 216577.09999990463,
+      "ended_ms": 219315.29999995232,
+      "ended_iso": "2026-08-09T23:19:17.829Z",
+      "n_judgments": 3,
+      "judgments": [
+        {
+          "word": "ACID",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 775.1000000238419,
+          "shown_at_ms": 216577.09999990463,
+          "responded_at_ms": 217352.19999992847
+        },
+        {
+          "word": "DELINQUENT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1109.8000000715256,
+          "shown_at_ms": 217352.19999992847,
+          "responded_at_ms": 218462
+        },
+        {
+          "word": "SCALLOP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 605.2999999523163,
+          "shown_at_ms": 218462,
+          "responded_at_ms": 219067.29999995232
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 10,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 9.701543332273744,
+      "actual_duration_ms": 9702,
+      "started_ms": 221338.19999992847,
+      "ended_ms": 231040.19999992847,
+      "ended_iso": "2026-08-09T23:19:29.554Z",
+      "n_judgments": 14,
+      "judgments": [
+        {
+          "word": "PORT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 730.8999999761581,
+          "shown_at_ms": 221338.39999997616,
+          "responded_at_ms": 222069.29999995232
+        },
+        {
+          "word": "CREVICE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 513.8999999761581,
+          "shown_at_ms": 222069.29999995232,
+          "responded_at_ms": 222583.19999992847
+        },
+        {
+          "word": "KLEENEX",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 489.5,
+          "shown_at_ms": 222583.19999992847,
+          "responded_at_ms": 223072.69999992847
+        },
+        {
+          "word": "VIDEO",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 804.1000000238419,
+          "shown_at_ms": 223072.69999992847,
+          "responded_at_ms": 223876.79999995232
+        },
+        {
+          "word": "HOUND",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 924.1000000238419,
+          "shown_at_ms": 223876.89999997616,
+          "responded_at_ms": 224801
+        },
+        {
+          "word": "MARGARINE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 601,
+          "shown_at_ms": 224801.09999990463,
+          "responded_at_ms": 225402.09999990463
+        },
+        {
+          "word": "CABINET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 698.6000000238419,
+          "shown_at_ms": 225402.19999992847,
+          "responded_at_ms": 226100.79999995232
+        },
+        {
+          "word": "YARD",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 588.1999999284744,
+          "shown_at_ms": 226100.89999997616,
+          "responded_at_ms": 226689.09999990463
+        },
+        {
+          "word": "TROMBONE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 520.7000000476837,
+          "shown_at_ms": 226689.09999990463,
+          "responded_at_ms": 227209.79999995232
+        },
+        {
+          "word": "COAL",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 582.7999999523163,
+          "shown_at_ms": 227209.89999997616,
+          "responded_at_ms": 227792.69999992847
+        },
+        {
+          "word": "CASTLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 515.1000000238419,
+          "shown_at_ms": 227792.69999992847,
+          "responded_at_ms": 228307.79999995232
+        },
+        {
+          "word": "INFANT",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 739.6000000238419,
+          "shown_at_ms": 228307.89999997616,
+          "responded_at_ms": 229047.5
+        },
+        {
+          "word": "GOBLIN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 820,
+          "shown_at_ms": 229047.59999990463,
+          "responded_at_ms": 229867.59999990463
+        },
+        {
+          "word": "DORM",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 796.9000000953674,
+          "shown_at_ms": 229867.59999990463,
+          "responded_at_ms": 230664.5
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 11,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.932622312944022,
+      "actual_duration_ms": 3935.399999976158,
+      "started_ms": 233079.89999997616,
+      "ended_ms": 237015.29999995232,
+      "ended_iso": "2026-08-09T23:19:35.529Z",
+      "n_judgments": 4,
+      "judgments": [
+        {
+          "word": "SWING",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 744,
+          "shown_at_ms": 233079.89999997616,
+          "responded_at_ms": 233823.89999997616
+        },
+        {
+          "word": "SPATULA",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1065.8999999761581,
+          "shown_at_ms": 233824,
+          "responded_at_ms": 234889.89999997616
+        },
+        {
+          "word": "KITTEN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 917,
+          "shown_at_ms": 234890,
+          "responded_at_ms": 235807
+        },
+        {
+          "word": "FIST",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 871.5999999046326,
+          "shown_at_ms": 235807,
+          "responded_at_ms": 236678.59999990463
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 12,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 3.806523716011361,
+      "actual_duration_ms": 3811.899999976158,
+      "started_ms": 239278.89999997616,
+      "ended_ms": 243090.79999995232,
+      "ended_iso": "2026-08-09T23:19:41.605Z",
+      "n_judgments": 3,
+      "judgments": [
+        {
+          "word": "TOY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1322.1000000238419,
+          "shown_at_ms": 239278.89999997616,
+          "responded_at_ms": 240601
+        },
+        {
+          "word": "BOLT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 526.2999999523163,
+          "shown_at_ms": 240601,
+          "responded_at_ms": 241127.29999995232
+        },
+        {
+          "word": "CLASS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1352.7000000476837,
+          "shown_at_ms": 241127.29999995232,
+          "responded_at_ms": 242480
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 13,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 6.063897299194091,
+      "actual_duration_ms": 6070.899999976158,
+      "started_ms": 245553.79999995232,
+      "ended_ms": 251624.69999992847,
+      "ended_iso": "2026-08-09T23:19:50.139Z",
+      "n_judgments": 8,
+      "judgments": [
+        {
+          "word": "BOTTLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1003,
+          "shown_at_ms": 245553.79999995232,
+          "responded_at_ms": 246556.79999995232
+        },
+        {
+          "word": "BUBBLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 693.6000000238419,
+          "shown_at_ms": 246556.89999997616,
+          "responded_at_ms": 247250.5
+        },
+        {
+          "word": "FLOUR",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 633.1000000238419,
+          "shown_at_ms": 247250.59999990463,
+          "responded_at_ms": 247883.69999992847
+        },
+        {
+          "word": "MANAGER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 561.8999999761581,
+          "shown_at_ms": 247883.69999992847,
+          "responded_at_ms": 248445.59999990463
+        },
+        {
+          "word": "GORILLA",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 654,
+          "shown_at_ms": 248445.69999992847,
+          "responded_at_ms": 249099.69999992847
+        },
+        {
+          "word": "EMERALD",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 717.7000000476837,
+          "shown_at_ms": 249099.69999992847,
+          "responded_at_ms": 249817.39999997616
+        },
+        {
+          "word": "JELLO",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 782.6000000238419,
+          "shown_at_ms": 249817.39999997616,
+          "responded_at_ms": 250600
+        },
+        {
+          "word": "DANDRUFF",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 798,
+          "shown_at_ms": 250600,
+          "responded_at_ms": 251398
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 14,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 11.700733217267201,
+      "actual_duration_ms": 11704.800000071526,
+      "started_ms": 253802.19999992847,
+      "ended_ms": 265507,
+      "ended_iso": "2026-08-09T23:20:04.021Z",
+      "n_judgments": 15,
+      "judgments": [
+        {
+          "word": "GUARDIAN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 681.2000000476837,
+          "shown_at_ms": 253802.19999992847,
+          "responded_at_ms": 254483.39999997616
+        },
+        {
+          "word": "FLOUR",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 942.1000000238419,
+          "shown_at_ms": 254483.59999990463,
+          "responded_at_ms": 255425.69999992847
+        },
+        {
+          "word": "BACON",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 983.6000000238419,
+          "shown_at_ms": 255425.69999992847,
+          "responded_at_ms": 256409.29999995232
+        },
+        {
+          "word": "TART",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 676,
+          "shown_at_ms": 256409.29999995232,
+          "responded_at_ms": 257085.29999995232
+        },
+        {
+          "word": "CHEDDAR",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 695.5999999046326,
+          "shown_at_ms": 257085.5,
+          "responded_at_ms": 257781.09999990463
+        },
+        {
+          "word": "TOMBSTONE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1553.1000000238419,
+          "shown_at_ms": 257781.19999992847,
+          "responded_at_ms": 259334.29999995232
+        },
+        {
+          "word": "COUGAR",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 629.8999999761581,
+          "shown_at_ms": 259334.29999995232,
+          "responded_at_ms": 259964.19999992847
+        },
+        {
+          "word": "VET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 563.3999999761581,
+          "shown_at_ms": 259964.29999995232,
+          "responded_at_ms": 260527.69999992847
+        },
+        {
+          "word": "DAM",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 631,
+          "shown_at_ms": 260527.79999995232,
+          "responded_at_ms": 261158.79999995232
+        },
+        {
+          "word": "SHAMPOO",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 507.7999999523163,
+          "shown_at_ms": 261158.89999997616,
+          "responded_at_ms": 261666.69999992847
+        },
+        {
+          "word": "TOAD",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1055.3999999761581,
+          "shown_at_ms": 261666.69999992847,
+          "responded_at_ms": 262722.09999990463
+        },
+        {
+          "word": "HEAD",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 605.7999999523163,
+          "shown_at_ms": 262722.2999999523,
+          "responded_at_ms": 263328.09999990463
+        },
+        {
+          "word": "SKULL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 585,
+          "shown_at_ms": 263328.09999990463,
+          "responded_at_ms": 263913.09999990463
+        },
+        {
+          "word": "SYRUP",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 644.6000000238419,
+          "shown_at_ms": 263913.1999999285,
+          "responded_at_ms": 264557.7999999523
+        },
+        {
+          "word": "HOSE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 914.2999999523163,
+          "shown_at_ms": 264557.89999997616,
+          "responded_at_ms": 265472.1999999285
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 15,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 7.019485768510802,
+      "actual_duration_ms": 7021.700000047684,
+      "started_ms": 270297.7999999523,
+      "ended_ms": 277319.5,
+      "ended_iso": "2026-08-09T23:20:15.833Z",
+      "n_judgments": 10,
+      "judgments": [
+        {
+          "word": "ROOT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 738.2999999523163,
+          "shown_at_ms": 270297.7999999523,
+          "responded_at_ms": 271036.09999990463
+        },
+        {
+          "word": "CARDINAL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 567.2000000476837,
+          "shown_at_ms": 271036.1999999285,
+          "responded_at_ms": 271603.39999997616
+        },
+        {
+          "word": "CASKET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 653.3999999761581,
+          "shown_at_ms": 271603.39999997616,
+          "responded_at_ms": 272256.7999999523
+        },
+        {
+          "word": "COMPANION",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 483.10000002384186,
+          "shown_at_ms": 272256.89999997616,
+          "responded_at_ms": 272740
+        },
+        {
+          "word": "CIGARETTE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 730.7000000476837,
+          "shown_at_ms": 272740.09999990463,
+          "responded_at_ms": 273470.7999999523
+        },
+        {
+          "word": "DRUG",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 611.2999999523163,
+          "shown_at_ms": 273470.7999999523,
+          "responded_at_ms": 274082.09999990463
+        },
+        {
+          "word": "HONEY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 598.5,
+          "shown_at_ms": 274082.1999999285,
+          "responded_at_ms": 274680.6999999285
+        },
+        {
+          "word": "JELLY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 542,
+          "shown_at_ms": 274680.7999999523,
+          "responded_at_ms": 275222.7999999523
+        },
+        {
+          "word": "MAYONNAISE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 630.1000000238419,
+          "shown_at_ms": 275222.7999999523,
+          "responded_at_ms": 275852.89999997616
+        },
+        {
+          "word": "WATER",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 850.2999999523163,
+          "shown_at_ms": 275852.89999997616,
+          "responded_at_ms": 276703.1999999285
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 16,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 9.258857263359058,
+      "actual_duration_ms": 9264.300000071526,
+      "started_ms": 279563.6999999285,
+      "ended_ms": 288828,
+      "ended_iso": "2026-08-09T23:20:27.342Z",
+      "n_judgments": 12,
+      "judgments": [
+        {
+          "word": "HEN",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 824.7000000476837,
+          "shown_at_ms": 279563.7999999523,
+          "responded_at_ms": 280388.5
+        },
+        {
+          "word": "AFRICA",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 533,
+          "shown_at_ms": 280388.59999990463,
+          "responded_at_ms": 280921.59999990463
+        },
+        {
+          "word": "ARROW",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 808.9000000953674,
+          "shown_at_ms": 280921.59999990463,
+          "responded_at_ms": 281730.5
+        },
+        {
+          "word": "GLASSES",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 724.8999999761581,
+          "shown_at_ms": 281730.5,
+          "responded_at_ms": 282455.39999997616
+        },
+        {
+          "word": "MULE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 830.6000000238419,
+          "shown_at_ms": 282455.39999997616,
+          "responded_at_ms": 283286
+        },
+        {
+          "word": "MONUMENT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 706.8999999761581,
+          "shown_at_ms": 283286,
+          "responded_at_ms": 283992.89999997616
+        },
+        {
+          "word": "KNIGHT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1295.1999999284744,
+          "shown_at_ms": 283992.89999997616,
+          "responded_at_ms": 285288.09999990463
+        },
+        {
+          "word": "PIER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 585.6000000238419,
+          "shown_at_ms": 285288.09999990463,
+          "responded_at_ms": 285873.6999999285
+        },
+        {
+          "word": "WINGS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 676.7000000476837,
+          "shown_at_ms": 285873.7999999523,
+          "responded_at_ms": 286550.5
+        },
+        {
+          "word": "ANTEATER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 584.1000000238419,
+          "shown_at_ms": 286550.59999990463,
+          "responded_at_ms": 287134.6999999285
+        },
+        {
+          "word": "BEETLE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 606.7000000476837,
+          "shown_at_ms": 287134.6999999285,
+          "responded_at_ms": 287741.39999997616
+        },
+        {
+          "word": "JAW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 702.1999999284744,
+          "shown_at_ms": 287741.5,
+          "responded_at_ms": 288443.6999999285
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 17,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 6.159211355715051,
+      "actual_duration_ms": 6160,
+      "started_ms": 291000.59999990463,
+      "ended_ms": 297160.59999990463,
+      "ended_iso": "2026-08-09T23:20:35.674Z",
+      "n_judgments": 8,
+      "judgments": [
+        {
+          "word": "DEPARTMENT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 729.3000000715256,
+          "shown_at_ms": 291000.6999999285,
+          "responded_at_ms": 291730
+        },
+        {
+          "word": "VELVET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1359.3999999761581,
+          "shown_at_ms": 291730,
+          "responded_at_ms": 293089.39999997616
+        },
+        {
+          "word": "CLOWN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 555.6000000238419,
+          "shown_at_ms": 293089.39999997616,
+          "responded_at_ms": 293645
+        },
+        {
+          "word": "HAY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 546.2000000476837,
+          "shown_at_ms": 293645.09999990463,
+          "responded_at_ms": 294191.2999999523
+        },
+        {
+          "word": "MUSEUM",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 607.1000000238419,
+          "shown_at_ms": 294191.39999997616,
+          "responded_at_ms": 294798.5
+        },
+        {
+          "word": "WALL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 941.1999999284744,
+          "shown_at_ms": 294798.5,
+          "responded_at_ms": 295739.6999999285
+        },
+        {
+          "word": "LENS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 725.3999999761581,
+          "shown_at_ms": 295739.6999999285,
+          "responded_at_ms": 296465.09999990463
+        },
+        {
+          "word": "HUSBAND",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 618.6000000238419,
+          "shown_at_ms": 296465.1999999285,
+          "responded_at_ms": 297083.7999999523
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 18,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 11.166482908924852,
+      "actual_duration_ms": 11172,
+      "started_ms": 299568.6999999285,
+      "ended_ms": 310740.6999999285,
+      "ended_iso": "2026-08-09T23:20:49.254Z",
+      "n_judgments": 16,
+      "judgments": [
+        {
+          "word": "SCREW",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1440.6000000238419,
+          "shown_at_ms": 299568.7999999523,
+          "responded_at_ms": 301009.39999997616
+        },
+        {
+          "word": "BUTTERFLY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 607.7999999523163,
+          "shown_at_ms": 301009.5,
+          "responded_at_ms": 301617.2999999523
+        },
+        {
+          "word": "BULB",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 600.8999999761581,
+          "shown_at_ms": 301617.2999999523,
+          "responded_at_ms": 302218.1999999285
+        },
+        {
+          "word": "FLANNEL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 652.6000000238419,
+          "shown_at_ms": 302218.1999999285,
+          "responded_at_ms": 302870.7999999523
+        },
+        {
+          "word": "OFFICER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 579.6999999284744,
+          "shown_at_ms": 302870.89999997616,
+          "responded_at_ms": 303450.59999990463
+        },
+        {
+          "word": "HEATER",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 709.7000000476837,
+          "shown_at_ms": 303450.59999990463,
+          "responded_at_ms": 304160.2999999523
+        },
+        {
+          "word": "CROW",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 758.7999999523163,
+          "shown_at_ms": 304160.39999997616,
+          "responded_at_ms": 304919.1999999285
+        },
+        {
+          "word": "STEWARDESS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 644.7999999523163,
+          "shown_at_ms": 304919.39999997616,
+          "responded_at_ms": 305564.1999999285
+        },
+        {
+          "word": "THREAD",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 611,
+          "shown_at_ms": 305564.2999999523,
+          "responded_at_ms": 306175.2999999523
+        },
+        {
+          "word": "PIT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 705.8999999761581,
+          "shown_at_ms": 306175.2999999523,
+          "responded_at_ms": 306881.1999999285
+        },
+        {
+          "word": "BASKETBALL",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 575,
+          "shown_at_ms": 306881.1999999285,
+          "responded_at_ms": 307456.1999999285
+        },
+        {
+          "word": "SIREN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 625.8000000715256,
+          "shown_at_ms": 307456.1999999285,
+          "responded_at_ms": 308082
+        },
+        {
+          "word": "MUSHROOM",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 537.8000000715256,
+          "shown_at_ms": 308082.09999990463,
+          "responded_at_ms": 308619.89999997616
+        },
+        {
+          "word": "JEEP",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 587,
+          "shown_at_ms": 308620.09999990463,
+          "responded_at_ms": 309207.09999990463
+        },
+        {
+          "word": "ASSOCIATE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 626.5,
+          "shown_at_ms": 309207.09999990463,
+          "responded_at_ms": 309833.59999990463
+        },
+        {
+          "word": "ARROW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 829.2000000476837,
+          "shown_at_ms": 309833.6999999285,
+          "responded_at_ms": 310662.89999997616
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 19,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 10.76161735005229,
+      "actual_duration_ms": 10767.5,
+      "started_ms": 314318.1999999285,
+      "ended_ms": 325085.6999999285,
+      "ended_iso": "2026-08-09T23:21:03.599Z",
+      "n_judgments": 15,
+      "judgments": [
+        {
+          "word": "SAUSAGE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 972.8999999761581,
+          "shown_at_ms": 314318.1999999285,
+          "responded_at_ms": 315291.09999990463
+        },
+        {
+          "word": "TOY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 549.1000000238419,
+          "shown_at_ms": 315291.09999990463,
+          "responded_at_ms": 315840.1999999285
+        },
+        {
+          "word": "DRIVEWAY",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 516.6000000238419,
+          "shown_at_ms": 315840.2999999523,
+          "responded_at_ms": 316356.89999997616
+        },
+        {
+          "word": "PALACE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 587.8999999761581,
+          "shown_at_ms": 316356.89999997616,
+          "responded_at_ms": 316944.7999999523
+        },
+        {
+          "word": "MUSTARD",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 787.7999999523163,
+          "shown_at_ms": 316944.89999997616,
+          "responded_at_ms": 317732.6999999285
+        },
+        {
+          "word": "LEAF",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 588.3999999761581,
+          "shown_at_ms": 317732.6999999285,
+          "responded_at_ms": 318321.09999990463
+        },
+        {
+          "word": "ATLAS",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 609.3000000715256,
+          "shown_at_ms": 318321.1999999285,
+          "responded_at_ms": 318930.5
+        },
+        {
+          "word": "WINE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 1032.1000000238419,
+          "shown_at_ms": 318930.59999990463,
+          "responded_at_ms": 319962.6999999285
+        },
+        {
+          "word": "MOUSE",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 636.2000000476837,
+          "shown_at_ms": 319962.7999999523,
+          "responded_at_ms": 320599
+        },
+        {
+          "word": "PILLOW",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 787.7000000476837,
+          "shown_at_ms": 320599.09999990463,
+          "responded_at_ms": 321386.7999999523
+        },
+        {
+          "word": "PARSLEY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 831.6999999284744,
+          "shown_at_ms": 321386.89999997616,
+          "responded_at_ms": 322218.59999990463
+        },
+        {
+          "word": "BENCH",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 782.5,
+          "shown_at_ms": 322218.59999990463,
+          "responded_at_ms": 323001.09999990463
+        },
+        {
+          "word": "CANOE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 683,
+          "shown_at_ms": 323001.09999990463,
+          "responded_at_ms": 323684.09999990463
+        },
+        {
+          "word": "KITCHEN",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 732.6000000238419,
+          "shown_at_ms": 323684.1999999285,
+          "responded_at_ms": 324416.7999999523
+        },
+        {
+          "word": "BASSINET",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 489.2000000476837,
+          "shown_at_ms": 324416.7999999523,
+          "responded_at_ms": 324906
+        }
+      ]
+    },
+    {
+      "after_phase": "forecast",
+      "after_round": 20,
+      "task": "size",
+      "prompt": "Will this item fit in a shoebox?",
+      "planned_duration_sec": 4.456547725141645,
+      "actual_duration_ms": 4460.800000071526,
+      "started_ms": 327434.09999990463,
+      "ended_ms": 331894.89999997616,
+      "ended_iso": "2026-08-09T23:21:10.408Z",
+      "n_judgments": 5,
+      "judgments": [
+        {
+          "word": "TOY",
+          "choice": "A",
+          "choice_label": "Yes",
+          "rt_ms": 920.1000000238419,
+          "shown_at_ms": 327434.1999999285,
+          "responded_at_ms": 328354.2999999523
+        },
+        {
+          "word": "SHRUB",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 1245.7999999523163,
+          "shown_at_ms": 328354.2999999523,
+          "responded_at_ms": 329600.09999990463
+        },
+        {
+          "word": "MAILBOX",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 697.5,
+          "shown_at_ms": 329600.1999999285,
+          "responded_at_ms": 330297.6999999285
+        },
+        {
+          "word": "FIDDLE",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 674.2000000476837,
+          "shown_at_ms": 330297.7999999523,
+          "responded_at_ms": 330972
+        },
+        {
+          "word": "BOAT",
+          "choice": "B",
+          "choice_label": "No",
+          "rt_ms": 682.6999999284744,
+          "shown_at_ms": 330972,
+          "responded_at_ms": 331654.6999999285
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "session_log": [
+      {
+        "type": "page_loaded",
+        "wall_iso": "2026-08-09T23:15:38.706Z",
+        "perf_ms": 190.59999990463257,
+        "url": "https://pennmem.github.io/Overreaction/?debug=1"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:41.032Z",
+        "perf_ms": 2515.6999999284744,
+        "screen": "screen-consent",
+        "duration_ms": 2325.100000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:41.032Z",
+        "perf_ms": 2515.7999999523163,
+        "screen": "screen-instructions"
+      },
+      {
+        "type": "task_started",
+        "wall_iso": "2026-08-09T23:15:42.137Z",
+        "perf_ms": 3620.7999999523163
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:42.137Z",
+        "perf_ms": 3621,
+        "screen": "screen-instructions",
+        "duration_ms": 1105.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:42.137Z",
+        "perf_ms": 3621.1999999284744,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:43.393Z",
+        "perf_ms": 4877.299999952316,
+        "screen": "screen-observe",
+        "duration_ms": 1256.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:43.393Z",
+        "perf_ms": 4877.399999976158,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:50.476Z",
+        "perf_ms": 11960.799999952316,
+        "screen": "screen-distractor",
+        "duration_ms": 7083.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:50.476Z",
+        "perf_ms": 11960.899999976158,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:51.268Z",
+        "perf_ms": 12752.099999904633,
+        "screen": "screen-observe",
+        "duration_ms": 791.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:51.268Z",
+        "perf_ms": 12752.199999928474,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:55.497Z",
+        "perf_ms": 16981.199999928474,
+        "screen": "screen-distractor",
+        "duration_ms": 4229.199999928474
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:55.497Z",
+        "perf_ms": 16981.199999928474,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:15:56.442Z",
+        "perf_ms": 17926.5,
+        "screen": "screen-observe",
+        "duration_ms": 945.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:15:56.442Z",
+        "perf_ms": 17926.599999904633,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:04.864Z",
+        "perf_ms": 26348.299999952316,
+        "screen": "screen-distractor",
+        "duration_ms": 8421.699999928474
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:04.864Z",
+        "perf_ms": 26348.399999976158,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:05.596Z",
+        "perf_ms": 27080.399999976158,
+        "screen": "screen-observe",
+        "duration_ms": 732.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:05.596Z",
+        "perf_ms": 27080.599999904633,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:11.538Z",
+        "perf_ms": 33022.89999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 5942.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:11.538Z",
+        "perf_ms": 33023,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:12.197Z",
+        "perf_ms": 33681.299999952316,
+        "screen": "screen-observe",
+        "duration_ms": 658.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:12.197Z",
+        "perf_ms": 33681.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:16.381Z",
+        "perf_ms": 37865.799999952316,
+        "screen": "screen-distractor",
+        "duration_ms": 4184.399999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:16.381Z",
+        "perf_ms": 37865.799999952316,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:17.114Z",
+        "perf_ms": 38599.09999990463,
+        "screen": "screen-observe",
+        "duration_ms": 733.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:17.114Z",
+        "perf_ms": 38599.199999928474,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:20.988Z",
+        "perf_ms": 42473,
+        "screen": "screen-distractor",
+        "duration_ms": 3873.9000000953674
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:20.988Z",
+        "perf_ms": 42473,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:21.799Z",
+        "perf_ms": 43283.89999997616,
+        "screen": "screen-observe",
+        "duration_ms": 810.8999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:21.799Z",
+        "perf_ms": 43284,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:25.500Z",
+        "perf_ms": 46985,
+        "screen": "screen-distractor",
+        "duration_ms": 3701.100000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:25.500Z",
+        "perf_ms": 46985,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:26.093Z",
+        "perf_ms": 47578.39999997616,
+        "screen": "screen-observe",
+        "duration_ms": 593.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:26.094Z",
+        "perf_ms": 47578.5,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:35.418Z",
+        "perf_ms": 56902.5,
+        "screen": "screen-distractor",
+        "duration_ms": 9324.100000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:35.418Z",
+        "perf_ms": 56902.59999990463,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:36.011Z",
+        "perf_ms": 57495.799999952316,
+        "screen": "screen-observe",
+        "duration_ms": 593.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:36.011Z",
+        "perf_ms": 57495.89999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:43.676Z",
+        "perf_ms": 65160.699999928474,
+        "screen": "screen-distractor",
+        "duration_ms": 7664.899999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:43.676Z",
+        "perf_ms": 65160.699999928474,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:44.486Z",
+        "perf_ms": 65971.39999997616,
+        "screen": "screen-observe",
+        "duration_ms": 810.7000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:44.487Z",
+        "perf_ms": 65971.59999990463,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:47.976Z",
+        "perf_ms": 69460.5,
+        "screen": "screen-distractor",
+        "duration_ms": 3489.100000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:47.976Z",
+        "perf_ms": 69460.59999990463,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:48.684Z",
+        "perf_ms": 70168.59999990463,
+        "screen": "screen-observe",
+        "duration_ms": 708.0999999046326
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:48.684Z",
+        "perf_ms": 70168.69999992847,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:53.935Z",
+        "perf_ms": 75419.89999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 5251.300000071526
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:53.935Z",
+        "perf_ms": 75419.89999997616,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:16:54.480Z",
+        "perf_ms": 75965.29999995232,
+        "screen": "screen-observe",
+        "duration_ms": 545.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:16:54.480Z",
+        "perf_ms": 75965.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:01.934Z",
+        "perf_ms": 83419.09999990463,
+        "screen": "screen-distractor",
+        "duration_ms": 7453.799999952316
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:01.934Z",
+        "perf_ms": 83419.19999992847,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:02.540Z",
+        "perf_ms": 84025.29999995232,
+        "screen": "screen-observe",
+        "duration_ms": 606.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:02.540Z",
+        "perf_ms": 84025.5,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:11.176Z",
+        "perf_ms": 92660.69999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 8635.399999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:11.176Z",
+        "perf_ms": 92660.69999992847,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:11.743Z",
+        "perf_ms": 93228.29999995232,
+        "screen": "screen-observe",
+        "duration_ms": 567.6000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:11.743Z",
+        "perf_ms": 93228.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:15.384Z",
+        "perf_ms": 96869.09999990463,
+        "screen": "screen-distractor",
+        "duration_ms": 3640.7999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:15.384Z",
+        "perf_ms": 96869.19999992847,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:16.026Z",
+        "perf_ms": 97511.09999990463,
+        "screen": "screen-observe",
+        "duration_ms": 642
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:16.026Z",
+        "perf_ms": 97511.29999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:27.117Z",
+        "perf_ms": 108602.29999995232,
+        "screen": "screen-distractor",
+        "duration_ms": 11091.200000047684
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:27.117Z",
+        "perf_ms": 108602.39999997616,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:27.747Z",
+        "perf_ms": 109232.59999990463,
+        "screen": "screen-observe",
+        "duration_ms": 630.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:27.747Z",
+        "perf_ms": 109232.69999992847,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:30.942Z",
+        "perf_ms": 112427.5,
+        "screen": "screen-distractor",
+        "duration_ms": 3194.9000000953674
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:30.942Z",
+        "perf_ms": 112427.5,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:31.591Z",
+        "perf_ms": 113076.19999992847,
+        "screen": "screen-observe",
+        "duration_ms": 648.6999999284744
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:31.591Z",
+        "perf_ms": 113076.29999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:33.892Z",
+        "perf_ms": 115377.5,
+        "screen": "screen-distractor",
+        "duration_ms": 2301.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:33.892Z",
+        "perf_ms": 115377.59999990463,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:34.500Z",
+        "perf_ms": 115985.19999992847,
+        "screen": "screen-observe",
+        "duration_ms": 607.6999999284744
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:34.500Z",
+        "perf_ms": 115985.19999992847,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:40.492Z",
+        "perf_ms": 121977.69999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 5992.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:40.492Z",
+        "perf_ms": 121977.79999995232,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:41.153Z",
+        "perf_ms": 122638.79999995232,
+        "screen": "screen-observe",
+        "duration_ms": 661.1000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:41.154Z",
+        "perf_ms": 122638.89999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:48.376Z",
+        "perf_ms": 129861.69999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 7222.899999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:48.376Z",
+        "perf_ms": 129861.89999997616,
+        "screen": "screen-observe"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:49.045Z",
+        "perf_ms": 130530.09999990463,
+        "screen": "screen-observe",
+        "duration_ms": 668.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:49.045Z",
+        "perf_ms": 130530.29999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:17:59.701Z",
+        "perf_ms": 141186.39999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 10656.300000071526
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:17:59.701Z",
+        "perf_ms": 141186.39999997616,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:00.323Z",
+        "perf_ms": 141808,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 621.6000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:00.323Z",
+        "perf_ms": 141808.09999990463,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:01.878Z",
+        "perf_ms": 143363.69999992847,
+        "screen": "screen-forecast",
+        "duration_ms": 1555.5999999046326
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:01.878Z",
+        "perf_ms": 143363.79999995232,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:03.027Z",
+        "perf_ms": 144512.79999995232,
+        "screen": "screen-feedback",
+        "duration_ms": 1149.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:03.028Z",
+        "perf_ms": 144512.89999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:08.034Z",
+        "perf_ms": 149519.19999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 5006.399999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:08.034Z",
+        "perf_ms": 149519.39999997616,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:08.546Z",
+        "perf_ms": 150031.79999995232,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 512.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:08.546Z",
+        "perf_ms": 150031.89999997616,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:09.946Z",
+        "perf_ms": 151431.29999995232,
+        "screen": "screen-forecast",
+        "duration_ms": 1399.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:09.946Z",
+        "perf_ms": 151431.39999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:10.752Z",
+        "perf_ms": 152237.39999997616,
+        "screen": "screen-feedback",
+        "duration_ms": 806.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:10.752Z",
+        "perf_ms": 152237.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:14.609Z",
+        "perf_ms": 156094,
+        "screen": "screen-distractor",
+        "duration_ms": 3856.600000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:14.609Z",
+        "perf_ms": 156094,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:15.207Z",
+        "perf_ms": 156692.09999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 598
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:15.207Z",
+        "perf_ms": 156692.19999992847,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:16.053Z",
+        "perf_ms": 157538.29999995232,
+        "screen": "screen-forecast",
+        "duration_ms": 846.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:16.053Z",
+        "perf_ms": 157538.39999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:16.665Z",
+        "perf_ms": 158150.59999990463,
+        "screen": "screen-feedback",
+        "duration_ms": 612.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:16.665Z",
+        "perf_ms": 158150.69999992847,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:20.850Z",
+        "perf_ms": 162336,
+        "screen": "screen-distractor",
+        "duration_ms": 4185.400000095367
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:20.851Z",
+        "perf_ms": 162336.09999990463,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:21.543Z",
+        "perf_ms": 163028.5,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 692.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:21.543Z",
+        "perf_ms": 163028.5,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:22.972Z",
+        "perf_ms": 164457.19999992847,
+        "screen": "screen-forecast",
+        "duration_ms": 1428.7999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:22.972Z",
+        "perf_ms": 164457.39999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:23.711Z",
+        "perf_ms": 165197,
+        "screen": "screen-feedback",
+        "duration_ms": 739.8000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:23.711Z",
+        "perf_ms": 165197,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:34.817Z",
+        "perf_ms": 176302.69999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 11105.699999928474
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:34.817Z",
+        "perf_ms": 176302.79999995232,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:35.397Z",
+        "perf_ms": 176882.79999995232,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 580
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:35.397Z",
+        "perf_ms": 176882.79999995232,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:36.426Z",
+        "perf_ms": 177912,
+        "screen": "screen-forecast",
+        "duration_ms": 1029.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:36.426Z",
+        "perf_ms": 177912,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:37.168Z",
+        "perf_ms": 178653.69999992847,
+        "screen": "screen-feedback",
+        "duration_ms": 741.6999999284744
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:37.168Z",
+        "perf_ms": 178653.79999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:42.734Z",
+        "perf_ms": 184219.39999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 5565.700000047684
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:42.734Z",
+        "perf_ms": 184219.5,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:43.269Z",
+        "perf_ms": 184754.79999995232,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 535.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:43.269Z",
+        "perf_ms": 184755,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:44.144Z",
+        "perf_ms": 185629.59999990463,
+        "screen": "screen-forecast",
+        "duration_ms": 874.7999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:44.144Z",
+        "perf_ms": 185629.69999992847,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:44.799Z",
+        "perf_ms": 186284.79999995232,
+        "screen": "screen-feedback",
+        "duration_ms": 655.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:44.799Z",
+        "perf_ms": 186285,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:51.900Z",
+        "perf_ms": 193385.89999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 7101.100000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:51.900Z",
+        "perf_ms": 193386,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:52.461Z",
+        "perf_ms": 193946.19999992847,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 560.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:52.461Z",
+        "perf_ms": 193946.29999995232,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:53.495Z",
+        "perf_ms": 194981.09999990463,
+        "screen": "screen-forecast",
+        "duration_ms": 1034.8000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:53.495Z",
+        "perf_ms": 194981.19999992847,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:18:53.967Z",
+        "perf_ms": 195452.89999997616,
+        "screen": "screen-feedback",
+        "duration_ms": 471.89999997615814
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:18:53.967Z",
+        "perf_ms": 195452.89999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:01.913Z",
+        "perf_ms": 203398.39999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 7945.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:01.913Z",
+        "perf_ms": 203398.5,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:02.425Z",
+        "perf_ms": 203911.09999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 512.6000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:02.425Z",
+        "perf_ms": 203911.19999992847,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:03.258Z",
+        "perf_ms": 204743.69999992847,
+        "screen": "screen-forecast",
+        "duration_ms": 832.6999999284744
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:03.258Z",
+        "perf_ms": 204743.79999995232,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:03.813Z",
+        "perf_ms": 205298.69999992847,
+        "screen": "screen-feedback",
+        "duration_ms": 555
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:03.813Z",
+        "perf_ms": 205298.79999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:12.455Z",
+        "perf_ms": 213941.19999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 8642.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:12.455Z",
+        "perf_ms": 213941.19999992847,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:13.144Z",
+        "perf_ms": 214629.39999997616,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 688.1000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:13.144Z",
+        "perf_ms": 214629.39999997616,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:14.424Z",
+        "perf_ms": 215909.79999995232,
+        "screen": "screen-forecast",
+        "duration_ms": 1280.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:14.424Z",
+        "perf_ms": 215909.89999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:15.090Z",
+        "perf_ms": 216576.19999992847,
+        "screen": "screen-feedback",
+        "duration_ms": 666.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:15.091Z",
+        "perf_ms": 216576.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:17.830Z",
+        "perf_ms": 219315.29999995232,
+        "screen": "screen-distractor",
+        "duration_ms": 2739.100000023842
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:17.830Z",
+        "perf_ms": 219315.39999997616,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:18.517Z",
+        "perf_ms": 220003.19999992847,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 687.8999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:18.517Z",
+        "perf_ms": 220003.19999992847,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:19.364Z",
+        "perf_ms": 220850.19999992847,
+        "screen": "screen-forecast",
+        "duration_ms": 847
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:19.364Z",
+        "perf_ms": 220850.29999995232,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:19.851Z",
+        "perf_ms": 221337.09999990463,
+        "screen": "screen-feedback",
+        "duration_ms": 486.89999997615814
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:19.851Z",
+        "perf_ms": 221337.29999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:29.554Z",
+        "perf_ms": 231040.29999995232,
+        "screen": "screen-distractor",
+        "duration_ms": 9703.200000047684
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:29.555Z",
+        "perf_ms": 231040.39999997616,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:30.136Z",
+        "perf_ms": 231622.29999995232,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 582
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:30.136Z",
+        "perf_ms": 231622.29999995232,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:31.077Z",
+        "perf_ms": 232562.89999997616,
+        "screen": "screen-forecast",
+        "duration_ms": 940.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:31.077Z",
+        "perf_ms": 232562.89999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:31.593Z",
+        "perf_ms": 233079,
+        "screen": "screen-feedback",
+        "duration_ms": 516.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:31.593Z",
+        "perf_ms": 233079.09999990463,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:35.529Z",
+        "perf_ms": 237015.29999995232,
+        "screen": "screen-distractor",
+        "duration_ms": 3936.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:35.530Z",
+        "perf_ms": 237015.39999997616,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:36.331Z",
+        "perf_ms": 237816.59999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 801.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:36.331Z",
+        "perf_ms": 237816.69999992847,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:37.180Z",
+        "perf_ms": 238666.09999990463,
+        "screen": "screen-forecast",
+        "duration_ms": 849.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:37.180Z",
+        "perf_ms": 238666.19999992847,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:37.792Z",
+        "perf_ms": 239278.09999990463,
+        "screen": "screen-feedback",
+        "duration_ms": 611.9000000953674
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:37.792Z",
+        "perf_ms": 239278.09999990463,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:41.605Z",
+        "perf_ms": 243090.89999997616,
+        "screen": "screen-distractor",
+        "duration_ms": 3812.899999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:41.605Z",
+        "perf_ms": 243091,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:42.237Z",
+        "perf_ms": 243723.09999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 632.1999999284744
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:42.237Z",
+        "perf_ms": 243723.19999992847,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:43.381Z",
+        "perf_ms": 244867,
+        "screen": "screen-forecast",
+        "duration_ms": 1143.8000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:43.381Z",
+        "perf_ms": 244867,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:44.067Z",
+        "perf_ms": 245553.29999995232,
+        "screen": "screen-feedback",
+        "duration_ms": 686.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:44.067Z",
+        "perf_ms": 245553.29999995232,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:50.139Z",
+        "perf_ms": 251624.69999992847,
+        "screen": "screen-distractor",
+        "duration_ms": 6071.399999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:50.139Z",
+        "perf_ms": 251624.79999995232,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:50.893Z",
+        "perf_ms": 252379.09999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 754.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:50.893Z",
+        "perf_ms": 252379.19999992847,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:51.797Z",
+        "perf_ms": 253283,
+        "screen": "screen-forecast",
+        "duration_ms": 903.9000000953674
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:51.797Z",
+        "perf_ms": 253283.19999992847,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:19:52.315Z",
+        "perf_ms": 253801.29999995232,
+        "screen": "screen-feedback",
+        "duration_ms": 518.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:19:52.315Z",
+        "perf_ms": 253801.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:04.021Z",
+        "perf_ms": 265507,
+        "screen": "screen-distractor",
+        "duration_ms": 11705.700000047684
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:04.021Z",
+        "perf_ms": 265507,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:04.659Z",
+        "perf_ms": 266145.1999999285,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 638.0999999046326
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:04.659Z",
+        "perf_ms": 266145.2999999523,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:05.533Z",
+        "perf_ms": 267018.7999999523,
+        "screen": "screen-forecast",
+        "duration_ms": 873.6000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:05.533Z",
+        "perf_ms": 267018.89999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:08.811Z",
+        "perf_ms": 270297,
+        "screen": "screen-feedback",
+        "duration_ms": 3278.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:08.811Z",
+        "perf_ms": 270297,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:15.833Z",
+        "perf_ms": 277319.59999990463,
+        "screen": "screen-distractor",
+        "duration_ms": 7022.599999904633
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:15.834Z",
+        "perf_ms": 277319.59999990463,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:16.488Z",
+        "perf_ms": 277973.89999997616,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 654.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:16.488Z",
+        "perf_ms": 277974,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:17.508Z",
+        "perf_ms": 278994.39999997616,
+        "screen": "screen-forecast",
+        "duration_ms": 1020.5
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:17.508Z",
+        "perf_ms": 278994.5,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:18.077Z",
+        "perf_ms": 279562.6999999285,
+        "screen": "screen-feedback",
+        "duration_ms": 568.2999999523163
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:18.077Z",
+        "perf_ms": 279562.7999999523,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:27.342Z",
+        "perf_ms": 288828.09999990463,
+        "screen": "screen-distractor",
+        "duration_ms": 9265.300000071526
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:27.342Z",
+        "perf_ms": 288828.09999990463,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:28.238Z",
+        "perf_ms": 289724.09999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 896.0999999046326
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:28.238Z",
+        "perf_ms": 289724.1999999285,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:28.863Z",
+        "perf_ms": 290349.39999997616,
+        "screen": "screen-forecast",
+        "duration_ms": 625.3000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:28.863Z",
+        "perf_ms": 290349.5,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:29.514Z",
+        "perf_ms": 290999.7999999523,
+        "screen": "screen-feedback",
+        "duration_ms": 650.3999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:29.514Z",
+        "perf_ms": 290999.89999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:35.674Z",
+        "perf_ms": 297160.59999990463,
+        "screen": "screen-distractor",
+        "duration_ms": 6160.799999952316
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:35.674Z",
+        "perf_ms": 297160.59999990463,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:36.442Z",
+        "perf_ms": 297927.89999997616,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 767.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:36.442Z",
+        "perf_ms": 297928,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:37.319Z",
+        "perf_ms": 298805,
+        "screen": "screen-forecast",
+        "duration_ms": 877.1000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:37.319Z",
+        "perf_ms": 298805,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:38.082Z",
+        "perf_ms": 299568,
+        "screen": "screen-feedback",
+        "duration_ms": 763
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:38.082Z",
+        "perf_ms": 299568.09999990463,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:49.254Z",
+        "perf_ms": 310740.6999999285,
+        "screen": "screen-distractor",
+        "duration_ms": 11172.799999952316
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:49.255Z",
+        "perf_ms": 310740.89999997616,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:49.926Z",
+        "perf_ms": 311412.59999990463,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 671.8999999761581
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:49.926Z",
+        "perf_ms": 311412.6999999285,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:50.763Z",
+        "perf_ms": 312249.39999997616,
+        "screen": "screen-forecast",
+        "duration_ms": 836.8000000715256
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:50.763Z",
+        "perf_ms": 312249.5,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:20:52.831Z",
+        "perf_ms": 314317.39999997616,
+        "screen": "screen-feedback",
+        "duration_ms": 2067.899999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:20:52.831Z",
+        "perf_ms": 314317.39999997616,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:21:03.599Z",
+        "perf_ms": 325085.6999999285,
+        "screen": "screen-distractor",
+        "duration_ms": 10768.399999976158
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:21:03.600Z",
+        "perf_ms": 325086,
+        "screen": "screen-forecast-intro"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:21:04.478Z",
+        "perf_ms": 325964.6999999285,
+        "screen": "screen-forecast-intro",
+        "duration_ms": 879
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:21:04.478Z",
+        "perf_ms": 325964.7999999523,
+        "screen": "screen-forecast"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:21:05.209Z",
+        "perf_ms": 326695.7999999523,
+        "screen": "screen-forecast",
+        "duration_ms": 731.1000000238419
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:21:05.210Z",
+        "perf_ms": 326695.89999997616,
+        "screen": "screen-feedback"
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:21:05.947Z",
+        "perf_ms": 327433.09999990463,
+        "screen": "screen-feedback",
+        "duration_ms": 737.2000000476837
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:21:05.947Z",
+        "perf_ms": 327433.1999999285,
+        "screen": "screen-distractor"
+      },
+      {
+        "type": "task_finished",
+        "wall_iso": "2026-08-09T23:21:10.409Z",
+        "perf_ms": 331895.2999999523,
+        "total_score": 491.66666666666674
+      },
+      {
+        "type": "screen_exit",
+        "wall_iso": "2026-08-09T23:21:10.409Z",
+        "perf_ms": 331895.2999999523,
+        "screen": "screen-distractor",
+        "duration_ms": 4462.299999952316
+      },
+      {
+        "type": "screen_enter",
+        "wall_iso": "2026-08-09T23:21:10.409Z",
+        "perf_ms": 331895.5,
+        "screen": "screen-done"
+      }
+    ],
+    "screen_timings": [
+      {
+        "screen": "screen-consent",
+        "entered_perf_ms": 190.59999990463257,
+        "exited_perf_ms": 2515.6999999284744,
+        "duration_ms": 2325.100000023842,
+        "entered_wall_iso": "2026-08-09T23:15:38.706Z"
+      },
+      {
+        "screen": "screen-instructions",
+        "entered_perf_ms": 2515.6999999284744,
+        "exited_perf_ms": 3621,
+        "duration_ms": 1105.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:15:41.032Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 3621,
+        "exited_perf_ms": 4877.299999952316,
+        "duration_ms": 1256.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:15:42.137Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 4877.299999952316,
+        "exited_perf_ms": 11960.799999952316,
+        "duration_ms": 7083.5,
+        "entered_wall_iso": "2026-08-09T23:15:43.393Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 11960.799999952316,
+        "exited_perf_ms": 12752,
+        "duration_ms": 791.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:15:50.476Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 12752,
+        "exited_perf_ms": 16981.199999928474,
+        "duration_ms": 4229.199999928474,
+        "entered_wall_iso": "2026-08-09T23:15:51.268Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 16981.199999928474,
+        "exited_perf_ms": 17926.5,
+        "duration_ms": 945.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:15:55.497Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 17926.5,
+        "exited_perf_ms": 26348.199999928474,
+        "duration_ms": 8421.699999928474,
+        "entered_wall_iso": "2026-08-09T23:15:56.442Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 26348.199999928474,
+        "exited_perf_ms": 27080.399999976158,
+        "duration_ms": 732.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:16:04.863Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 27080.399999976158,
+        "exited_perf_ms": 33022.89999997616,
+        "duration_ms": 5942.5,
+        "entered_wall_iso": "2026-08-09T23:16:05.596Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 33022.89999997616,
+        "exited_perf_ms": 33681.299999952316,
+        "duration_ms": 658.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:16:11.538Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 33681.299999952316,
+        "exited_perf_ms": 37865.699999928474,
+        "duration_ms": 4184.399999976158,
+        "entered_wall_iso": "2026-08-09T23:16:12.197Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 37865.699999928474,
+        "exited_perf_ms": 38599.09999990463,
+        "duration_ms": 733.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:16:16.381Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 38599.09999990463,
+        "exited_perf_ms": 42473,
+        "duration_ms": 3873.9000000953674,
+        "entered_wall_iso": "2026-08-09T23:16:17.114Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 42473,
+        "exited_perf_ms": 43283.89999997616,
+        "duration_ms": 810.8999999761581,
+        "entered_wall_iso": "2026-08-09T23:16:20.988Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 43283.89999997616,
+        "exited_perf_ms": 46985,
+        "duration_ms": 3701.100000023842,
+        "entered_wall_iso": "2026-08-09T23:16:21.799Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 46985,
+        "exited_perf_ms": 47578.39999997616,
+        "duration_ms": 593.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:16:25.500Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 47578.39999997616,
+        "exited_perf_ms": 56902.5,
+        "duration_ms": 9324.100000023842,
+        "entered_wall_iso": "2026-08-09T23:16:26.093Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 56902.5,
+        "exited_perf_ms": 57495.799999952316,
+        "duration_ms": 593.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:16:35.418Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 57495.799999952316,
+        "exited_perf_ms": 65160.699999928474,
+        "duration_ms": 7664.899999976158,
+        "entered_wall_iso": "2026-08-09T23:16:36.011Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 65160.699999928474,
+        "exited_perf_ms": 65971.39999997616,
+        "duration_ms": 810.7000000476837,
+        "entered_wall_iso": "2026-08-09T23:16:43.676Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 65971.39999997616,
+        "exited_perf_ms": 69460.5,
+        "duration_ms": 3489.100000023842,
+        "entered_wall_iso": "2026-08-09T23:16:44.486Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 69460.5,
+        "exited_perf_ms": 70168.59999990463,
+        "duration_ms": 708.0999999046326,
+        "entered_wall_iso": "2026-08-09T23:16:47.975Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 70168.59999990463,
+        "exited_perf_ms": 75419.89999997616,
+        "duration_ms": 5251.300000071526,
+        "entered_wall_iso": "2026-08-09T23:16:48.684Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 75419.89999997616,
+        "exited_perf_ms": 75965.29999995232,
+        "duration_ms": 545.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:16:53.935Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 75965.29999995232,
+        "exited_perf_ms": 83419.09999990463,
+        "duration_ms": 7453.799999952316,
+        "entered_wall_iso": "2026-08-09T23:16:54.480Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 83419.09999990463,
+        "exited_perf_ms": 84025.29999995232,
+        "duration_ms": 606.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:17:01.934Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 84025.29999995232,
+        "exited_perf_ms": 92660.69999992847,
+        "duration_ms": 8635.399999976158,
+        "entered_wall_iso": "2026-08-09T23:17:02.540Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 92660.69999992847,
+        "exited_perf_ms": 93228.29999995232,
+        "duration_ms": 567.6000000238419,
+        "entered_wall_iso": "2026-08-09T23:17:11.175Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 93228.29999995232,
+        "exited_perf_ms": 96869.09999990463,
+        "duration_ms": 3640.7999999523163,
+        "entered_wall_iso": "2026-08-09T23:17:11.743Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 96869.09999990463,
+        "exited_perf_ms": 97511.09999990463,
+        "duration_ms": 642,
+        "entered_wall_iso": "2026-08-09T23:17:15.384Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 97511.09999990463,
+        "exited_perf_ms": 108602.29999995232,
+        "duration_ms": 11091.200000047684,
+        "entered_wall_iso": "2026-08-09T23:17:16.026Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 108602.29999995232,
+        "exited_perf_ms": 109232.59999990463,
+        "duration_ms": 630.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:17:27.117Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 109232.59999990463,
+        "exited_perf_ms": 112427.5,
+        "duration_ms": 3194.9000000953674,
+        "entered_wall_iso": "2026-08-09T23:17:27.747Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 112427.5,
+        "exited_perf_ms": 113076.19999992847,
+        "duration_ms": 648.6999999284744,
+        "entered_wall_iso": "2026-08-09T23:17:30.942Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 113076.19999992847,
+        "exited_perf_ms": 115377.5,
+        "duration_ms": 2301.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:17:31.591Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 115377.5,
+        "exited_perf_ms": 115985.19999992847,
+        "duration_ms": 607.6999999284744,
+        "entered_wall_iso": "2026-08-09T23:17:33.892Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 115985.19999992847,
+        "exited_perf_ms": 121977.69999992847,
+        "duration_ms": 5992.5,
+        "entered_wall_iso": "2026-08-09T23:17:34.500Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 121977.69999992847,
+        "exited_perf_ms": 122638.79999995232,
+        "duration_ms": 661.1000000238419,
+        "entered_wall_iso": "2026-08-09T23:17:40.492Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 122638.79999995232,
+        "exited_perf_ms": 129861.69999992847,
+        "duration_ms": 7222.899999976158,
+        "entered_wall_iso": "2026-08-09T23:17:41.153Z"
+      },
+      {
+        "screen": "screen-observe",
+        "entered_perf_ms": 129861.69999992847,
+        "exited_perf_ms": 130530.09999990463,
+        "duration_ms": 668.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:17:48.376Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 130530.09999990463,
+        "exited_perf_ms": 141186.39999997616,
+        "duration_ms": 10656.300000071526,
+        "entered_wall_iso": "2026-08-09T23:17:49.045Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 141186.39999997616,
+        "exited_perf_ms": 141808,
+        "duration_ms": 621.6000000238419,
+        "entered_wall_iso": "2026-08-09T23:17:59.701Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 141808,
+        "exited_perf_ms": 143363.59999990463,
+        "duration_ms": 1555.5999999046326,
+        "entered_wall_iso": "2026-08-09T23:18:00.323Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 143363.59999990463,
+        "exited_perf_ms": 144512.79999995232,
+        "duration_ms": 1149.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:18:01.878Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 144512.79999995232,
+        "exited_perf_ms": 149519.19999992847,
+        "duration_ms": 5006.399999976158,
+        "entered_wall_iso": "2026-08-09T23:18:03.027Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 149519.19999992847,
+        "exited_perf_ms": 150031.69999992847,
+        "duration_ms": 512.5,
+        "entered_wall_iso": "2026-08-09T23:18:08.034Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 150031.69999992847,
+        "exited_perf_ms": 151431.19999992847,
+        "duration_ms": 1399.5,
+        "entered_wall_iso": "2026-08-09T23:18:08.546Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 151431.19999992847,
+        "exited_perf_ms": 152237.39999997616,
+        "duration_ms": 806.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:18:09.946Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 152237.39999997616,
+        "exited_perf_ms": 156094,
+        "duration_ms": 3856.600000023842,
+        "entered_wall_iso": "2026-08-09T23:18:10.752Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 156094,
+        "exited_perf_ms": 156692,
+        "duration_ms": 598,
+        "entered_wall_iso": "2026-08-09T23:18:14.609Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 156692,
+        "exited_perf_ms": 157538.29999995232,
+        "duration_ms": 846.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:18:15.207Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 157538.29999995232,
+        "exited_perf_ms": 158150.59999990463,
+        "duration_ms": 612.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:18:16.053Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 158150.59999990463,
+        "exited_perf_ms": 162336,
+        "duration_ms": 4185.400000095367,
+        "entered_wall_iso": "2026-08-09T23:18:16.665Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 162336,
+        "exited_perf_ms": 163028.39999997616,
+        "duration_ms": 692.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:18:20.850Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 163028.39999997616,
+        "exited_perf_ms": 164457.19999992847,
+        "duration_ms": 1428.7999999523163,
+        "entered_wall_iso": "2026-08-09T23:18:21.543Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 164457.19999992847,
+        "exited_perf_ms": 165197,
+        "duration_ms": 739.8000000715256,
+        "entered_wall_iso": "2026-08-09T23:18:22.972Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 165197,
+        "exited_perf_ms": 176302.69999992847,
+        "duration_ms": 11105.699999928474,
+        "entered_wall_iso": "2026-08-09T23:18:23.711Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 176302.69999992847,
+        "exited_perf_ms": 176882.69999992847,
+        "duration_ms": 580,
+        "entered_wall_iso": "2026-08-09T23:18:34.817Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 176882.69999992847,
+        "exited_perf_ms": 177912,
+        "duration_ms": 1029.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:18:35.397Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 177912,
+        "exited_perf_ms": 178653.69999992847,
+        "duration_ms": 741.6999999284744,
+        "entered_wall_iso": "2026-08-09T23:18:36.426Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 178653.69999992847,
+        "exited_perf_ms": 184219.39999997616,
+        "duration_ms": 5565.700000047684,
+        "entered_wall_iso": "2026-08-09T23:18:37.168Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 184219.39999997616,
+        "exited_perf_ms": 184754.79999995232,
+        "duration_ms": 535.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:18:42.734Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 184754.79999995232,
+        "exited_perf_ms": 185629.59999990463,
+        "duration_ms": 874.7999999523163,
+        "entered_wall_iso": "2026-08-09T23:18:43.269Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 185629.59999990463,
+        "exited_perf_ms": 186284.79999995232,
+        "duration_ms": 655.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:18:44.144Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 186284.79999995232,
+        "exited_perf_ms": 193385.89999997616,
+        "duration_ms": 7101.100000023842,
+        "entered_wall_iso": "2026-08-09T23:18:44.799Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 193385.89999997616,
+        "exited_perf_ms": 193946.19999992847,
+        "duration_ms": 560.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:18:51.900Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 193946.19999992847,
+        "exited_perf_ms": 194981,
+        "duration_ms": 1034.8000000715256,
+        "entered_wall_iso": "2026-08-09T23:18:52.461Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 194981,
+        "exited_perf_ms": 195452.89999997616,
+        "duration_ms": 471.89999997615814,
+        "entered_wall_iso": "2026-08-09T23:18:53.495Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 195452.89999997616,
+        "exited_perf_ms": 203398.39999997616,
+        "duration_ms": 7945.5,
+        "entered_wall_iso": "2026-08-09T23:18:53.967Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 203398.39999997616,
+        "exited_perf_ms": 203911,
+        "duration_ms": 512.6000000238419,
+        "entered_wall_iso": "2026-08-09T23:19:01.913Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 203911,
+        "exited_perf_ms": 204743.69999992847,
+        "duration_ms": 832.6999999284744,
+        "entered_wall_iso": "2026-08-09T23:19:02.425Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 204743.69999992847,
+        "exited_perf_ms": 205298.69999992847,
+        "duration_ms": 555,
+        "entered_wall_iso": "2026-08-09T23:19:03.258Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 205298.69999992847,
+        "exited_perf_ms": 213941.19999992847,
+        "duration_ms": 8642.5,
+        "entered_wall_iso": "2026-08-09T23:19:03.813Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 213941.19999992847,
+        "exited_perf_ms": 214629.29999995232,
+        "duration_ms": 688.1000000238419,
+        "entered_wall_iso": "2026-08-09T23:19:12.455Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 214629.29999995232,
+        "exited_perf_ms": 215909.69999992847,
+        "duration_ms": 1280.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:19:13.144Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 215909.69999992847,
+        "exited_perf_ms": 216576.19999992847,
+        "duration_ms": 666.5,
+        "entered_wall_iso": "2026-08-09T23:19:14.424Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 216576.19999992847,
+        "exited_perf_ms": 219315.29999995232,
+        "duration_ms": 2739.100000023842,
+        "entered_wall_iso": "2026-08-09T23:19:15.090Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 219315.29999995232,
+        "exited_perf_ms": 220003.19999992847,
+        "duration_ms": 687.8999999761581,
+        "entered_wall_iso": "2026-08-09T23:19:17.830Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 220003.19999992847,
+        "exited_perf_ms": 220850.19999992847,
+        "duration_ms": 847,
+        "entered_wall_iso": "2026-08-09T23:19:18.517Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 220850.19999992847,
+        "exited_perf_ms": 221337.09999990463,
+        "duration_ms": 486.89999997615814,
+        "entered_wall_iso": "2026-08-09T23:19:19.364Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 221337.09999990463,
+        "exited_perf_ms": 231040.29999995232,
+        "duration_ms": 9703.200000047684,
+        "entered_wall_iso": "2026-08-09T23:19:19.851Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 231040.29999995232,
+        "exited_perf_ms": 231622.29999995232,
+        "duration_ms": 582,
+        "entered_wall_iso": "2026-08-09T23:19:29.554Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 231622.29999995232,
+        "exited_perf_ms": 232562.79999995232,
+        "duration_ms": 940.5,
+        "entered_wall_iso": "2026-08-09T23:19:30.136Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 232562.79999995232,
+        "exited_perf_ms": 233079,
+        "duration_ms": 516.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:19:31.077Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 233079,
+        "exited_perf_ms": 237015.29999995232,
+        "duration_ms": 3936.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:19:31.593Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 237015.29999995232,
+        "exited_perf_ms": 237816.59999990463,
+        "duration_ms": 801.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:19:35.529Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 237816.59999990463,
+        "exited_perf_ms": 238666.09999990463,
+        "duration_ms": 849.5,
+        "entered_wall_iso": "2026-08-09T23:19:36.331Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 238666.09999990463,
+        "exited_perf_ms": 239278,
+        "duration_ms": 611.9000000953674,
+        "entered_wall_iso": "2026-08-09T23:19:37.180Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 239278,
+        "exited_perf_ms": 243090.89999997616,
+        "duration_ms": 3812.899999976158,
+        "entered_wall_iso": "2026-08-09T23:19:37.792Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 243090.89999997616,
+        "exited_perf_ms": 243723.09999990463,
+        "duration_ms": 632.1999999284744,
+        "entered_wall_iso": "2026-08-09T23:19:41.605Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 243723.09999990463,
+        "exited_perf_ms": 244866.89999997616,
+        "duration_ms": 1143.8000000715256,
+        "entered_wall_iso": "2026-08-09T23:19:42.237Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 244866.89999997616,
+        "exited_perf_ms": 245553.29999995232,
+        "duration_ms": 686.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:19:43.381Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 245553.29999995232,
+        "exited_perf_ms": 251624.69999992847,
+        "duration_ms": 6071.399999976158,
+        "entered_wall_iso": "2026-08-09T23:19:44.067Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 251624.69999992847,
+        "exited_perf_ms": 252379.09999990463,
+        "duration_ms": 754.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:19:50.139Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 252379.09999990463,
+        "exited_perf_ms": 253283,
+        "duration_ms": 903.9000000953674,
+        "entered_wall_iso": "2026-08-09T23:19:50.893Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 253283,
+        "exited_perf_ms": 253801.29999995232,
+        "duration_ms": 518.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:19:51.797Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 253801.29999995232,
+        "exited_perf_ms": 265507,
+        "duration_ms": 11705.700000047684,
+        "entered_wall_iso": "2026-08-09T23:19:52.315Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 265507,
+        "exited_perf_ms": 266145.09999990463,
+        "duration_ms": 638.0999999046326,
+        "entered_wall_iso": "2026-08-09T23:20:04.021Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 266145.09999990463,
+        "exited_perf_ms": 267018.6999999285,
+        "duration_ms": 873.6000000238419,
+        "entered_wall_iso": "2026-08-09T23:20:04.659Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 267018.6999999285,
+        "exited_perf_ms": 270297,
+        "duration_ms": 3278.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:20:05.533Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 270297,
+        "exited_perf_ms": 277319.59999990463,
+        "duration_ms": 7022.599999904633,
+        "entered_wall_iso": "2026-08-09T23:20:08.811Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 277319.59999990463,
+        "exited_perf_ms": 277973.89999997616,
+        "duration_ms": 654.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:20:15.833Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 277973.89999997616,
+        "exited_perf_ms": 278994.39999997616,
+        "duration_ms": 1020.5,
+        "entered_wall_iso": "2026-08-09T23:20:16.488Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 278994.39999997616,
+        "exited_perf_ms": 279562.6999999285,
+        "duration_ms": 568.2999999523163,
+        "entered_wall_iso": "2026-08-09T23:20:17.508Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 279562.6999999285,
+        "exited_perf_ms": 288828,
+        "duration_ms": 9265.300000071526,
+        "entered_wall_iso": "2026-08-09T23:20:18.077Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 288828,
+        "exited_perf_ms": 289724.09999990463,
+        "duration_ms": 896.0999999046326,
+        "entered_wall_iso": "2026-08-09T23:20:27.342Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 289724.09999990463,
+        "exited_perf_ms": 290349.39999997616,
+        "duration_ms": 625.3000000715256,
+        "entered_wall_iso": "2026-08-09T23:20:28.238Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 290349.39999997616,
+        "exited_perf_ms": 290999.7999999523,
+        "duration_ms": 650.3999999761581,
+        "entered_wall_iso": "2026-08-09T23:20:28.863Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 290999.7999999523,
+        "exited_perf_ms": 297160.59999990463,
+        "duration_ms": 6160.799999952316,
+        "entered_wall_iso": "2026-08-09T23:20:29.514Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 297160.59999990463,
+        "exited_perf_ms": 297927.7999999523,
+        "duration_ms": 767.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:20:35.674Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 297927.7999999523,
+        "exited_perf_ms": 298804.89999997616,
+        "duration_ms": 877.1000000238419,
+        "entered_wall_iso": "2026-08-09T23:20:36.442Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 298804.89999997616,
+        "exited_perf_ms": 299567.89999997616,
+        "duration_ms": 763,
+        "entered_wall_iso": "2026-08-09T23:20:37.319Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 299567.89999997616,
+        "exited_perf_ms": 310740.6999999285,
+        "duration_ms": 11172.799999952316,
+        "entered_wall_iso": "2026-08-09T23:20:38.082Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 310740.6999999285,
+        "exited_perf_ms": 311412.59999990463,
+        "duration_ms": 671.8999999761581,
+        "entered_wall_iso": "2026-08-09T23:20:49.254Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 311412.59999990463,
+        "exited_perf_ms": 312249.39999997616,
+        "duration_ms": 836.8000000715256,
+        "entered_wall_iso": "2026-08-09T23:20:49.926Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 312249.39999997616,
+        "exited_perf_ms": 314317.2999999523,
+        "duration_ms": 2067.899999976158,
+        "entered_wall_iso": "2026-08-09T23:20:50.763Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 314317.2999999523,
+        "exited_perf_ms": 325085.6999999285,
+        "duration_ms": 10768.399999976158,
+        "entered_wall_iso": "2026-08-09T23:20:52.831Z"
+      },
+      {
+        "screen": "screen-forecast-intro",
+        "entered_perf_ms": 325085.6999999285,
+        "exited_perf_ms": 325964.6999999285,
+        "duration_ms": 879,
+        "entered_wall_iso": "2026-08-09T23:21:03.599Z"
+      },
+      {
+        "screen": "screen-forecast",
+        "entered_perf_ms": 325964.6999999285,
+        "exited_perf_ms": 326695.7999999523,
+        "duration_ms": 731.1000000238419,
+        "entered_wall_iso": "2026-08-09T23:21:04.478Z"
+      },
+      {
+        "screen": "screen-feedback",
+        "entered_perf_ms": 326695.7999999523,
+        "exited_perf_ms": 327433,
+        "duration_ms": 737.2000000476837,
+        "entered_wall_iso": "2026-08-09T23:21:05.209Z"
+      },
+      {
+        "screen": "screen-distractor",
+        "entered_perf_ms": 327433,
+        "exited_perf_ms": 331895.2999999523,
+        "duration_ms": 4462.299999952316,
+        "entered_wall_iso": "2026-08-09T23:21:05.947Z"
+      }
+    ],
+    "client": {
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+      "viewport": {
+        "width": 1728,
+        "height": 992
+      }
+    }
+  }
+}
