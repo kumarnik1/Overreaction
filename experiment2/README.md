@@ -280,8 +280,3 @@ been deleted. Two things were deliberately kept:
 
 - `participants.db` — the psiTurk pilot database. Keep it until you have run
   `scripts/migrate_psiturk_db.py` and checked the export.
-- `server.log` — the old psiTurk log, several gigabytes. The new server writes
-  to `experiment.log` instead, so this is safe to delete whenever you like.
-
-If you set up this project before the switch, `.venv` may still hold the old
-Python 3.9 psiTurk environment. `./setup_env.sh` detects that and rebuilds it.
