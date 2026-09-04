@@ -1,0 +1,14 @@
+.venv/
+.venv-analysis/
+__pycache__/
+*.pyc
+*.sqlite
+*.db
+.DS_Store
+*.log
+
+# Secrets: completion codes, API tokens, database URLs
+.env
+
+# psiTurk leftovers
+.psiturk_history
